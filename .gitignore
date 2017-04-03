@@ -1,0 +1,5 @@
+#archive folder to keep old files
+archive/
+#Windows editors backups
+*.bak
+*.ori

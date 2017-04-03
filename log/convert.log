@@ -1,0 +1,3583 @@
+[DEBUG] _TRACE="0" _DEBUG="1" _FAILFAST="1"
+[DEBUG] enter main
+[DEBUG] enter initialize
+[DEBUG] initializing the variables
+[DEBUG] enter get_distibution
+grep: /etc/redhat-release: No such file or directory
+grep: /etc/redhat-release: No such file or directory
+[DEBUG] aim to check if the name is valid
+[DEBUG] enter get_release
+egrep: /etc/redhat-release: No such file or directory
+[DEBUG] aim to check if the name is valid
+[DEBUG] found "x86_64" "unsupported" ""
+[DEBUG] WORKSPACE="/root/bin"
+[DEBUG] enter convert_rhel_to_centos
+[DEBUG] converting to CentOS
+[DEBUG] enter extend_part
+[DEBUG] extending the /usr filesystem
+[DEBUG] size of "/dev/mapper/VG00-USR" is already 4 GB
+[DEBUG] cleaning up the yum cache
+Loaded plugins: security
+Cleaning repos: local-prod redhat
+Cleaning up Everything
+[DEBUG] enter download_centos_rpm
+[DEBUG] downloading the CentOS rpms
+[DEBUG] RPM-GPG-KEY-CentOS-6 downloaded
+[DEBUG] python-urlgrabber-3.9.1-11.el6.noarch.rpm downloaded
+[DEBUG] centos-release-6-8.el6.centos.12.3.x86_64.rpm downloaded
+[DEBUG] centos-indexhtml-6-2.el6.centos.noarch.rpm downloaded
+[DEBUG] yum-3.2.29-73.el6.centos.noarch.rpm downloaded
+[DEBUG] yum-plugin-fastestmirror-1.1.30-37.el6.noarch.rpm downloaded
+[DEBUG] yum-utils-1.1.30-37.el6.noarch.rpm downloaded
+[DEBUG] importing the GPG key "RPM-GPG-KEY-CentOS-6"
+[DEBUG] enter remove_rhel_packages
+[DEBUG] removing RHEL packages
+Loaded plugins: security
+Setting up Remove Process
+No Match for argument: rhnlib
+Package(s) rhnlib available, but not installed.
+No Match for argument: abrt-plugin-bugzilla
+No Match for argument: redhat-release-notes*
+No Packages marked for removal
+error: package redhat-release-server-6Server is not installed
+error: package redhat-indexhtml is not installed
+[DEBUG] removing redhat-release-server-6Server redhat-indexhtml
+Loaded plugins: security
+Setting up Remove Process
+Resolving Dependencies
+--> Running transaction check
+---> Package Red_Hat_Enterprise_Linux-Release_Notes-6-en-US.noarch 0:2-18.el6 will be erased
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package
+      Arch   Version
+                  Repository                                               Size
+================================================================================
+Removing:
+ Red_Hat_Enterprise_Linux-Release_Notes-6-en-US
+      noarch 2-18.el6
+                  @anaconda-RedHatEnterpriseLinux-201111171049.x86_64/6.2 261 k
+
+Transaction Summary
+================================================================================
+Remove        1 Package(s)
+
+Installed size: 261 k
+Is this ok [y/N]: Exiting on user Command
+[DEBUG] enter remove_subscription_manager
+[DEBUG] removing any left over RHEL subscription information and the subscription-manager
+./convert-redhat6-centos6.sh: line 212: type: subscription-manager: not found
+[DEBUG] found certificate of the Red Hat Enterprise Linux system
+[DEBUG] enter install_centos_rpm
+[DEBUG] installing the CentOS RPMs
+Preparing...                ##################################################
+python-urlgrabber           ##################################################
+yum-plugin-fastestmirror    ##################################################
+yum                         ##################################################
+yum-utils                   ##################################################
+centos-release              ##################################################
+centos-indexhtml            ##################################################
+[DEBUG] enter upgrade_packages
+[DEBUG] cleaning up yum cached data and then upgrade
+Loaded plugins: fastestmirror, security
+Cleaning repos: base extras local-prod redhat updates
+Cleaning up Everything
+Loaded plugins: fastestmirror, security
+Setting up Update Process
+Determining fastest mirrors
+ * base: mirrors.coreix.net
+ * extras: mirrors.coreix.net
+ * updates: mirrors.coreix.net
+Resolving Dependencies
+--> Running transaction check
+---> Package glibc.x86_64 0:2.12-1.149.el6_6.5 will be updated
+---> Package glibc.x86_64 0:2.12-1.192.el6 will be an update
+---> Package glibc-common.x86_64 0:2.12-1.149.el6_6.5 will be updated
+---> Package glibc-common.x86_64 0:2.12-1.192.el6 will be an update
+---> Package python.x86_64 0:2.6.6-29.el6_2.2 will be updated
+---> Package python.x86_64 0:2.6.6-66.el6_8 will be an update
+---> Package python-libs.x86_64 0:2.6.6-29.el6_2.2 will be updated
+---> Package python-libs.x86_64 0:2.6.6-66.el6_8 will be an update
+---> Package python-pycurl.x86_64 0:7.19.0-8.el6 will be updated
+---> Package python-pycurl.x86_64 0:7.19.0-9.el6 will be an update
+---> Package rpm.x86_64 0:4.8.0-19.el6_2.1 will be updated
+---> Package rpm.x86_64 0:4.8.0-55.el6 will be an update
+---> Package rpm-libs.x86_64 0:4.8.0-19.el6_2.1 will be updated
+---> Package rpm-libs.x86_64 0:4.8.0-55.el6 will be an update
+---> Package rpm-python.x86_64 0:4.8.0-19.el6_2.1 will be updated
+---> Package rpm-python.x86_64 0:4.8.0-55.el6 will be an update
+---> Package yum.noarch 0:3.2.29-73.el6.centos will be updated
+---> Package yum.noarch 0:3.2.29-75.el6.centos will be an update
+---> Package yum-plugin-security.noarch 0:1.1.30-10.el6 will be updated
+---> Package yum-plugin-security.noarch 0:1.1.30-37.el6 will be an update
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                 Arch       Version                   Repository   Size
+================================================================================
+Updating:
+ glibc                   x86_64     2.12-1.192.el6            base        3.8 M
+ glibc-common            x86_64     2.12-1.192.el6            base         14 M
+ python                  x86_64     2.6.6-66.el6_8            updates      76 k
+ python-libs             x86_64     2.6.6-66.el6_8            updates     5.3 M
+ python-pycurl           x86_64     7.19.0-9.el6              base         77 k
+ rpm                     x86_64     4.8.0-55.el6              base        906 k
+ rpm-libs                x86_64     4.8.0-55.el6              base        318 k
+ rpm-python              x86_64     4.8.0-55.el6              base         60 k
+ yum                     noarch     3.2.29-75.el6.centos      updates     1.0 M
+ yum-plugin-security     noarch     1.1.30-37.el6             base         42 k
+
+Transaction Summary
+================================================================================
+Upgrade      10 Package(s)
+
+Total download size: 26 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           5.0 MB/s |  26 MB     00:05     
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+Warning: RPMDB altered outside of yum.
+
+  Updating   : glibc-common-2.12-1.192.el6.x86_64                          1/20 
+
+  Updating   : glibc-2.12-1.192.el6.x86_64                                 2/20 
+
+  Updating   : python-2.6.6-66.el6_8.x86_64                                3/20 
+
+  Updating   : python-libs-2.6.6-66.el6_8.x86_64                           4/20 
+
+  Updating   : rpm-libs-4.8.0-55.el6.x86_64                                5/20 
+
+  Updating   : rpm-4.8.0-55.el6.x86_64                                     6/20 
+
+  Updating   : rpm-python-4.8.0-55.el6.x86_64                              7/20 
+
+  Updating   : yum-3.2.29-75.el6.centos.noarch                             8/20 
+
+  Updating   : yum-plugin-security-1.1.30-37.el6.noarch                    9/20 
+
+  Updating   : python-pycurl-7.19.0-9.el6.x86_64                          10/20 
+
+  Cleanup    : python-pycurl-7.19.0-8.el6.x86_64                          11/20 
+
+  Cleanup    : yum-plugin-security-1.1.30-10.el6.noarch                   12/20 
+
+  Cleanup    : yum-3.2.29-73.el6.centos.noarch                            13/20 
+
+  Cleanup    : rpm-python-4.8.0-19.el6_2.1.x86_64                         14/20 
+
+  Cleanup    : python-2.6.6-29.el6_2.2.x86_64                             15/20 
+
+  Cleanup    : python-libs-2.6.6-29.el6_2.2.x86_64                        16/20 
+
+  Cleanup    : rpm-libs-4.8.0-19.el6_2.1.x86_64                           17/20 
+
+  Cleanup    : rpm-4.8.0-19.el6_2.1.x86_64                                18/20 
+
+  Cleanup    : glibc-common-2.12-1.149.el6_6.5.x86_64                     19/20 
+
+  Cleanup    : glibc-2.12-1.149.el6_6.5.x86_64                            20/20 
+
+  Verifying  : python-libs-2.6.6-66.el6_8.x86_64                           1/20 
+
+  Verifying  : rpm-python-4.8.0-55.el6.x86_64                              2/20 
+
+  Verifying  : rpm-4.8.0-55.el6.x86_64                                     3/20 
+
+  Verifying  : glibc-2.12-1.192.el6.x86_64                                 4/20 
+
+  Verifying  : python-2.6.6-66.el6_8.x86_64                                5/20 
+
+  Verifying  : python-pycurl-7.19.0-9.el6.x86_64                           6/20 
+
+  Verifying  : yum-plugin-security-1.1.30-37.el6.noarch                    7/20 
+
+  Verifying  : yum-3.2.29-75.el6.centos.noarch                             8/20 
+
+  Verifying  : glibc-common-2.12-1.192.el6.x86_64                          9/20 
+
+  Verifying  : rpm-libs-4.8.0-55.el6.x86_64                               10/20 
+
+  Verifying  : yum-3.2.29-73.el6.centos.noarch                            11/20 
+
+  Verifying  : rpm-libs-4.8.0-19.el6_2.1.x86_64                           12/20 
+
+  Verifying  : python-2.6.6-29.el6_2.2.x86_64                             13/20 
+
+  Verifying  : glibc-common-2.12-1.149.el6_6.5.x86_64                     14/20 
+
+  Verifying  : yum-plugin-security-1.1.30-10.el6.noarch                   15/20 
+
+  Verifying  : python-libs-2.6.6-29.el6_2.2.x86_64                        16/20 
+
+  Verifying  : python-pycurl-7.19.0-8.el6.x86_64                          17/20 
+
+  Verifying  : rpm-4.8.0-19.el6_2.1.x86_64                                18/20 
+
+  Verifying  : glibc-2.12-1.149.el6_6.5.x86_64                            19/20 
+
+  Verifying  : rpm-python-4.8.0-19.el6_2.1.x86_64                         20/20 
+
+Updated:
+  glibc.x86_64 0:2.12-1.192.el6                                                 
+  glibc-common.x86_64 0:2.12-1.192.el6                                          
+  python.x86_64 0:2.6.6-66.el6_8                                                
+  python-libs.x86_64 0:2.6.6-66.el6_8                                           
+  python-pycurl.x86_64 0:7.19.0-9.el6                                           
+  rpm.x86_64 0:4.8.0-55.el6                                                     
+  rpm-libs.x86_64 0:4.8.0-55.el6                                                
+  rpm-python.x86_64 0:4.8.0-55.el6                                              
+  yum.noarch 0:3.2.29-75.el6.centos                                             
+  yum-plugin-security.noarch 0:1.1.30-37.el6                                    
+
+Complete!
+Loaded plugins: fastestmirror, security
+Setting up Update Process
+Loading mirror speeds from cached hostfile
+ * base: mirrors.coreix.net
+ * extras: mirrors.coreix.net
+ * updates: mirrors.coreix.net
+Resolving Dependencies
+--> Running transaction check
+---> Package ConsoleKit.x86_64 0:0.4.1-3.el6 will be updated
+---> Package ConsoleKit.x86_64 0:0.4.1-6.el6 will be an update
+---> Package ConsoleKit-libs.x86_64 0:0.4.1-3.el6 will be updated
+---> Package ConsoleKit-libs.x86_64 0:0.4.1-6.el6 will be an update
+---> Package acpid.x86_64 0:1.0.10-2.1.el6 will be updated
+---> Package acpid.x86_64 0:1.0.10-3.el6 will be an update
+---> Package alsa-lib.x86_64 0:1.0.22-3.el6 will be updated
+---> Package alsa-lib.x86_64 0:1.1.0-4.el6 will be an update
+---> Package alsa-utils.x86_64 0:1.0.21-3.el6 will be updated
+---> Package alsa-utils.x86_64 0:1.1.0-8.el6 will be an update
+---> Package at.x86_64 0:3.1.10-43.el6_2.1 will be updated
+---> Package at.x86_64 0:3.1.10-48.el6 will be an update
+---> Package atk.x86_64 0:1.28.0-2.el6 will be updated
+---> Package atk.x86_64 0:1.30.0-1.el6 will be an update
+---> Package audit.x86_64 0:2.1.3-3.el6 will be updated
+---> Package audit.x86_64 0:2.4.5-3.el6 will be an update
+---> Package audit-libs.x86_64 0:2.1.3-3.el6 will be updated
+---> Package audit-libs.x86_64 0:2.4.5-3.el6 will be an update
+---> Package authconfig.x86_64 0:6.1.12-5.el6 will be updated
+---> Package authconfig.x86_64 0:6.1.12-23.el6 will be an update
+---> Package avahi-libs.x86_64 0:0.6.25-11.el6 will be updated
+---> Package avahi-libs.x86_64 0:0.6.25-15.el6_8.1 will be an update
+---> Package bash.x86_64 0:4.1.2-15.el6_5.2 will be updated
+---> Package bash.x86_64 0:4.1.2-41.el6_8 will be an update
+---> Package bind-libs.x86_64 32:9.7.3-8.P3.el6_2.3 will be updated
+---> Package bind-libs.x86_64 32:9.8.2-0.47.rc1.el6_8.4 will be an update
+---> Package bind-utils.x86_64 32:9.7.3-8.P3.el6_2.3 will be updated
+---> Package bind-utils.x86_64 32:9.8.2-0.47.rc1.el6_8.4 will be an update
+---> Package binutils.x86_64 0:2.20.51.0.2-5.28.el6 will be updated
+---> Package binutils.x86_64 0:2.20.51.0.2-5.44.el6 will be an update
+---> Package biosdevname.x86_64 0:0.3.11-1.el6 will be updated
+---> Package biosdevname.x86_64 0:0.7.1-3.el6 will be an update
+---> Package blktrace.x86_64 0:1.0.1-6.el6 will be updated
+---> Package blktrace.x86_64 0:1.0.1-7.el6 will be an update
+---> Package bridge-utils.x86_64 0:1.2-9.el6 will be updated
+---> Package bridge-utils.x86_64 0:1.2-10.el6 will be an update
+---> Package busybox.x86_64 1:1.15.1-11.el6 will be updated
+---> Package busybox.x86_64 1:1.15.1-21.el6_6 will be an update
+---> Package ca-certificates.noarch 0:2010.63-3.el6_1.5 will be updated
+---> Package ca-certificates.noarch 0:2015.2.6-65.0.1.el6_7 will be an update
+--> Processing Dependency: p11-kit-trust >= 0.18.4-2 for package: ca-certificates-2015.2.6-65.0.1.el6_7.noarch
+--> Processing Dependency: p11-kit >= 0.18.4-2 for package: ca-certificates-2015.2.6-65.0.1.el6_7.noarch
+---> Package cairo.x86_64 0:1.8.8-3.1.el6 will be updated
+---> Package cairo.x86_64 0:1.8.8-6.el6_6 will be an update
+---> Package chkconfig.x86_64 0:1.3.49.3-1.el6_2 will be updated
+---> Package chkconfig.x86_64 0:1.3.49.5-1.el6 will be an update
+---> Package coreutils.x86_64 0:8.4-16.el6 will be updated
+---> Package coreutils.x86_64 0:8.4-43.el6 will be an update
+---> Package coreutils-libs.x86_64 0:8.4-16.el6 will be updated
+---> Package coreutils-libs.x86_64 0:8.4-43.el6 will be an update
+---> Package cpio.x86_64 0:2.10-9.el6 will be updated
+---> Package cpio.x86_64 0:2.10-12.el6_5 will be an update
+---> Package cronie.x86_64 0:1.4.4-7.el6 will be updated
+---> Package cronie.x86_64 0:1.4.4-16.el6_8.2 will be an update
+---> Package cronie-anacron.x86_64 0:1.4.4-7.el6 will be updated
+---> Package cronie-anacron.x86_64 0:1.4.4-16.el6_8.2 will be an update
+---> Package cryptsetup-luks.x86_64 0:1.2.0-6.el6 will be updated
+---> Package cryptsetup-luks.x86_64 0:1.2.0-11.el6 will be an update
+---> Package cryptsetup-luks-libs.x86_64 0:1.2.0-6.el6 will be updated
+---> Package cryptsetup-luks-libs.x86_64 0:1.2.0-11.el6 will be an update
+---> Package cups-libs.x86_64 1:1.4.2-44.el6_2.3 will be updated
+---> Package cups-libs.x86_64 1:1.4.2-74.el6 will be an update
+---> Package curl.x86_64 0:7.19.7-26.el6_2.4 will be updated
+---> Package curl.x86_64 0:7.19.7-52.el6 will be an update
+---> Package cvs.x86_64 0:1.11.23-11.el6_2.1 will be updated
+---> Package cvs.x86_64 0:1.11.23-16.el6 will be an update
+---> Package cyrus-sasl-lib.x86_64 0:2.1.23-13.el6 will be updated
+---> Package cyrus-sasl-lib.x86_64 0:2.1.23-15.el6_6.2 will be an update
+---> Package cyrus-sasl-plain.x86_64 0:2.1.23-13.el6 will be updated
+---> Package cyrus-sasl-plain.x86_64 0:2.1.23-15.el6_6.2 will be an update
+---> Package dash.x86_64 0:0.5.5.1-3.1.el6 will be updated
+---> Package dash.x86_64 0:0.5.5.1-4.el6 will be an update
+---> Package db4.x86_64 0:4.7.25-16.el6 will be updated
+---> Package db4.x86_64 0:4.7.25-20.el6_8.1 will be an update
+---> Package db4-utils.x86_64 0:4.7.25-16.el6 will be updated
+---> Package db4-utils.x86_64 0:4.7.25-20.el6_8.1 will be an update
+---> Package dbus.x86_64 1:1.2.24-5.el6_1 will be updated
+---> Package dbus.x86_64 1:1.2.24-8.el6_6 will be an update
+---> Package dbus-glib.x86_64 0:0.86-5.el6 will be updated
+---> Package dbus-glib.x86_64 0:0.86-6.el6 will be an update
+---> Package dbus-libs.x86_64 1:1.2.24-5.el6_1 will be updated
+---> Package dbus-libs.x86_64 1:1.2.24-8.el6_6 will be an update
+---> Package device-mapper.x86_64 0:1.02.66-6.el6 will be updated
+---> Package device-mapper.x86_64 0:1.02.117-7.el6_8.1 will be an update
+---> Package device-mapper-event.x86_64 0:1.02.66-6.el6 will be updated
+---> Package device-mapper-event.x86_64 0:1.02.117-7.el6_8.1 will be an update
+---> Package device-mapper-event-libs.x86_64 0:1.02.66-6.el6 will be updated
+---> Package device-mapper-event-libs.x86_64 0:1.02.117-7.el6_8.1 will be an update
+---> Package device-mapper-libs.x86_64 0:1.02.66-6.el6 will be updated
+---> Package device-mapper-libs.x86_64 0:1.02.117-7.el6_8.1 will be an update
+---> Package dmidecode.x86_64 1:2.11-2.el6 will be updated
+---> Package dmidecode.x86_64 1:2.12-7.el6 will be an update
+---> Package dmraid.x86_64 0:1.0.0.rc16-10.el6 will be updated
+---> Package dmraid.x86_64 0:1.0.0.rc16-11.el6 will be an update
+---> Package dmraid-events.x86_64 0:1.0.0.rc16-10.el6 will be updated
+---> Package dmraid-events.x86_64 0:1.0.0.rc16-11.el6 will be an update
+---> Package dracut.noarch 0:004-256.el6_2.1 will be updated
+---> Package dracut.noarch 0:004-409.el6_8.2 will be an update
+---> Package dracut-kernel.noarch 0:004-256.el6_2.1 will be updated
+---> Package dracut-kernel.noarch 0:004-409.el6_8.2 will be an update
+---> Package e2fsprogs.x86_64 0:1.41.12-11.el6 will be updated
+---> Package e2fsprogs.x86_64 0:1.41.12-22.el6 will be an update
+---> Package e2fsprogs-libs.x86_64 0:1.41.12-11.el6 will be updated
+---> Package e2fsprogs-libs.x86_64 0:1.41.12-22.el6 will be an update
+---> Package efibootmgr.x86_64 0:0.5.4-9.el6 will be updated
+---> Package efibootmgr.x86_64 0:0.5.4-13.el6 will be an update
+---> Package elfutils-libelf.x86_64 0:0.152-1.el6 will be updated
+---> Package elfutils-libelf.x86_64 0:0.164-2.el6 will be an update
+---> Package elfutils-libs.x86_64 0:0.152-1.el6 will be updated
+---> Package elfutils-libs.x86_64 0:0.164-2.el6 will be an update
+---> Package ethtool.x86_64 2:2.6.33-0.3.el6 will be updated
+---> Package ethtool.x86_64 2:3.5-6.el6 will be an update
+---> Package expat.x86_64 0:2.0.1-11.el6_2 will be updated
+---> Package expat.x86_64 0:2.0.1-13.el6_8 will be an update
+---> Package file.x86_64 0:5.04-11.el6 will be updated
+---> Package file.x86_64 0:5.04-30.el6 will be an update
+---> Package file-libs.x86_64 0:5.04-11.el6 will be updated
+---> Package file-libs.x86_64 0:5.04-30.el6 will be an update
+---> Package findutils.x86_64 1:4.4.2-6.el6 will be updated
+---> Package findutils.x86_64 1:4.4.2-9.el6 will be an update
+---> Package fontconfig.x86_64 0:2.8.0-3.el6 will be updated
+---> Package fontconfig.x86_64 0:2.8.0-5.el6 will be an update
+---> Package fprintd.x86_64 0:0.1-19.git04fd09cfa.el6 will be updated
+---> Package fprintd.x86_64 0:0.1-22.git04fd09cfa.el6 will be an update
+---> Package fprintd-pam.x86_64 0:0.1-19.git04fd09cfa.el6 will be updated
+---> Package fprintd-pam.x86_64 0:0.1-22.git04fd09cfa.el6 will be an update
+---> Package freetype.x86_64 0:2.3.11-6.el6_2.9 will be updated
+---> Package freetype.x86_64 0:2.3.11-17.el6 will be an update
+---> Package gawk.x86_64 0:3.1.7-6.el6 will be updated
+---> Package gawk.x86_64 0:3.1.7-10.el6_7.3 will be an update
+---> Package gdbm.x86_64 0:1.8.0-36.el6 will be updated
+---> Package gdbm.x86_64 0:1.8.0-39.el6 will be an update
+---> Package gettext.x86_64 0:0.17-16.el6 will be updated
+---> Package gettext.x86_64 0:0.17-18.el6 will be an update
+---> Package glib2.x86_64 0:2.22.5-6.el6 will be updated
+---> Package glib2.x86_64 0:2.28.8-5.el6 will be an update
+--> Processing Dependency: shared-mime-info for package: glib2-2.28.8-5.el6.x86_64
+---> Package gmp.x86_64 0:4.3.1-7.el6_2.2 will be updated
+---> Package gmp.x86_64 0:4.3.1-10.el6 will be an update
+---> Package gnupg2.x86_64 0:2.0.14-4.el6 will be updated
+---> Package gnupg2.x86_64 0:2.0.14-8.el6 will be an update
+---> Package gnutls.x86_64 0:2.8.5-4.el6_2.2 will be updated
+---> Package gnutls.x86_64 0:2.8.5-19.el6_7 will be an update
+---> Package grep.x86_64 0:2.6.3-2.el6 will be updated
+---> Package grep.x86_64 0:2.20-5.el6_8 will be an update
+---> Package grub.x86_64 1:0.97-75.el6 will be updated
+---> Package grub.x86_64 1:0.97-94.el6_7.1 will be an update
+---> Package grubby.x86_64 0:7.0.15-2.el6 will be updated
+---> Package grubby.x86_64 0:7.0.15-7.el6 will be an update
+---> Package gtk2.x86_64 0:2.18.9-6.el6 will be updated
+--> Processing Dependency: libgdk_pixbuf-2.0.so.0()(64bit) for package: gtk2-2.24.23-8.el6.x86_64
+--> Processing Dependency: libgdk_pixbuf-2.0.so.0()(64bit) for package: libfprint-0.1.0-19.pre2.el6.x86_64
+---> Package gtk2.x86_64 0:2.24.23-8.el6 will be an update
+---> Package gzip.x86_64 0:1.3.12-18.el6 will be updated
+---> Package gzip.x86_64 0:1.3.12-22.el6 will be an update
+---> Package hal.x86_64 0:0.5.14-11.el6 will be updated
+---> Package hal.x86_64 0:0.5.14-14.el6 will be an update
+---> Package hal-info.noarch 0:20090716-3.1.el6 will be updated
+---> Package hal-info.noarch 0:20090716-5.el6 will be an update
+---> Package hal-libs.x86_64 0:0.5.14-11.el6 will be updated
+---> Package hal-libs.x86_64 0:0.5.14-14.el6 will be an update
+---> Package hdparm.x86_64 0:9.16-3.4.el6 will be updated
+---> Package hdparm.x86_64 0:9.43-4.el6 will be an update
+---> Package hwdata.noarch 0:0.233-7.6.el6 will be updated
+---> Package hwdata.noarch 0:0.233-16.1.el6 will be an update
+---> Package initscripts.x86_64 0:9.03.27-1.el6_2.1 will be updated
+---> Package initscripts.x86_64 0:9.03.53-1.el6.centos.2 will be an update
+---> Package iproute.x86_64 0:2.6.32-17.el6 will be updated
+---> Package iproute.x86_64 0:2.6.32-54.el6 will be an update
+---> Package iptables.x86_64 0:1.4.7-5.1.el6_2 will be updated
+---> Package iptables.x86_64 0:1.4.7-16.el6 will be an update
+--> Processing Dependency: policycoreutils for package: iptables-1.4.7-16.el6.x86_64
+---> Package iptables-ipv6.x86_64 0:1.4.7-5.1.el6_2 will be updated
+---> Package iptables-ipv6.x86_64 0:1.4.7-16.el6 will be an update
+---> Package iputils.x86_64 0:20071127-20.el6 will be updated
+---> Package iputils.x86_64 0:20071127-21.el6 will be an update
+---> Package irqbalance.x86_64 2:0.55-30.el6_2 will be updated
+---> Package irqbalance.x86_64 2:1.0.7-8.el6 will be an update
+--> Processing Dependency: libnuma.so.1(libnuma_1.1)(64bit) for package: 2:irqbalance-1.0.7-8.el6.x86_64
+--> Processing Dependency: libnuma.so.1()(64bit) for package: 2:irqbalance-1.0.7-8.el6.x86_64
+---> Package jasper-libs.x86_64 0:1.900.1-15.el6_1.1 will be updated
+---> Package jasper-libs.x86_64 0:1.900.1-16.el6_6.3 will be an update
+---> Package kernel.x86_64 0:2.6.32-642.15.1.el6 will be installed
+---> Package kernel-firmware.noarch 0:2.6.32-504.8.1.el6 will be updated
+---> Package kernel-firmware.noarch 0:2.6.32-642.15.1.el6 will be an update
+---> Package kexec-tools.x86_64 0:2.0.0-209.el6_2.5 will be updated
+---> Package kexec-tools.x86_64 0:2.0.0-300.el6_8.2 will be an update
+--> Processing Dependency: libsnappy.so.1()(64bit) for package: kexec-tools-2.0.0-300.el6_8.2.x86_64
+--> Processing Dependency: liblzo2.so.2()(64bit) for package: kexec-tools-2.0.0-300.el6_8.2.x86_64
+---> Package keyutils-libs.x86_64 0:1.4-3.el6 will be updated
+---> Package keyutils-libs.x86_64 0:1.4-5.el6 will be an update
+---> Package kpartx.x86_64 0:0.4.9-46.el6_2.2 will be updated
+---> Package kpartx.x86_64 0:0.4.9-93.el6 will be an update
+---> Package krb5-libs.x86_64 0:1.9-22.el6 will be updated
+---> Package krb5-libs.x86_64 0:1.10.3-57.el6 will be an update
+---> Package less.x86_64 0:436-10.el6 will be updated
+---> Package less.x86_64 0:436-13.el6 will be an update
+---> Package libX11.x86_64 0:1.3-2.el6 will be updated
+---> Package libX11.x86_64 0:1.6.3-2.el6 will be an update
+---> Package libX11-common.noarch 0:1.3-2.el6 will be updated
+---> Package libX11-common.noarch 0:1.6.3-2.el6 will be an update
+---> Package libXau.x86_64 0:1.0.5-1.el6 will be updated
+---> Package libXau.x86_64 0:1.0.6-4.el6 will be an update
+---> Package libXcomposite.x86_64 0:0.4.1-2.el6 will be updated
+---> Package libXcomposite.x86_64 0:0.4.3-4.el6 will be an update
+---> Package libXcursor.x86_64 0:1.1.10-2.el6 will be updated
+---> Package libXcursor.x86_64 0:1.1.14-2.1.el6 will be an update
+---> Package libXdamage.x86_64 0:1.1.2-1.el6 will be updated
+---> Package libXdamage.x86_64 0:1.1.3-4.el6 will be an update
+---> Package libXext.x86_64 0:1.1-3.el6 will be updated
+---> Package libXext.x86_64 0:1.3.3-1.el6 will be an update
+---> Package libXfixes.x86_64 0:4.0.4-1.el6 will be updated
+---> Package libXfixes.x86_64 0:5.0.1-2.1.el6 will be an update
+---> Package libXft.x86_64 0:2.1.13-4.1.el6 will be updated
+---> Package libXft.x86_64 0:2.3.2-1.el6 will be an update
+---> Package libXi.x86_64 0:1.3-3.el6 will be updated
+---> Package libXi.x86_64 0:1.7.4-1.el6 will be an update
+---> Package libXinerama.x86_64 0:1.1-1.el6 will be updated
+---> Package libXinerama.x86_64 0:1.1.3-2.1.el6 will be an update
+---> Package libXrandr.x86_64 0:1.3.0-4.el6 will be updated
+---> Package libXrandr.x86_64 0:1.4.2-1.el6 will be an update
+---> Package libXrender.x86_64 0:0.9.5-1.el6 will be updated
+---> Package libXrender.x86_64 0:0.9.8-2.1.el6_8.1 will be an update
+---> Package libblkid.x86_64 0:2.17.2-12.4.el6 will be updated
+---> Package libblkid.x86_64 0:2.17.2-12.24.el6_8.3 will be an update
+---> Package libcom_err.x86_64 0:1.41.12-11.el6 will be updated
+---> Package libcom_err.x86_64 0:1.41.12-22.el6 will be an update
+---> Package libcurl.x86_64 0:7.19.7-26.el6_2.4 will be updated
+---> Package libcurl.x86_64 0:7.19.7-52.el6 will be an update
+---> Package libdrm.x86_64 0:2.4.25-2.el6 will be updated
+---> Package libdrm.x86_64 0:2.4.65-2.el6 will be an update
+--> Processing Dependency: libpciaccess.so.0()(64bit) for package: libdrm-2.4.65-2.el6.x86_64
+---> Package libevent.x86_64 0:1.4.13-1.el6 will be updated
+---> Package libevent.x86_64 0:1.4.13-4.el6 will be an update
+---> Package libgcc.x86_64 0:4.4.6-3.el6 will be updated
+---> Package libgcc.x86_64 0:4.4.7-17.el6 will be an update
+---> Package libgcrypt.x86_64 0:1.4.5-9.el6_2.2 will be updated
+---> Package libgcrypt.x86_64 0:1.4.5-12.el6_8 will be an update
+---> Package libgomp.x86_64 0:4.4.6-3.el6 will be updated
+---> Package libgomp.x86_64 0:4.4.7-17.el6 will be an update
+---> Package libnl.x86_64 0:1.1-14.el6 will be updated
+---> Package libnl.x86_64 0:1.1.4-2.el6 will be an update
+---> Package libpcap.x86_64 14:1.0.0-6.20091201git117cb5.el6 will be updated
+---> Package libpcap.x86_64 14:1.4.0-4.20130826git2dbcaa1.el6 will be an update
+---> Package libpng.x86_64 2:1.2.49-1.el6_2 will be updated
+---> Package libpng.x86_64 2:1.2.49-2.el6_7 will be an update
+---> Package libselinux.x86_64 0:2.0.94-5.2.el6 will be updated
+---> Package libselinux.x86_64 0:2.0.94-7.el6 will be an update
+---> Package libselinux-utils.x86_64 0:2.0.94-5.2.el6 will be updated
+---> Package libselinux-utils.x86_64 0:2.0.94-7.el6 will be an update
+---> Package libss.x86_64 0:1.41.12-11.el6 will be updated
+---> Package libss.x86_64 0:1.41.12-22.el6 will be an update
+---> Package libssh2.x86_64 0:1.2.2-7.el6_2.3 will be updated
+---> Package libssh2.x86_64 0:1.4.2-2.el6_7.1 will be an update
+---> Package libstdc++.x86_64 0:4.4.6-3.el6 will be updated
+---> Package libstdc++.x86_64 0:4.4.7-17.el6 will be an update
+---> Package libtasn1.x86_64 0:2.3-3.el6_2.1 will be updated
+---> Package libtasn1.x86_64 0:2.3-6.el6_5 will be an update
+---> Package libtiff.x86_64 0:3.9.4-5.el6_2 will be updated
+---> Package libtiff.x86_64 0:3.9.4-21.el6_8 will be an update
+---> Package libtirpc.x86_64 0:0.2.1-5.el6 will be updated
+---> Package libtirpc.x86_64 0:0.2.1-11.el6_8 will be an update
+---> Package libudev.x86_64 0:147-2.40.el6 will be updated
+---> Package libudev.x86_64 0:147-2.73.el6_8.2 will be an update
+---> Package libusb1.x86_64 0:1.0.3-1.el6 will be updated
+---> Package libusb1.x86_64 0:1.0.9-0.7.rc1.el6 will be an update
+---> Package libuser.x86_64 0:0.56.13-4.el6_0.1 will be updated
+---> Package libuser.x86_64 0:0.56.13-8.el6_7 will be an update
+---> Package libuuid.x86_64 0:2.17.2-12.4.el6 will be updated
+---> Package libuuid.x86_64 0:2.17.2-12.24.el6_8.3 will be an update
+---> Package libxcb.x86_64 0:1.5-1.el6 will be updated
+---> Package libxcb.x86_64 0:1.11-2.el6 will be an update
+---> Package libxml2.x86_64 0:2.7.6-4.el6_2.4 will be updated
+---> Package libxml2.x86_64 0:2.7.6-21.el6_8.1 will be an update
+---> Package libxml2-python.x86_64 0:2.7.6-4.el6_2.4 will be updated
+---> Package libxml2-python.x86_64 0:2.7.6-21.el6_8.1 will be an update
+---> Package lm_sensors-libs.x86_64 0:3.1.1-10.el6 will be updated
+---> Package lm_sensors-libs.x86_64 0:3.1.1-17.el6 will be an update
+---> Package logrotate.x86_64 0:3.7.8-12.el6_0.1 will be updated
+---> Package logrotate.x86_64 0:3.7.8-26.el6_7 will be an update
+---> Package lsof.x86_64 0:4.82-2.el6 will be updated
+---> Package lsof.x86_64 0:4.82-5.el6 will be an update
+---> Package lvm2.x86_64 0:2.02.87-6.el6 will be updated
+---> Package lvm2.x86_64 0:2.02.143-7.el6_8.1 will be an update
+--> Processing Dependency: device-mapper-persistent-data >= 0.6.2 for package: lvm2-2.02.143-7.el6_8.1.x86_64
+---> Package lvm2-libs.x86_64 0:2.02.87-6.el6 will be updated
+---> Package lvm2-libs.x86_64 0:2.02.143-7.el6_8.1 will be an update
+---> Package mailx.x86_64 0:12.4-6.el6 will be updated
+---> Package mailx.x86_64 0:12.4-8.el6_6 will be an update
+---> Package make.x86_64 1:3.81-19.el6 will be updated
+---> Package make.x86_64 1:3.81-23.el6 will be an update
+---> Package man.x86_64 0:1.6f-29.el6 will be updated
+---> Package man.x86_64 0:1.6f-32.el6 will be an update
+---> Package man-pages.noarch 0:3.22-17.el6 will be updated
+---> Package man-pages.noarch 0:3.22-20.el6 will be an update
+---> Package man-pages-overrides.noarch 0:6.2.3-2.el6 will be updated
+---> Package man-pages-overrides.noarch 0:6.8.2-1.el6 will be an update
+---> Package mdadm.x86_64 0:3.2.2-9.el6 will be updated
+---> Package mdadm.x86_64 0:3.3.4-1.el6_8.5 will be an update
+---> Package mlocate.x86_64 0:0.22.2-3.el6 will be updated
+---> Package mlocate.x86_64 0:0.22.2-6.el6 will be an update
+---> Package module-init-tools.x86_64 0:3.9-19.el6_2 will be updated
+---> Package module-init-tools.x86_64 0:3.9-25.el6 will be an update
+---> Package ncurses.x86_64 0:5.7-3.20090208.el6 will be updated
+---> Package ncurses.x86_64 0:5.7-4.20090207.el6 will be an update
+---> Package ncurses-base.x86_64 0:5.7-3.20090208.el6 will be updated
+---> Package ncurses-base.x86_64 0:5.7-4.20090207.el6 will be an update
+---> Package ncurses-libs.x86_64 0:5.7-3.20090208.el6 will be updated
+---> Package ncurses-libs.x86_64 0:5.7-4.20090207.el6 will be an update
+---> Package net-snmp.x86_64 1:5.5-37.el6_2.1 will be updated
+---> Package net-snmp.x86_64 1:5.5-57.el6_8.1 will be an update
+---> Package net-snmp-libs.x86_64 1:5.5-37.el6_2.1 will be updated
+---> Package net-snmp-libs.x86_64 1:5.5-57.el6_8.1 will be an update
+---> Package net-snmp-utils.x86_64 1:5.5-37.el6_2.1 will be updated
+---> Package net-snmp-utils.x86_64 1:5.5-57.el6_8.1 will be an update
+---> Package nfs-utils.x86_64 1:1.2.3-15.el6_2.1 will be updated
+---> Package nfs-utils.x86_64 1:1.2.3-70.el6_8.2 will be an update
+--> Processing Dependency: keyutils >= 1.4-4 for package: 1:nfs-utils-1.2.3-70.el6_8.2.x86_64
+--> Processing Dependency: python-argparse for package: 1:nfs-utils-1.2.3-70.el6_8.2.x86_64
+---> Package nfs-utils-lib.x86_64 0:1.1.5-4.el6 will be updated
+---> Package nfs-utils-lib.x86_64 0:1.1.5-11.el6 will be an update
+---> Package nmap.x86_64 2:5.21-4.el6 will be updated
+---> Package nmap.x86_64 2:5.51-4.el6 will be an update
+---> Package nspr.x86_64 0:4.9-1.el6 will be updated
+---> Package nspr.x86_64 0:4.11.0-1.el6 will be an update
+---> Package nss.x86_64 0:3.13.3-8.el6 will be updated
+---> Package nss.x86_64 0:3.21.3-2.el6_8 will be an update
+---> Package nss-softokn.x86_64 0:3.12.9-11.el6 will be updated
+---> Package nss-softokn.x86_64 0:3.14.3-23.3.el6_8 will be an update
+---> Package nss-softokn-freebl.x86_64 0:3.12.9-11.el6 will be updated
+---> Package nss-softokn-freebl.x86_64 0:3.14.3-23.3.el6_8 will be an update
+---> Package nss-sysinit.x86_64 0:3.13.3-8.el6 will be updated
+---> Package nss-sysinit.x86_64 0:3.21.3-2.el6_8 will be an update
+---> Package nss-util.x86_64 0:3.13.3-2.el6 will be updated
+---> Package nss-util.x86_64 0:3.21.3-1.el6_8 will be an update
+---> Package ntsysv.x86_64 0:1.3.49.3-1.el6_2 will be updated
+---> Package ntsysv.x86_64 0:1.3.49.5-1.el6 will be an update
+---> Package openldap.x86_64 0:2.4.23-20.el6 will be updated
+---> Package openldap.x86_64 0:2.4.40-12.el6 will be an update
+--> Processing Dependency: nss-tools for package: openldap-2.4.40-12.el6.x86_64
+---> Package openssh.x86_64 0:5.3p1-70.el6 will be updated
+---> Package openssh.x86_64 0:5.3p1-118.1.el6_8 will be an update
+---> Package openssh-clients.x86_64 0:5.3p1-70.el6 will be updated
+---> Package openssh-clients.x86_64 0:5.3p1-118.1.el6_8 will be an update
+---> Package openssh-server.x86_64 0:5.3p1-70.el6 will be updated
+---> Package openssh-server.x86_64 0:5.3p1-118.1.el6_8 will be an update
+---> Package openssl.x86_64 0:1.0.1e-16.el6_5.7 will be updated
+---> Package openssl.x86_64 0:1.0.1e-48.el6_8.4 will be an update
+---> Package pam.x86_64 0:1.1.1-10.el6_2.1 will be updated
+---> Package pam.x86_64 0:1.1.1-22.el6 will be an update
+---> Package pam_passwdqc.x86_64 0:1.0.5-6.el6 will be updated
+---> Package pam_passwdqc.x86_64 0:1.0.5-8.el6 will be an update
+---> Package pango.x86_64 0:1.28.1-3.el6_0.5 will be updated
+---> Package pango.x86_64 0:1.28.1-11.el6 will be an update
+---> Package parted.x86_64 0:2.1-17.el6 will be updated
+---> Package parted.x86_64 0:2.1-29.el6 will be an update
+---> Package passwd.x86_64 0:0.77-4.el6_2.2 will be updated
+---> Package passwd.x86_64 0:0.77-7.el6 will be an update
+---> Package pciutils.x86_64 0:3.1.4-11.el6 will be updated
+---> Package pciutils.x86_64 0:3.1.10-4.el6 will be an update
+---> Package pciutils-libs.x86_64 0:3.1.4-11.el6 will be updated
+---> Package pciutils-libs.x86_64 0:3.1.10-4.el6 will be an update
+---> Package pcre.x86_64 0:7.8-3.1.el6 will be updated
+---> Package pcre.x86_64 0:7.8-7.el6 will be an update
+---> Package perl.x86_64 4:5.10.1-119.el6_1.1 will be updated
+---> Package perl.x86_64 4:5.10.1-141.el6_7.1 will be an update
+---> Package perl-Archive-Tar.x86_64 0:1.58-119.el6_1.1 will be updated
+---> Package perl-Archive-Tar.x86_64 0:1.58-141.el6_7.1 will be an update
+---> Package perl-CGI.x86_64 0:3.51-119.el6_1.1 will be updated
+---> Package perl-CGI.x86_64 0:3.51-141.el6_7.1 will be an update
+---> Package perl-Compress-Raw-Zlib.x86_64 0:2.023-119.el6_1.1 will be updated
+---> Package perl-Compress-Raw-Zlib.x86_64 1:2.021-141.el6_7.1 will be an update
+---> Package perl-Compress-Zlib.x86_64 0:2.020-119.el6_1.1 will be updated
+---> Package perl-Compress-Zlib.x86_64 0:2.021-141.el6_7.1 will be an update
+---> Package perl-Crypt-SSLeay.x86_64 0:0.57-16.el6 will be updated
+---> Package perl-Crypt-SSLeay.x86_64 0:0.57-17.el6 will be an update
+---> Package perl-ExtUtils-MakeMaker.x86_64 0:6.55-119.el6_1.1 will be updated
+---> Package perl-ExtUtils-MakeMaker.x86_64 0:6.55-141.el6_7.1 will be an update
+---> Package perl-ExtUtils-ParseXS.x86_64 1:2.2003.0-119.el6_1.1 will be updated
+---> Package perl-ExtUtils-ParseXS.x86_64 1:2.2003.0-141.el6_7.1 will be an update
+---> Package perl-IO-Compress-Base.x86_64 0:2.020-119.el6_1.1 will be updated
+---> Package perl-IO-Compress-Base.x86_64 0:2.021-141.el6_7.1 will be an update
+---> Package perl-IO-Compress-Zlib.x86_64 0:2.020-119.el6_1.1 will be updated
+---> Package perl-IO-Compress-Zlib.x86_64 0:2.021-141.el6_7.1 will be an update
+---> Package perl-IO-Zlib.x86_64 1:1.09-119.el6_1.1 will be updated
+---> Package perl-IO-Zlib.x86_64 1:1.09-141.el6_7.1 will be an update
+---> Package perl-Module-Pluggable.x86_64 1:3.90-119.el6_1.1 will be updated
+---> Package perl-Module-Pluggable.x86_64 1:3.90-141.el6_7.1 will be an update
+---> Package perl-Net-SSLeay.x86_64 0:1.35-9.el6 will be updated
+---> Package perl-Net-SSLeay.x86_64 0:1.35-10.el6_8.1 will be an update
+---> Package perl-Package-Constants.x86_64 1:0.02-119.el6_1.1 will be updated
+---> Package perl-Package-Constants.x86_64 1:0.02-141.el6_7.1 will be an update
+---> Package perl-Pod-Escapes.x86_64 1:1.04-119.el6_1.1 will be updated
+---> Package perl-Pod-Escapes.x86_64 1:1.04-141.el6_7.1 will be an update
+---> Package perl-Pod-Simple.x86_64 1:3.13-119.el6_1.1 will be updated
+---> Package perl-Pod-Simple.x86_64 1:3.13-141.el6_7.1 will be an update
+---> Package perl-Test-Harness.x86_64 0:3.17-119.el6_1.1 will be updated
+---> Package perl-Test-Harness.x86_64 0:3.17-141.el6_7.1 will be an update
+---> Package perl-Test-Simple.x86_64 0:0.92-119.el6_1.1 will be updated
+---> Package perl-Test-Simple.x86_64 0:0.92-141.el6_7.1 will be an update
+---> Package perl-devel.x86_64 4:5.10.1-119.el6_1.1 will be updated
+---> Package perl-devel.x86_64 4:5.10.1-141.el6_7.1 will be an update
+--> Processing Dependency: glibc-devel for package: 4:perl-devel-5.10.1-141.el6_7.1.x86_64
+--> Processing Dependency: gdbm-devel for package: 4:perl-devel-5.10.1-141.el6_7.1.x86_64
+--> Processing Dependency: db4-devel for package: 4:perl-devel-5.10.1-141.el6_7.1.x86_64
+---> Package perl-libs.x86_64 4:5.10.1-119.el6_1.1 will be updated
+---> Package perl-libs.x86_64 4:5.10.1-141.el6_7.1 will be an update
+---> Package perl-libwww-perl.noarch 0:5.833-2.el6 will be updated
+---> Package perl-libwww-perl.noarch 0:5.833-3.el6 will be an update
+---> Package perl-version.x86_64 3:0.77-119.el6_1.1 will be updated
+---> Package perl-version.x86_64 3:0.77-141.el6_7.1 will be an update
+---> Package pinentry.x86_64 0:0.7.6-6.el6 will be updated
+---> Package pinentry.x86_64 0:0.7.6-8.el6 will be an update
+---> Package pixman.x86_64 0:0.18.4-1.el6_0.1 will be updated
+---> Package pixman.x86_64 0:0.32.8-1.el6 will be an update
+---> Package plymouth.x86_64 0:0.8.3-24.el6 will be updated
+---> Package plymouth.x86_64 0:0.8.3-27.el6.centos.1 will be an update
+---> Package plymouth-core-libs.x86_64 0:0.8.3-24.el6 will be updated
+---> Package plymouth-core-libs.x86_64 0:0.8.3-27.el6.centos.1 will be an update
+---> Package plymouth-scripts.x86_64 0:0.8.3-24.el6 will be updated
+---> Package plymouth-scripts.x86_64 0:0.8.3-27.el6.centos.1 will be an update
+---> Package pm-utils.x86_64 0:1.2.5-9.el6 will be updated
+---> Package pm-utils.x86_64 0:1.2.5-11.el6 will be an update
+---> Package polkit.x86_64 0:0.96-2.el6_0.1 will be updated
+---> Package polkit.x86_64 0:0.96-11.el6 will be an update
+---> Package prelink.x86_64 0:0.4.6-3.el6 will be updated
+---> Package prelink.x86_64 0:0.4.6-3.1.el6_4 will be an update
+---> Package procps.x86_64 0:3.2.8-21.el6 will be updated
+---> Package procps.x86_64 0:3.2.8-36.el6 will be an update
+---> Package psacct.x86_64 0:6.3.2-63.el6 will be updated
+---> Package psacct.x86_64 0:6.3.2-63.el6_3.3 will be an update
+---> Package psmisc.x86_64 0:22.6-15.el6_0.1 will be updated
+---> Package psmisc.x86_64 0:22.6-19.el6_5 will be an update
+---> Package ql2400-firmware.noarch 0:5.06.02-1.el6 will be updated
+---> Package ql2400-firmware.noarch 0:7.03.00-1.el6_5 will be an update
+---> Package quota.x86_64 1:3.17-16.el6 will be updated
+---> Package quota.x86_64 1:3.17-23.el6 will be an update
+---> Package readahead.x86_64 1:1.5.6-1.el6 will be updated
+---> Package readahead.x86_64 1:1.5.6-2.el6 will be an update
+---> Package readline.x86_64 0:6.0-3.el6 will be updated
+---> Package readline.x86_64 0:6.0-4.el6 will be an update
+---> Package redhat-logos.noarch 0:60.0.14-1.el6 will be updated
+---> Package redhat-logos.noarch 0:60.0.14-12.el6.centos will be an update
+---> Package redhat-lsb-core.x86_64 0:4.0-7.el6 will be updated
+---> Package redhat-lsb-core.x86_64 0:4.0-7.el6.centos will be an update
+---> Package rng-tools.x86_64 0:2-13.el6_2 will be updated
+---> Package rng-tools.x86_64 0:5-2.el6_7 will be an update
+---> Package rpcbind.x86_64 0:0.2.0-8.el6 will be updated
+---> Package rpcbind.x86_64 0:0.2.0-12.el6 will be an update
+---> Package rsync.x86_64 0:3.0.6-5.el6_0.1 will be updated
+---> Package rsync.x86_64 0:3.0.6-12.el6 will be an update
+---> Package rsyslog.x86_64 0:5.8.10-6.el6 will be updated
+---> Package rsyslog.x86_64 0:5.8.10-10.el6_6 will be an update
+---> Package ruby.x86_64 0:1.8.7.352-7.el6_2 will be updated
+---> Package ruby.x86_64 0:1.8.7.374-4.el6_6 will be an update
+---> Package ruby-libs.x86_64 0:1.8.7.352-7.el6_2 will be updated
+---> Package ruby-libs.x86_64 0:1.8.7.374-4.el6_6 will be an update
+---> Package screen.x86_64 0:4.0.3-16.el6 will be updated
+---> Package screen.x86_64 0:4.0.3-19.el6 will be an update
+---> Package sed.x86_64 0:4.2.1-7.el6 will be updated
+---> Package sed.x86_64 0:4.2.1-10.el6 will be an update
+---> Package setup.noarch 0:2.8.14-20.el6 will be updated
+---> Package setup.noarch 0:2.8.14-20.el6_4.1 will be an update
+---> Package setuptool.x86_64 0:1.19.9-3.el6 will be updated
+---> Package setuptool.x86_64 0:1.19.9-4.el6 will be an update
+---> Package shadow-utils.x86_64 2:4.1.4.2-13.el6 will be updated
+---> Package shadow-utils.x86_64 2:4.1.5.1-5.el6 will be an update
+--> Processing Dependency: libsemanage.so.1(LIBSEMANAGE_1.0)(64bit) for package: 2:shadow-utils-4.1.5.1-5.el6.x86_64
+--> Processing Dependency: libsemanage.so.1()(64bit) for package: 2:shadow-utils-4.1.5.1-5.el6.x86_64
+---> Package smartmontools.x86_64 1:5.39.1-5.el6 will be updated
+---> Package smartmontools.x86_64 1:5.43-1.el6 will be an update
+---> Package sos.noarch 0:2.2-17.el6_2.3 will be updated
+---> Package sos.noarch 0:3.2-40.el6.centos will be an update
+---> Package sqlite.x86_64 0:3.6.20-1.el6 will be updated
+---> Package sqlite.x86_64 0:3.6.20-1.el6_7.2 will be an update
+---> Package strace.x86_64 0:4.5.19-1.10.el6 will be updated
+---> Package strace.x86_64 0:4.8-10.el6 will be an update
+---> Package sudo.x86_64 0:1.7.4p5-9.el6_2 will be updated
+---> Package sudo.x86_64 0:1.8.6p3-25.el6_8 will be an update
+---> Package sysstat.x86_64 0:9.0.4-20.el6 will be updated
+---> Package sysstat.x86_64 0:9.0.4-31.el6 will be an update
+---> Package system-config-firewall-base.noarch 0:1.2.27-5.el6 will be updated
+---> Package system-config-firewall-base.noarch 0:1.2.27-7.2.el6_6 will be an update
+---> Package system-config-firewall-tui.noarch 0:1.2.27-5.el6 will be updated
+---> Package system-config-firewall-tui.noarch 0:1.2.27-7.2.el6_6 will be an update
+---> Package systemtap-runtime.x86_64 0:1.6-5.el6_2 will be updated
+---> Package systemtap-runtime.x86_64 0:2.9-4.el6 will be an update
+---> Package sysvinit-tools.x86_64 0:2.87-4.dsf.el6 will be updated
+---> Package sysvinit-tools.x86_64 0:2.87-6.dsf.el6 will be an update
+---> Package tar.x86_64 2:1.23-3.el6 will be updated
+---> Package tar.x86_64 2:1.23-15.el6_8 will be an update
+---> Package tcp_wrappers.x86_64 0:7.6-57.el6 will be updated
+---> Package tcp_wrappers.x86_64 0:7.6-58.el6 will be an update
+---> Package tcp_wrappers-libs.x86_64 0:7.6-57.el6 will be updated
+---> Package tcp_wrappers-libs.x86_64 0:7.6-58.el6 will be an update
+---> Package tcpdump.x86_64 14:4.0.0-3.20090921gitdf3cb4.1.el6 will be updated
+---> Package tcpdump.x86_64 14:4.0.0-9.20090921gitdf3cb4.2.el6 will be an update
+---> Package tcsh.x86_64 0:6.17-14.el6 will be updated
+---> Package tcsh.x86_64 0:6.17-35.el6_8.1 will be an update
+---> Package telnet.x86_64 1:0.17-47.el6 will be updated
+---> Package telnet.x86_64 1:0.17-48.el6 will be an update
+---> Package time.x86_64 0:1.7-37.1.el6 will be updated
+---> Package time.x86_64 0:1.7-38.el6 will be an update
+---> Package tmpwatch.x86_64 0:2.9.16-4.el6 will be updated
+---> Package tmpwatch.x86_64 0:2.9.16-6.el6 will be an update
+---> Package tzdata.noarch 0:2016f-1.el6 will be updated
+---> Package tzdata.noarch 0:2017a-1.el6 will be an update
+---> Package udev.x86_64 0:147-2.40.el6 will be updated
+---> Package udev.x86_64 0:147-2.73.el6_8.2 will be an update
+---> Package unzip.x86_64 0:6.0-1.el6 will be updated
+---> Package unzip.x86_64 0:6.0-4.el6 will be an update
+---> Package upstart.x86_64 0:0.6.5-10.el6 will be updated
+---> Package upstart.x86_64 0:0.6.5-16.el6 will be an update
+---> Package util-linux-ng.x86_64 0:2.17.2-12.4.el6 will be updated
+---> Package util-linux-ng.x86_64 0:2.17.2-12.24.el6_8.3 will be an update
+---> Package vim-minimal.x86_64 2:7.2.411-1.6.el6 will be updated
+---> Package vim-minimal.x86_64 2:7.4.629-5.el6_8.1 will be an update
+---> Package virt-what.x86_64 0:1.11-1.1.el6 will be updated
+---> Package virt-what.x86_64 0:1.11-1.2.el6 will be an update
+---> Package wget.x86_64 0:1.12-1.4.el6 will be updated
+---> Package wget.x86_64 0:1.12-8.el6 will be an update
+---> Package xinetd.x86_64 2:2.3.14-33.el6 will be updated
+---> Package xinetd.x86_64 2:2.3.14-40.el6 will be an update
+---> Package xorg-x11-drv-ati-firmware.noarch 0:6.14.2-7.el6 will be updated
+---> Package xorg-x11-drv-ati-firmware.noarch 0:7.6.1-2.el6 will be an update
+---> Package xz.x86_64 0:4.999.9-0.3.beta.20091007git.el6 will be updated
+---> Package xz.x86_64 0:4.999.9-0.5.beta.20091007git.el6 will be an update
+---> Package xz-libs.x86_64 0:4.999.9-0.3.beta.20091007git.el6 will be updated
+---> Package xz-libs.x86_64 0:4.999.9-0.5.beta.20091007git.el6 will be an update
+---> Package xz-lzma-compat.x86_64 0:4.999.9-0.3.beta.20091007git.el6 will be updated
+---> Package xz-lzma-compat.x86_64 0:4.999.9-0.5.beta.20091007git.el6 will be an update
+---> Package zip.x86_64 0:3.0-1.el6 will be updated
+---> Package zip.x86_64 0:3.0-1.el6_7.1 will be an update
+--> Running transaction check
+---> Package db4-devel.x86_64 0:4.7.25-20.el6_8.1 will be installed
+--> Processing Dependency: db4-cxx = 4.7.25-20.el6_8.1 for package: db4-devel-4.7.25-20.el6_8.1.x86_64
+--> Processing Dependency: libdb_cxx-4.7.so()(64bit) for package: db4-devel-4.7.25-20.el6_8.1.x86_64
+---> Package device-mapper-persistent-data.x86_64 0:0.6.2-0.1.rc7.el6 will be installed
+---> Package gdbm-devel.x86_64 0:1.8.0-39.el6 will be installed
+---> Package gdk-pixbuf2.x86_64 0:2.24.1-6.el6_7 will be installed
+---> Package glibc-devel.x86_64 0:2.12-1.192.el6 will be installed
+--> Processing Dependency: glibc-headers = 2.12-1.192.el6 for package: glibc-devel-2.12-1.192.el6.x86_64
+--> Processing Dependency: glibc-headers for package: glibc-devel-2.12-1.192.el6.x86_64
+---> Package keyutils.x86_64 0:1.4-5.el6 will be installed
+---> Package libpciaccess.x86_64 0:0.13.4-1.el6 will be installed
+---> Package libsemanage.x86_64 0:2.0.43-5.1.el6 will be installed
+--> Processing Dependency: libustr-1.0.so.1(USTR_1.0.1)(64bit) for package: libsemanage-2.0.43-5.1.el6.x86_64
+--> Processing Dependency: libustr-1.0.so.1(USTR_1.0)(64bit) for package: libsemanage-2.0.43-5.1.el6.x86_64
+--> Processing Dependency: libustr-1.0.so.1()(64bit) for package: libsemanage-2.0.43-5.1.el6.x86_64
+---> Package lzo.x86_64 0:2.03-3.1.el6_5.1 will be installed
+---> Package nss-tools.x86_64 0:3.21.3-2.el6_8 will be installed
+---> Package numactl.x86_64 0:2.0.9-2.el6 will be installed
+---> Package p11-kit.x86_64 0:0.18.5-2.el6_5.2 will be installed
+---> Package p11-kit-trust.x86_64 0:0.18.5-2.el6_5.2 will be installed
+---> Package policycoreutils.x86_64 0:2.0.83-30.1.el6_8 will be installed
+--> Processing Dependency: checkpolicy for package: policycoreutils-2.0.83-30.1.el6_8.x86_64
+---> Package python-argparse.noarch 0:1.2.1-2.1.el6 will be installed
+---> Package shared-mime-info.x86_64 0:0.70-6.el6 will be installed
+--> Processing Dependency: pkgconfig for package: shared-mime-info-0.70-6.el6.x86_64
+--> Processing Dependency: /usr/bin/pkg-config for package: shared-mime-info-0.70-6.el6.x86_64
+---> Package snappy.x86_64 0:1.1.0-1.el6 will be installed
+--> Running transaction check
+---> Package checkpolicy.x86_64 0:2.0.22-1.el6 will be installed
+---> Package db4-cxx.x86_64 0:4.7.25-20.el6_8.1 will be installed
+---> Package glibc-headers.x86_64 0:2.12-1.192.el6 will be installed
+--> Processing Dependency: kernel-headers >= 2.2.1 for package: glibc-headers-2.12-1.192.el6.x86_64
+--> Processing Dependency: kernel-headers for package: glibc-headers-2.12-1.192.el6.x86_64
+---> Package pkgconfig.x86_64 1:0.23-9.1.el6 will be installed
+---> Package ustr.x86_64 0:1.0.4-9.1.el6 will be installed
+--> Running transaction check
+---> Package kernel-headers.x86_64 0:2.6.32-642.15.1.el6 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package                       Arch   Version                     Repository
+                                                                           Size
+================================================================================
+Installing:
+ kernel                        x86_64 2.6.32-642.15.1.el6         updates  32 M
+Updating:
+ ConsoleKit                    x86_64 0.4.1-6.el6                 base     83 k
+ ConsoleKit-libs               x86_64 0.4.1-6.el6                 base     18 k
+ acpid                         x86_64 1.0.10-3.el6                base     37 k
+ alsa-lib                      x86_64 1.1.0-4.el6                 base    389 k
+ alsa-utils                    x86_64 1.1.0-8.el6                 base    2.0 M
+ at                            x86_64 3.1.10-48.el6               base     61 k
+ atk                           x86_64 1.30.0-1.el6                base    195 k
+ audit                         x86_64 2.4.5-3.el6                 base    214 k
+ audit-libs                    x86_64 2.4.5-3.el6                 base     74 k
+ authconfig                    x86_64 6.1.12-23.el6               base    377 k
+ avahi-libs                    x86_64 0.6.25-15.el6_8.1           updates  55 k
+ bash                          x86_64 4.1.2-41.el6_8              updates 909 k
+ bind-libs                     x86_64 32:9.8.2-0.47.rc1.el6_8.4   updates 890 k
+ bind-utils                    x86_64 32:9.8.2-0.47.rc1.el6_8.4   updates 187 k
+ binutils                      x86_64 2.20.51.0.2-5.44.el6        base    2.8 M
+ biosdevname                   x86_64 0.7.1-3.el6                 base     34 k
+ blktrace                      x86_64 1.0.1-7.el6                 base    768 k
+ bridge-utils                  x86_64 1.2-10.el6                  base     30 k
+ busybox                       x86_64 1:1.15.1-21.el6_6           base    611 k
+ ca-certificates               noarch 2015.2.6-65.0.1.el6_7       base    1.2 M
+ cairo                         x86_64 1.8.8-6.el6_6               base    309 k
+ chkconfig                     x86_64 1.3.49.5-1.el6              base    160 k
+ coreutils                     x86_64 8.4-43.el6                  base    3.0 M
+ coreutils-libs                x86_64 8.4-43.el6                  base     51 k
+ cpio                          x86_64 2.10-12.el6_5               base    192 k
+ cronie                        x86_64 1.4.4-16.el6_8.2            updates  75 k
+ cronie-anacron                x86_64 1.4.4-16.el6_8.2            updates  31 k
+ cryptsetup-luks               x86_64 1.2.0-11.el6                base     95 k
+ cryptsetup-luks-libs          x86_64 1.2.0-11.el6                base     51 k
+ cups-libs                     x86_64 1:1.4.2-74.el6              base    322 k
+ curl                          x86_64 7.19.7-52.el6               base    197 k
+ cvs                           x86_64 1.11.23-16.el6              base    712 k
+ cyrus-sasl-lib                x86_64 2.1.23-15.el6_6.2           base    136 k
+ cyrus-sasl-plain              x86_64 2.1.23-15.el6_6.2           base     31 k
+ dash                          x86_64 0.5.5.1-4.el6               base     74 k
+ db4                           x86_64 4.7.25-20.el6_8.1           updates 564 k
+ db4-utils                     x86_64 4.7.25-20.el6_8.1           updates 130 k
+ dbus                          x86_64 1:1.2.24-8.el6_6            base    207 k
+ dbus-glib                     x86_64 0.86-6.el6                  base    170 k
+ dbus-libs                     x86_64 1:1.2.24-8.el6_6            base    127 k
+ device-mapper                 x86_64 1.02.117-7.el6_8.1          updates 211 k
+ device-mapper-event           x86_64 1.02.117-7.el6_8.1          updates 133 k
+ device-mapper-event-libs      x86_64 1.02.117-7.el6_8.1          updates 125 k
+ device-mapper-libs            x86_64 1.02.117-7.el6_8.1          updates 256 k
+ dmidecode                     x86_64 1:2.12-7.el6                base     74 k
+ dmraid                        x86_64 1.0.0.rc16-11.el6           base    140 k
+ dmraid-events                 x86_64 1.0.0.rc16-11.el6           base     18 k
+ dracut                        noarch 004-409.el6_8.2             updates 127 k
+ dracut-kernel                 noarch 004-409.el6_8.2             updates  28 k
+ e2fsprogs                     x86_64 1.41.12-22.el6              base    554 k
+ e2fsprogs-libs                x86_64 1.41.12-22.el6              base    121 k
+ efibootmgr                    x86_64 0.5.4-13.el6                base     38 k
+ elfutils-libelf               x86_64 0.164-2.el6                 base    197 k
+ elfutils-libs                 x86_64 0.164-2.el6                 base    230 k
+ ethtool                       x86_64 2:3.5-6.el6                 base    103 k
+ expat                         x86_64 2.0.1-13.el6_8              updates  77 k
+ file                          x86_64 5.04-30.el6                 base     49 k
+ file-libs                     x86_64 5.04-30.el6                 base    317 k
+ findutils                     x86_64 1:4.4.2-9.el6               base    447 k
+ fontconfig                    x86_64 2.8.0-5.el6                 base    186 k
+ fprintd                       x86_64 0.1-22.git04fd09cfa.el6     base     41 k
+ fprintd-pam                   x86_64 0.1-22.git04fd09cfa.el6     base     13 k
+ freetype                      x86_64 2.3.11-17.el6               base    361 k
+ gawk                          x86_64 3.1.7-10.el6_7.3            base    780 k
+ gdbm                          x86_64 1.8.0-39.el6                base     29 k
+ gettext                       x86_64 0.17-18.el6                 base    1.8 M
+ glib2                         x86_64 2.28.8-5.el6                base    1.7 M
+ gmp                           x86_64 4.3.1-10.el6                base    207 k
+ gnupg2                        x86_64 2.0.14-8.el6                base    1.6 M
+ gnutls                        x86_64 2.8.5-19.el6_7              base    347 k
+ grep                          x86_64 2.20-5.el6_8                updates 345 k
+ grub                          x86_64 1:0.97-94.el6_7.1           base    937 k
+ grubby                        x86_64 7.0.15-7.el6                base     43 k
+ gtk2                          x86_64 2.24.23-8.el6               base    3.2 M
+ gzip                          x86_64 1.3.12-22.el6               base    116 k
+ hal                           x86_64 0.5.14-14.el6               base    375 k
+ hal-info                      noarch 20090716-5.el6              base     57 k
+ hal-libs                      x86_64 0.5.14-14.el6               base     69 k
+ hdparm                        x86_64 9.43-4.el6                  base     81 k
+ hwdata                        noarch 0.233-16.1.el6              base    1.3 M
+ initscripts                   x86_64 9.03.53-1.el6.centos.2      updates 947 k
+ iproute                       x86_64 2.6.32-54.el6               base    389 k
+ iptables                      x86_64 1.4.7-16.el6                base    254 k
+ iptables-ipv6                 x86_64 1.4.7-16.el6                base    103 k
+ iputils                       x86_64 20071127-21.el6             base    120 k
+ irqbalance                    x86_64 2:1.0.7-8.el6               base     42 k
+ jasper-libs                   x86_64 1.900.1-16.el6_6.3          base    137 k
+ kernel-firmware               noarch 2.6.32-642.15.1.el6         updates  28 M
+ kexec-tools                   x86_64 2.0.0-300.el6_8.2           updates 350 k
+ keyutils-libs                 x86_64 1.4-5.el6                   base     20 k
+ kpartx                        x86_64 0.4.9-93.el6                base     67 k
+ krb5-libs                     x86_64 1.10.3-57.el6               base    770 k
+ less                          x86_64 436-13.el6                  base    108 k
+ libX11                        x86_64 1.6.3-2.el6                 base    586 k
+ libX11-common                 noarch 1.6.3-2.el6                 base    169 k
+ libXau                        x86_64 1.0.6-4.el6                 base     24 k
+ libXcomposite                 x86_64 0.4.3-4.el6                 base     20 k
+ libXcursor                    x86_64 1.1.14-2.1.el6              base     28 k
+ libXdamage                    x86_64 1.1.3-4.el6                 base     18 k
+ libXext                       x86_64 1.3.3-1.el6                 base     35 k
+ libXfixes                     x86_64 5.0.1-2.1.el6               base     17 k
+ libXft                        x86_64 2.3.2-1.el6                 base     55 k
+ libXi                         x86_64 1.7.4-1.el6                 base     37 k
+ libXinerama                   x86_64 1.1.3-2.1.el6               base     13 k
+ libXrandr                     x86_64 1.4.2-1.el6                 base     23 k
+ libXrender                    x86_64 0.9.8-2.1.el6_8.1           updates  24 k
+ libblkid                      x86_64 2.17.2-12.24.el6_8.3        updates 118 k
+ libcom_err                    x86_64 1.41.12-22.el6              base     37 k
+ libcurl                       x86_64 7.19.7-52.el6               base    169 k
+ libdrm                        x86_64 2.4.65-2.el6                base    136 k
+ libevent                      x86_64 1.4.13-4.el6                base     66 k
+ libgcc                        x86_64 4.4.7-17.el6                base    103 k
+ libgcrypt                     x86_64 1.4.5-12.el6_8              updates 229 k
+ libgomp                       x86_64 4.4.7-17.el6                base    134 k
+ libnl                         x86_64 1.1.4-2.el6                 base    121 k
+ libpcap                       x86_64 14:1.4.0-4.20130826git2dbcaa1.el6
+                                                                  base    131 k
+ libpng                        x86_64 2:1.2.49-2.el6_7            base    182 k
+ libselinux                    x86_64 2.0.94-7.el6                base    109 k
+ libselinux-utils              x86_64 2.0.94-7.el6                base     82 k
+ libss                         x86_64 1.41.12-22.el6              base     42 k
+ libssh2                       x86_64 1.4.2-2.el6_7.1             base    123 k
+ libstdc++                     x86_64 4.4.7-17.el6                base    295 k
+ libtasn1                      x86_64 2.3-6.el6_5                 base    238 k
+ libtiff                       x86_64 3.9.4-21.el6_8              updates 346 k
+ libtirpc                      x86_64 0.2.1-11.el6_8              updates  82 k
+ libudev                       x86_64 147-2.73.el6_8.2            updates  78 k
+ libusb1                       x86_64 1.0.9-0.7.rc1.el6           base     80 k
+ libuser                       x86_64 0.56.13-8.el6_7             base    368 k
+ libuuid                       x86_64 2.17.2-12.24.el6_8.3        updates  71 k
+ libxcb                        x86_64 1.11-2.el6                  base    142 k
+ libxml2                       x86_64 2.7.6-21.el6_8.1            updates 805 k
+ libxml2-python                x86_64 2.7.6-21.el6_8.1            updates 325 k
+ lm_sensors-libs               x86_64 3.1.1-17.el6                base     38 k
+ logrotate                     x86_64 3.7.8-26.el6_7              base     58 k
+ lsof                          x86_64 4.82-5.el6                  base    324 k
+ lvm2                          x86_64 2.02.143-7.el6_8.1          updates 944 k
+ lvm2-libs                     x86_64 2.02.143-7.el6_8.1          updates 1.0 M
+ mailx                         x86_64 12.4-8.el6_6                base    235 k
+ make                          x86_64 1:3.81-23.el6               base    389 k
+ man                           x86_64 1.6f-32.el6                 base    263 k
+ man-pages                     noarch 3.22-20.el6                 base    4.8 M
+ man-pages-overrides           noarch 6.8.2-1.el6                 base    1.1 M
+ mdadm                         x86_64 3.3.4-1.el6_8.5             updates 348 k
+ mlocate                       x86_64 0.22.2-6.el6                base     86 k
+ module-init-tools             x86_64 3.9-25.el6                  base    466 k
+ ncurses                       x86_64 5.7-4.20090207.el6          base    268 k
+ ncurses-base                  x86_64 5.7-4.20090207.el6          base     61 k
+ ncurses-libs                  x86_64 5.7-4.20090207.el6          base    245 k
+ net-snmp                      x86_64 1:5.5-57.el6_8.1            updates 309 k
+ net-snmp-libs                 x86_64 1:5.5-57.el6_8.1            updates 1.5 M
+ net-snmp-utils                x86_64 1:5.5-57.el6_8.1            updates 177 k
+ nfs-utils                     x86_64 1:1.2.3-70.el6_8.2          updates 335 k
+ nfs-utils-lib                 x86_64 1.1.5-11.el6                base     68 k
+ nmap                          x86_64 2:5.51-4.el6                base    2.8 M
+ nspr                          x86_64 4.11.0-1.el6                base    114 k
+ nss                           x86_64 3.21.3-2.el6_8              updates 859 k
+ nss-softokn                   x86_64 3.14.3-23.3.el6_8           updates 262 k
+ nss-softokn-freebl            x86_64 3.14.3-23.3.el6_8           updates 168 k
+ nss-sysinit                   x86_64 3.21.3-2.el6_8              updates  47 k
+ nss-util                      x86_64 3.21.3-1.el6_8              updates  67 k
+ ntsysv                        x86_64 1.3.49.5-1.el6              base     30 k
+ openldap                      x86_64 2.4.40-12.el6               base    284 k
+ openssh                       x86_64 5.3p1-118.1.el6_8           updates 276 k
+ openssh-clients               x86_64 5.3p1-118.1.el6_8           updates 442 k
+ openssh-server                x86_64 5.3p1-118.1.el6_8           updates 328 k
+ openssl                       x86_64 1.0.1e-48.el6_8.4           updates 1.5 M
+ pam                           x86_64 1.1.1-22.el6                base    658 k
+ pam_passwdqc                  x86_64 1.0.5-8.el6                 base     35 k
+ pango                         x86_64 1.28.1-11.el6               base    351 k
+ parted                        x86_64 2.1-29.el6                  base    608 k
+ passwd                        x86_64 0.77-7.el6                  base     89 k
+ pciutils                      x86_64 3.1.10-4.el6                base     85 k
+ pciutils-libs                 x86_64 3.1.10-4.el6                base     34 k
+ pcre                          x86_64 7.8-7.el6                   base    196 k
+ perl                          x86_64 4:5.10.1-141.el6_7.1        base     10 M
+ perl-Archive-Tar              x86_64 1.58-141.el6_7.1            base     74 k
+ perl-CGI                      x86_64 3.51-141.el6_7.1            base    209 k
+ perl-Compress-Raw-Zlib        x86_64 1:2.021-141.el6_7.1         base     70 k
+ perl-Compress-Zlib            x86_64 2.021-141.el6_7.1           base     46 k
+ perl-Crypt-SSLeay             x86_64 0.57-17.el6                 base     57 k
+ perl-ExtUtils-MakeMaker       x86_64 6.55-141.el6_7.1            base    294 k
+ perl-ExtUtils-ParseXS         x86_64 1:2.2003.0-141.el6_7.1      base     46 k
+ perl-IO-Compress-Base         x86_64 2.021-141.el6_7.1           base     70 k
+ perl-IO-Compress-Zlib         x86_64 2.021-141.el6_7.1           base    136 k
+ perl-IO-Zlib                  x86_64 1:1.09-141.el6_7.1          base     33 k
+ perl-Module-Pluggable         x86_64 1:3.90-141.el6_7.1          base     40 k
+ perl-Net-SSLeay               x86_64 1.35-10.el6_8.1             updates 174 k
+ perl-Package-Constants        x86_64 1:0.02-141.el6_7.1          base     27 k
+ perl-Pod-Escapes              x86_64 1:1.04-141.el6_7.1          base     33 k
+ perl-Pod-Simple               x86_64 1:3.13-141.el6_7.1          base    213 k
+ perl-Test-Harness             x86_64 3.17-141.el6_7.1            base    232 k
+ perl-Test-Simple              x86_64 0.92-141.el6_7.1            base    113 k
+ perl-devel                    x86_64 4:5.10.1-141.el6_7.1        base    424 k
+ perl-libs                     x86_64 4:5.10.1-141.el6_7.1        base    579 k
+ perl-libwww-perl              noarch 5.833-3.el6                 base    391 k
+ perl-version                  x86_64 3:0.77-141.el6_7.1          base     52 k
+ pinentry                      x86_64 0.7.6-8.el6                 base     66 k
+ pixman                        x86_64 0.32.8-1.el6                base    243 k
+ plymouth                      x86_64 0.8.3-27.el6.centos.1       base     89 k
+ plymouth-core-libs            x86_64 0.8.3-27.el6.centos.1       base     88 k
+ plymouth-scripts              x86_64 0.8.3-27.el6.centos.1       base     31 k
+ pm-utils                      x86_64 1.2.5-11.el6                base    108 k
+ polkit                        x86_64 0.96-11.el6                 base    162 k
+ prelink                       x86_64 0.4.6-3.1.el6_4             base    993 k
+ procps                        x86_64 3.2.8-36.el6                base    218 k
+ psacct                        x86_64 6.3.2-63.el6_3.3            base     68 k
+ psmisc                        x86_64 22.6-19.el6_5               base     81 k
+ ql2400-firmware               noarch 7.03.00-1.el6_5             base     94 k
+ quota                         x86_64 1:3.17-23.el6               base    202 k
+ readahead                     x86_64 1:1.5.6-2.el6               base     49 k
+ readline                      x86_64 6.0-4.el6                   base    178 k
+ redhat-logos                  noarch 60.0.14-12.el6.centos       base     15 M
+ redhat-lsb-core               x86_64 4.0-7.el6.centos            base     25 k
+ rng-tools                     x86_64 5-2.el6_7                   base     32 k
+ rpcbind                       x86_64 0.2.0-12.el6                base     51 k
+ rsync                         x86_64 3.0.6-12.el6                base    335 k
+ rsyslog                       x86_64 5.8.10-10.el6_6             base    650 k
+ ruby                          x86_64 1.8.7.374-4.el6_6           base    538 k
+ ruby-libs                     x86_64 1.8.7.374-4.el6_6           base    1.7 M
+ screen                        x86_64 4.0.3-19.el6                base    494 k
+ sed                           x86_64 4.2.1-10.el6                base    216 k
+ setup                         noarch 2.8.14-20.el6_4.1           base    151 k
+ setuptool                     x86_64 1.19.9-4.el6                base     59 k
+ shadow-utils                  x86_64 2:4.1.5.1-5.el6             base    1.0 M
+ smartmontools                 x86_64 1:5.43-1.el6                base    439 k
+ sos                           noarch 3.2-40.el6.centos           base    318 k
+ sqlite                        x86_64 3.6.20-1.el6_7.2            base    300 k
+ strace                        x86_64 4.8-10.el6                  base    262 k
+ sudo                          x86_64 1.8.6p3-25.el6_8            updates 710 k
+ sysstat                       x86_64 9.0.4-31.el6                base    234 k
+ system-config-firewall-base   noarch 1.2.27-7.2.el6_6            base    434 k
+ system-config-firewall-tui    noarch 1.2.27-7.2.el6_6            base     39 k
+ systemtap-runtime             x86_64 2.9-4.el6                   base    205 k
+ sysvinit-tools                x86_64 2.87-6.dsf.el6              base     60 k
+ tar                           x86_64 2:1.23-15.el6_8             updates 810 k
+ tcp_wrappers                  x86_64 7.6-58.el6                  base     70 k
+ tcp_wrappers-libs             x86_64 7.6-58.el6                  base     62 k
+ tcpdump                       x86_64 14:4.0.0-9.20090921gitdf3cb4.2.el6
+                                                                  base    338 k
+ tcsh                          x86_64 6.17-35.el6_8.1             updates 417 k
+ telnet                        x86_64 1:0.17-48.el6               base     58 k
+ time                          x86_64 1.7-38.el6                  base     26 k
+ tmpwatch                      x86_64 2.9.16-6.el6                base     31 k
+ tzdata                        noarch 2017a-1.el6                 updates 455 k
+ udev                          x86_64 147-2.73.el6_8.2            updates 358 k
+ unzip                         x86_64 6.0-4.el6                   base    152 k
+ upstart                       x86_64 0.6.5-16.el6                base    177 k
+ util-linux-ng                 x86_64 2.17.2-12.24.el6_8.3        updates 1.6 M
+ vim-minimal                   x86_64 2:7.4.629-5.el6_8.1         updates 422 k
+ virt-what                     x86_64 1.11-1.2.el6                base     24 k
+ wget                          x86_64 1.12-8.el6                  base    484 k
+ xinetd                        x86_64 2:2.3.14-40.el6             base    122 k
+ xorg-x11-drv-ati-firmware     noarch 7.6.1-2.el6                 base    1.2 M
+ xz                            x86_64 4.999.9-0.5.beta.20091007git.el6
+                                                                  base    137 k
+ xz-libs                       x86_64 4.999.9-0.5.beta.20091007git.el6
+                                                                  base     89 k
+ xz-lzma-compat                x86_64 4.999.9-0.5.beta.20091007git.el6
+                                                                  base     16 k
+ zip                           x86_64 3.0-1.el6_7.1               base    259 k
+Installing for dependencies:
+ checkpolicy                   x86_64 2.0.22-1.el6                base    190 k
+ db4-cxx                       x86_64 4.7.25-20.el6_8.1           updates 589 k
+ db4-devel                     x86_64 4.7.25-20.el6_8.1           updates 6.6 M
+ device-mapper-persistent-data x86_64 0.6.2-0.1.rc7.el6           base    463 k
+ gdbm-devel                    x86_64 1.8.0-39.el6                base     26 k
+ gdk-pixbuf2                   x86_64 2.24.1-6.el6_7              base    501 k
+ glibc-devel                   x86_64 2.12-1.192.el6              base    988 k
+ glibc-headers                 x86_64 2.12-1.192.el6              base    617 k
+ kernel-headers                x86_64 2.6.32-642.15.1.el6         updates 4.4 M
+ keyutils                      x86_64 1.4-5.el6                   base     39 k
+ libpciaccess                  x86_64 0.13.4-1.el6                base     24 k
+ libsemanage                   x86_64 2.0.43-5.1.el6              base    104 k
+ lzo                           x86_64 2.03-3.1.el6_5.1            base     55 k
+ nss-tools                     x86_64 3.21.3-2.el6_8              updates 437 k
+ numactl                       x86_64 2.0.9-2.el6                 base     74 k
+ p11-kit                       x86_64 0.18.5-2.el6_5.2            base     94 k
+ p11-kit-trust                 x86_64 0.18.5-2.el6_5.2            base     71 k
+ pkgconfig                     x86_64 1:0.23-9.1.el6              base     70 k
+ policycoreutils               x86_64 2.0.83-30.1.el6_8           updates 663 k
+ python-argparse               noarch 1.2.1-2.1.el6               base     48 k
+ shared-mime-info              x86_64 0.70-6.el6                  base    209 k
+ snappy                        x86_64 1.1.0-1.el6                 base     39 k
+ ustr                          x86_64 1.0.4-9.1.el6               base     86 k
+
+Transaction Summary
+================================================================================
+Install      24 Package(s)
+Upgrade     256 Package(s)
+
+Total download size: 187 M
+Downloading Packages:
+--------------------------------------------------------------------------------
+Total                                           2.3 MB/s | 187 MB     01:20     
+Running rpm_check_debug
+Running Transaction Test
+Transaction Test Succeeded
+Running Transaction
+
+  Updating   : libgcc-4.4.7-17.el6.x86_64                                 1/536 
+
+  Updating   : audit-libs-2.4.5-3.el6.x86_64                              2/536 
+
+  Updating   : libcom_err-1.41.12-22.el6.x86_64                           3/536 
+
+  Updating   : nspr-4.11.0-1.el6.x86_64                                   4/536 
+
+  Updating   : 1:dbus-libs-1.2.24-8.el6_6.x86_64                          5/536 
+
+  Updating   : libstdc++-4.4.7-17.el6.x86_64                              6/536 
+
+  Updating   : tcp_wrappers-libs-7.6-58.el6.x86_64                        7/536 
+
+  Updating   : nss-util-3.21.3-1.el6_8.x86_64                             8/536 
+
+  Updating   : db4-4.7.25-20.el6_8.1.x86_64                               9/536 
+
+  Updating   : expat-2.0.1-13.el6_8.x86_64                               10/536 
+
+  Updating   : libuuid-2.17.2-12.24.el6_8.3.x86_64                       11/536 
+
+  Updating   : libudev-147-2.73.el6_8.2.x86_64                           12/536 
+
+  Updating   : elfutils-libelf-0.164-2.el6.x86_64                        13/536 
+
+  Updating   : pciutils-libs-3.1.10-4.el6.x86_64                         14/536 
+
+  Updating   : libxml2-2.7.6-21.el6_8.1.x86_64                           15/536 
+
+  Updating   : pcre-7.8-7.el6.x86_64                                     16/536 
+
+  Updating   : upstart-0.6.5-16.el6.x86_64                               17/536 
+
+  Updating   : e2fsprogs-libs-1.41.12-22.el6.x86_64                      18/536 
+
+  Updating   : libgcrypt-1.4.5-12.el6_8.x86_64                           19/536 
+
+  Updating   : 2:libpng-1.2.49-2.el6_7.x86_64                            20/536 
+
+  Updating   : keyutils-libs-1.4-5.el6.x86_64                            21/536 
+
+  Updating   : gdbm-1.8.0-39.el6.x86_64                                  22/536 
+
+  Updating   : 1:perl-Pod-Escapes-1.04-141.el6_7.1.x86_64                23/536 
+
+  Updating   : 3:perl-version-0.77-141.el6_7.1.x86_64                    24/536 
+
+  Updating   : 4:perl-libs-5.10.1-141.el6_7.1.x86_64                     25/536 
+
+  Updating   : 1:perl-Module-Pluggable-3.90-141.el6_7.1.x86_64           26/536 
+
+  Updating   : 1:perl-Pod-Simple-3.13-141.el6_7.1.x86_64                 27/536 
+
+  Updating   : 4:perl-5.10.1-141.el6_7.1.x86_64                          28/536 
+
+  Updating   : sysvinit-tools-2.87-6.dsf.el6.x86_64                      29/536 
+
+  Updating   : libtasn1-2.3-6.el6_5.x86_64                               30/536 
+
+  Updating   : xz-libs-4.999.9-0.5.beta.20091007git.el6.x86_64           31/536 
+
+  Updating   : setup-2.8.14-20.el6_4.1.noarch                            32/536 
+warning: /etc/shadow created as /etc/shadow.rpmnew
+
+  Updating   : 1:perl-Compress-Raw-Zlib-2.021-141.el6_7.1.x86_64         33/536 
+
+  Updating   : perl-IO-Compress-Base-2.021-141.el6_7.1.x86_64            34/536 
+
+  Updating   : cyrus-sasl-lib-2.1.23-15.el6_6.2.x86_64                   35/536 
+
+  Updating   : libtiff-3.9.4-21.el6_8.x86_64                             36/536 
+
+  Updating   : lm_sensors-libs-3.1.1-17.el6.x86_64                       37/536 
+
+  Updating   : libtirpc-0.2.1-11.el6_8.x86_64                            38/536 
+
+  Updating   : 14:libpcap-1.4.0-4.20130826git2dbcaa1.el6.x86_64          39/536 
+
+  Updating   : 1:dmidecode-2.12-7.el6.x86_64                             40/536 
+
+  Updating   : perl-IO-Compress-Zlib-2.021-141.el6_7.1.x86_64            41/536 
+
+  Updating   : perl-Compress-Zlib-2.021-141.el6_7.1.x86_64               42/536 
+
+  Updating   : 1:perl-IO-Zlib-1.09-141.el6_7.1.x86_64                    43/536 
+
+  Updating   : elfutils-libs-0.164-2.el6.x86_64                          44/536 
+
+  Updating   : gnutls-2.8.5-19.el6_7.x86_64                              45/536 
+
+  Updating   : perl-CGI-3.51-141.el6_7.1.x86_64                          46/536 
+
+  Updating   : 1:perl-Package-Constants-0.02-141.el6_7.1.x86_64          47/536 
+
+  Updating   : libxml2-python-2.7.6-21.el6_8.1.x86_64                    48/536 
+
+  Installing : device-mapper-persistent-data-0.6.2-0.1.rc7.el6.x86_64    49/536 
+
+  Updating   : tcp_wrappers-7.6-58.el6.x86_64                            50/536 
+
+  Updating   : gmp-4.3.1-10.el6.x86_64                                   51/536 
+
+  Installing : snappy-1.1.0-1.el6.x86_64                                 52/536 
+
+  Installing : db4-cxx-4.7.25-20.el6_8.1.x86_64                          53/536 
+
+  Installing : db4-devel-4.7.25-20.el6_8.1.x86_64                        54/536 
+
+  Updating   : avahi-libs-0.6.25-15.el6_8.1.x86_64                       55/536 
+
+  Updating   : libss-1.41.12-22.el6.x86_64                               56/536 
+
+  Installing : python-argparse-1.2.1-2.1.el6.noarch                      57/536 
+
+  Updating   : libevent-1.4.13-4.el6.x86_64                              58/536 
+
+  Updating   : plymouth-core-libs-0.8.3-27.el6.centos.1.x86_64           59/536 
+
+  Updating   : 2:ethtool-3.5-6.el6.x86_64                                60/536 
+
+  Updating   : kernel-firmware-2.6.32-642.15.1.el6.noarch                61/536 
+
+  Updating   : 1:busybox-1.15.1-21.el6_6.x86_64                          62/536 
+
+  Updating   : ncurses-base-5.7-4.20090207.el6.x86_64                    63/536 
+
+  Updating   : ncurses-libs-5.7-4.20090207.el6.x86_64                    64/536 
+
+  Updating   : bash-4.1.2-41.el6_8.x86_64                                65/536 
+
+  Updating   : libselinux-2.0.94-7.el6.x86_64                            66/536 
+
+  Updating   : chkconfig-1.3.49.5-1.el6.x86_64                           67/536 
+
+  Updating   : grep-2.20-5.el6_8.x86_64                                  68/536 
+
+  Updating   : krb5-libs-1.10.3-57.el6.x86_64                            69/536 
+
+  Updating   : sed-4.2.1-10.el6.x86_64                                   70/536 
+
+  Updating   : gawk-3.1.7-10.el6_7.3.x86_64                              71/536 
+
+  Updating   : libblkid-2.17.2-12.24.el6_8.3.x86_64                      72/536 
+
+  Updating   : 1:findutils-4.4.2-9.el6.x86_64                            73/536 
+
+  Updating   : freetype-2.3.11-17.el6.x86_64                             74/536 
+
+  Updating   : nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64               75/536 
+
+  Updating   : readline-6.0-4.el6.x86_64                                 76/536 
+
+  Updating   : psmisc-22.6-19.el6_5.x86_64                               77/536 
+
+  Updating   : procps-3.2.8-36.el6.x86_64                                78/536 
+
+  Updating   : cpio-2.10-12.el6_5.x86_64                                 79/536 
+
+  Installing : p11-kit-0.18.5-2.el6_5.2.x86_64                           80/536 
+
+  Updating   : libselinux-utils-2.0.94-7.el6.x86_64                      81/536 
+
+  Updating   : 2:tar-1.23-15.el6_8.x86_64                                82/536 
+
+  Updating   : 2:vim-minimal-7.4.629-5.el6_8.1.x86_64                    83/536 
+
+  Updating   : less-436-13.el6.x86_64                                    84/536 
+
+  Updating   : xz-4.999.9-0.5.beta.20091007git.el6.x86_64                85/536 
+
+  Updating   : binutils-2.20.51.0.2-5.44.el6.x86_64                      86/536 
+
+  Updating   : 1:make-3.81-23.el6.x86_64                                 87/536 
+
+  Updating   : xz-lzma-compat-4.999.9-0.5.beta.20091007git.el6.x86_64    88/536 
+
+  Installing : p11-kit-trust-0.18.5-2.el6_5.2.x86_64                     89/536 
+
+  Updating   : sqlite-3.6.20-1.el6_7.2.x86_64                            90/536 
+
+  Updating   : nss-softokn-3.14.3-23.3.el6_8.x86_64                      91/536 
+
+  Updating   : e2fsprogs-1.41.12-22.el6.x86_64                           92/536 
+
+  Updating   : 1:cups-libs-1.4.2-74.el6.x86_64                           93/536 
+
+  Updating   : pinentry-0.7.6-8.el6.x86_64                               94/536 
+
+  Installing : checkpolicy-2.0.22-1.el6.x86_64                           95/536 
+
+  Updating   : dash-0.5.5.1-4.el6.x86_64                                 96/536 
+
+  Installing : keyutils-1.4-5.el6.x86_64                                 97/536 
+
+  Updating   : libgomp-4.4.7-17.el6.x86_64                               98/536 
+
+  Installing : gdbm-devel-1.8.0-39.el6.x86_64                            99/536 
+
+  Updating   : time-1.7-38.el6.x86_64                                   100/536 
+
+  Updating   : ncurses-5.7-4.20090207.el6.x86_64                        101/536 
+
+  Updating   : coreutils-libs-8.4-43.el6.x86_64                         102/536 
+
+  Updating   : coreutils-8.4-43.el6.x86_64                              103/536 
+warning: /etc/profile.d/colorls.sh created as /etc/profile.d/colorls.sh.rpmnew
+
+  Updating   : pam-1.1.1-22.el6.x86_64                                  104/536 
+
+  Updating   : module-init-tools-3.9-25.el6.x86_64                      105/536 
+
+  Updating   : fontconfig-2.8.0-5.el6.x86_64                            106/536 
+
+  Updating   : hwdata-0.233-16.1.el6.noarch                             107/536 
+
+  Updating   : gzip-1.3.12-22.el6.x86_64                                108/536 
+
+  Updating   : man-1.6f-32.el6.x86_64                                   109/536 
+
+  Updating   : ca-certificates-2015.2.6-65.0.1.el6_7.noarch             110/536 
+
+  Updating   : openssl-1.0.1e-48.el6_8.4.x86_64                         111/536 
+
+  Updating   : libssh2-1.4.2-2.el6_7.1.x86_64                           112/536 
+
+  Updating   : 1:net-snmp-libs-5.5-57.el6_8.1.x86_64                    113/536 
+
+  Updating   : redhat-logos-60.0.14-12.el6.centos.noarch                114/536 
+
+  Updating   : plymouth-scripts-0.8.3-27.el6.centos.1.x86_64            115/536 
+
+  Updating   : ruby-libs-1.8.7.374-4.el6_6.x86_64                       116/536 
+
+  Updating   : 32:bind-libs-9.8.2-0.47.rc1.el6_8.4.x86_64               117/536 
+
+  Installing : libpciaccess-0.13.4-1.el6.x86_64                         118/536 
+
+  Updating   : cvs-1.11.23-16.el6.x86_64                                119/536 
+
+  Updating   : gettext-0.17-18.el6.x86_64                               120/536 
+
+  Updating   : alsa-lib-1.1.0-4.el6.x86_64                              121/536 
+
+  Updating   : nss-3.21.3-2.el6_8.x86_64                                122/536 
+
+  Updating   : nss-sysinit-3.21.3-2.el6_8.x86_64                        123/536 
+
+  Updating   : mailx-12.4-8.el6_6.x86_64                                124/536 
+
+  Installing : nss-tools-3.21.3-2.el6_8.x86_64                          125/536 
+
+  Updating   : openldap-2.4.40-12.el6.x86_64                            126/536 
+
+  Updating   : libcurl-7.19.7-52.el6.x86_64                             127/536 
+
+  Updating   : logrotate-3.7.8-26.el6_7.x86_64                          128/536 
+
+  Installing : ustr-1.0.4-9.1.el6.x86_64                                129/536 
+
+  Installing : libsemanage-2.0.43-5.1.el6.x86_64                        130/536 
+
+  Updating   : 2:shadow-utils-4.1.5.1-5.el6.x86_64                      131/536 
+
+  Updating   : 1:dbus-1.2.24-8.el6_6.x86_64                             132/536 
+
+  Updating   : ConsoleKit-libs-0.4.1-6.el6.x86_64                       133/536 
+
+  Updating   : hal-libs-0.5.14-14.el6.x86_64                            134/536 
+
+  Updating   : rpcbind-0.2.0-12.el6.x86_64                              135/536 
+
+  Updating   : libX11-common-1.6.3-2.el6.noarch                         136/536 
+
+  Installing : kernel-headers-2.6.32-642.15.1.el6.x86_64                137/536 
+
+  Installing : glibc-headers-2.12-1.192.el6.x86_64                      138/536 
+
+  Installing : glibc-devel-2.12-1.192.el6.x86_64                        139/536 
+
+  Updating   : 1:perl-ExtUtils-ParseXS-2.2003.0-141.el6_7.1.x86_64      140/536 
+
+  Updating   : 4:perl-devel-5.10.1-141.el6_7.1.x86_64                   141/536 
+
+  Updating   : perl-Test-Harness-3.17-141.el6_7.1.x86_64                142/536 
+
+  Updating   : perl-ExtUtils-MakeMaker-6.55-141.el6_7.1.x86_64          143/536 
+
+  Updating   : perl-Test-Simple-0.92-141.el6_7.1.x86_64                 144/536 
+
+  Updating   : libnl-1.1.4-2.el6.x86_64                                 145/536 
+
+  Installing : numactl-2.0.9-2.el6.x86_64                               146/536 
+
+  Updating   : libXau-1.0.6-4.el6.x86_64                                147/536 
+
+  Updating   : libxcb-1.11-2.el6.x86_64                                 148/536 
+
+  Updating   : libX11-1.6.3-2.el6.x86_64                                149/536 
+
+  Updating   : libXrender-0.9.8-2.1.el6_8.1.x86_64                      150/536 
+
+  Updating   : libXext-1.3.3-1.el6.x86_64                               151/536 
+
+  Updating   : libXfixes-5.0.1-2.1.el6.x86_64                           152/536 
+
+  Updating   : libXcursor-1.1.14-2.1.el6.x86_64                         153/536 
+
+  Updating   : libXdamage-1.1.3-4.el6.x86_64                            154/536 
+
+  Updating   : libXi-1.7.4-1.el6.x86_64                                 155/536 
+
+  Updating   : libXinerama-1.1.3-2.1.el6.x86_64                         156/536 
+
+  Updating   : libXrandr-1.4.2-1.el6.x86_64                             157/536 
+
+  Updating   : libXft-2.3.2-1.el6.x86_64                                158/536 
+
+  Updating   : libXcomposite-0.4.3-4.el6.x86_64                         159/536 
+
+  Installing : 1:pkgconfig-0.23-9.1.el6.x86_64                          160/536 
+
+  Updating   : glib2-2.28.8-5.el6.x86_64                                161/536 
+
+  Installing : shared-mime-info-0.70-6.el6.x86_64                       162/536 
+
+  Updating   : dbus-glib-0.86-6.el6.x86_64                              163/536 
+
+  Updating   : ConsoleKit-0.4.1-6.el6.x86_64                            164/536 
+
+  Updating   : polkit-0.96-11.el6.x86_64                                165/536 
+
+  Updating   : fprintd-0.1-22.git04fd09cfa.el6.x86_64                   166/536 
+
+  Installing : policycoreutils-2.0.83-30.1.el6_8.x86_64                 167/536 
+
+  Updating   : iptables-1.4.7-16.el6.x86_64                             168/536 
+
+  Updating   : iproute-2.6.32-54.el6.x86_64                             169/536 
+
+  Updating   : libdrm-2.4.65-2.el6.x86_64                               170/536 
+
+  Updating   : plymouth-0.8.3-27.el6.centos.1.x86_64                    171/536 
+
+  Updating   : iputils-20071127-21.el6.x86_64                           172/536 
+
+  Updating   : util-linux-ng-2.17.2-12.24.el6_8.3.x86_64                173/536 
+
+  Updating   : initscripts-9.03.53-1.el6.centos.2.x86_64                174/536 
+
+  Updating   : udev-147-2.73.el6_8.2.x86_64                             175/536 
+
+  Updating   : device-mapper-libs-1.02.117-7.el6_8.1.x86_64             176/536 
+
+  Updating   : device-mapper-1.02.117-7.el6_8.1.x86_64                  177/536 
+
+  Updating   : device-mapper-event-libs-1.02.117-7.el6_8.1.x86_64       178/536 
+
+  Updating   : device-mapper-event-1.02.117-7.el6_8.1.x86_64            179/536 
+
+  Updating   : kpartx-0.4.9-93.el6.x86_64                               180/536 
+
+  Updating   : openssh-5.3p1-118.1.el6_8.x86_64                         181/536 
+
+  Updating   : dmraid-events-1.0.0.rc16-11.el6.x86_64                   182/536 
+
+  Updating   : dmraid-1.0.0.rc16-11.el6.x86_64                          183/536 
+
+  Updating   : lvm2-libs-2.02.143-7.el6_8.1.x86_64                      184/536 
+
+  Updating   : cryptsetup-luks-libs-1.2.0-11.el6.x86_64                 185/536 
+
+  Updating   : cryptsetup-luks-1.2.0-11.el6.x86_64                      186/536 
+
+  Updating   : mdadm-3.3.4-1.el6_8.5.x86_64                             187/536 
+
+  Updating   : rsyslog-5.8.10-10.el6_6.x86_64                           188/536 
+
+  Updating   : cronie-anacron-1.4.4-16.el6_8.2.x86_64                   189/536 
+
+  Updating   : cronie-1.4.4-16.el6_8.2.x86_64                           190/536 
+
+  Updating   : at-3.1.10-48.el6.x86_64                                  191/536 
+
+  Updating   : nfs-utils-lib-1.1.5-11.el6.x86_64                        192/536 
+
+  Updating   : 1:nfs-utils-1.2.3-70.el6_8.2.x86_64                      193/536 
+
+  Updating   : iptables-ipv6-1.4.7-16.el6.x86_64                        194/536 
+
+  Updating   : system-config-firewall-base-1.2.27-7.2.el6_6.noarch      195/536 
+
+  Updating   : grubby-7.0.15-7.el6.x86_64                               196/536 
+
+  Updating   : libuser-0.56.13-8.el6_7.x86_64                           197/536 
+
+  Updating   : passwd-0.77-7.el6.x86_64                                 198/536 
+
+  Updating   : atk-1.30.0-1.el6.x86_64                                  199/536 
+
+  Updating   : pixman-0.32.8-1.el6.x86_64                               200/536 
+
+  Updating   : cairo-1.8.8-6.el6_6.x86_64                               201/536 
+
+  Updating   : pango-1.28.1-11.el6.x86_64                               202/536 
+
+  Updating   : file-libs-5.04-30.el6.x86_64                             203/536 
+
+  Updating   : file-5.04-30.el6.x86_64                                  204/536 
+
+  Updating   : dracut-004-409.el6_8.2.noarch                            205/536 
+
+  Updating   : dracut-kernel-004-409.el6_8.2.noarch                     206/536 
+
+  Installing : kernel-2.6.32-642.15.1.el6.x86_64                        207/536 
+
+  Installing : lzo-2.03-3.1.el6_5.1.x86_64                              208/536 
+
+  Updating   : jasper-libs-1.900.1-16.el6_6.3.x86_64                    209/536 
+
+  Installing : gdk-pixbuf2-2.24.1-6.el6_7.x86_64                        210/536 
+
+  Updating   : hdparm-9.43-4.el6.x86_64                                 211/536 
+
+  Updating   : hal-info-20090716-5.el6.noarch                           212/536 
+
+  Updating   : pm-utils-1.2.5-11.el6.x86_64                             213/536 
+
+  Updating   : hal-0.5.14-14.el6.x86_64                                 214/536 
+
+  Updating   : gtk2-2.24.23-8.el6.x86_64                                215/536 
+
+  Updating   : kexec-tools-2.0.0-300.el6_8.2.x86_64                     216/536 
+
+  Updating   : 2:irqbalance-1.0.7-8.el6.x86_64                          217/536 
+
+  Updating   : redhat-lsb-core-4.0-7.el6.centos.x86_64                  218/536 
+
+  Updating   : system-config-firewall-tui-1.2.27-7.2.el6_6.noarch       219/536 
+
+  Updating   : sysstat-9.0.4-31.el6.x86_64                              220/536 
+
+  Updating   : lvm2-2.02.143-7.el6_8.1.x86_64                           221/536 
+
+  Updating   : openssh-server-5.3p1-118.1.el6_8.x86_64                  222/536 
+
+  Updating   : openssh-clients-5.3p1-118.1.el6_8.x86_64                 223/536 
+
+  Updating   : parted-2.1-29.el6.x86_64                                 224/536 
+
+  Updating   : biosdevname-0.7.1-3.el6.x86_64                           225/536 
+
+  Updating   : 2:xinetd-2.3.14-40.el6.x86_64                            226/536 
+
+  Updating   : 1:quota-3.17-23.el6.x86_64                               227/536 
+
+  Updating   : 1:smartmontools-5.43-1.el6.x86_64                        228/536 
+
+  Updating   : 1:readahead-1.5.6-2.el6.x86_64                           229/536 
+
+  Updating   : acpid-1.0.10-3.el6.x86_64                                230/536 
+
+  Updating   : 1:net-snmp-5.5-57.el6_8.1.x86_64                         231/536 
+
+  Updating   : rng-tools-5-2.el6_7.x86_64                               232/536 
+
+  Updating   : virt-what-1.11-1.2.el6.x86_64                            233/536 
+
+  Updating   : prelink-0.4.6-3.1.el6_4.x86_64                           234/536 
+
+  Updating   : fprintd-pam-0.1-22.git04fd09cfa.el6.x86_64               235/536 
+
+  Updating   : screen-4.0.3-19.el6.x86_64                               236/536 
+
+  Updating   : systemtap-runtime-2.9-4.el6.x86_64                       237/536 
+
+  Updating   : mlocate-0.22.2-6.el6.x86_64                              238/536 
+
+  Updating   : 14:tcpdump-4.0.0-9.20090921gitdf3cb4.2.el6.x86_64        239/536 
+
+  Updating   : gnupg2-2.0.14-8.el6.x86_64                               240/536 
+
+  Updating   : curl-7.19.7-52.el6.x86_64                                241/536 
+
+  Updating   : sudo-1.8.6p3-25.el6_8.x86_64                             242/536 
+
+  Updating   : alsa-utils-1.1.0-8.el6.x86_64                            243/536 
+
+  Updating   : 32:bind-utils-9.8.2-0.47.rc1.el6_8.4.x86_64              244/536 
+
+  Updating   : ruby-1.8.7.374-4.el6_6.x86_64                            245/536 
+
+  Updating   : 1:grub-0.97-94.el6_7.1.x86_64                            246/536 
+
+  Updating   : 1:net-snmp-utils-5.5-57.el6_8.1.x86_64                   247/536 
+
+  Updating   : 2:nmap-5.51-4.el6.x86_64                                 248/536 
+
+  Updating   : perl-Net-SSLeay-1.35-10.el6_8.1.x86_64                   249/536 
+
+  Updating   : perl-Crypt-SSLeay-0.57-17.el6.x86_64                     250/536 
+
+  Updating   : wget-1.12-8.el6.x86_64                                   251/536 
+
+  Updating   : man-pages-overrides-6.8.2-1.el6.noarch                   252/536 
+
+  Updating   : pciutils-3.1.10-4.el6.x86_64                             253/536 
+
+  Updating   : pam_passwdqc-1.0.5-8.el6.x86_64                          254/536 
+
+  Updating   : authconfig-6.1.12-23.el6.x86_64                          255/536 
+
+  Updating   : blktrace-1.0.1-7.el6.x86_64                              256/536 
+
+  Updating   : psacct-6.3.2-63.el6_3.3.x86_64                           257/536 
+
+  Updating   : tcsh-6.17-35.el6_8.1.x86_64                              258/536 
+
+  Updating   : audit-2.4.5-3.el6.x86_64                                 259/536 
+
+  Updating   : sos-3.2-40.el6.centos.noarch                             260/536 
+
+  Updating   : tmpwatch-2.9.16-6.el6.x86_64                             261/536 
+
+  Updating   : ntsysv-1.3.49.5-1.el6.x86_64                             262/536 
+
+  Updating   : lsof-4.82-5.el6.x86_64                                   263/536 
+
+  Updating   : strace-4.8-10.el6.x86_64                                 264/536 
+
+  Updating   : unzip-6.0-4.el6.x86_64                                   265/536 
+
+  Updating   : 1:telnet-0.17-48.el6.x86_64                              266/536 
+
+  Updating   : perl-Archive-Tar-1.58-141.el6_7.1.x86_64                 267/536 
+
+  Updating   : perl-libwww-perl-5.833-3.el6.noarch                      268/536 
+
+  Updating   : cyrus-sasl-plain-2.1.23-15.el6_6.2.x86_64                269/536 
+
+  Updating   : efibootmgr-0.5.4-13.el6.x86_64                           270/536 
+
+  Updating   : db4-utils-4.7.25-20.el6_8.1.x86_64                       271/536 
+
+  Updating   : xorg-x11-drv-ati-firmware-7.6.1-2.el6.noarch             272/536 
+
+  Updating   : rsync-3.0.6-12.el6.x86_64                                273/536 
+
+  Updating   : libusb1-1.0.9-0.7.rc1.el6.x86_64                         274/536 
+
+  Updating   : zip-3.0-1.el6_7.1.x86_64                                 275/536 
+
+  Updating   : setuptool-1.19.9-4.el6.x86_64                            276/536 
+
+  Updating   : bridge-utils-1.2-10.el6.x86_64                           277/536 
+
+  Updating   : man-pages-3.22-20.el6.noarch                             278/536 
+
+  Updating   : ql2400-firmware-7.03.00-1.el6_5.noarch                   279/536 
+
+  Updating   : tzdata-2017a-1.el6.noarch                                280/536 
+
+  Cleanup    : redhat-lsb-core-4.0-7.el6.x86_64                         281/536 
+
+  Cleanup    : perl-Archive-Tar-1.58-119.el6_1.1.x86_64                 282/536 
+
+  Cleanup    : 1:perl-IO-Zlib-1.09-119.el6_1.1.x86_64                   283/536 
+
+  Cleanup    : perl-Net-SSLeay-1.35-9.el6.x86_64                        284/536 
+
+  Cleanup    : 1:grub-0.97-75.el6.x86_64                                285/536 
+
+  Cleanup    : sos-2.2-17.el6_2.3.noarch                                286/536 
+
+  Cleanup    : perl-libwww-perl-5.833-2.el6.noarch                      287/536 
+
+  Cleanup    : perl-Compress-Zlib-2.020-119.el6_1.1.x86_64              288/536 
+
+  Cleanup    : perl-IO-Compress-Zlib-2.020-119.el6_1.1.x86_64           289/536 
+
+  Cleanup    : perl-Test-Simple-0.92-119.el6_1.1.x86_64                 290/536 
+
+  Cleanup    : perl-Test-Harness-3.17-119.el6_1.1.x86_64                291/536 
+
+  Cleanup    : perl-ExtUtils-MakeMaker-6.55-119.el6_1.1.x86_64          292/536 
+
+  Cleanup    : 1:perl-ExtUtils-ParseXS-2.2003.0-119.el6_1.1.x86_64      293/536 
+
+  Cleanup    : 4:perl-devel-5.10.1-119.el6_1.1.x86_64                   294/536 
+
+  Cleanup    : perl-IO-Compress-Base-2.020-119.el6_1.1.x86_64           295/536 
+
+  Cleanup    : 1:perl-Package-Constants-0.02-119.el6_1.1.x86_64         296/536 
+
+  Cleanup    : perl-CGI-3.51-119.el6_1.1.x86_64                         297/536 
+
+  Cleanup    : dracut-kernel-004-256.el6_2.1.noarch                     298/536 
+
+  Cleanup    : system-config-firewall-tui-1.2.27-5.el6.noarch           299/536 
+
+  Cleanup    : system-config-firewall-base-1.2.27-5.el6.noarch          300/536 
+
+  Cleanup    : man-pages-overrides-6.2.3-2.el6.noarch                   301/536 
+
+  Cleanup    : xorg-x11-drv-ati-firmware-6.14.2-7.el6.noarch            302/536 
+
+  Cleanup    : kernel-firmware-2.6.32-504.8.1.el6.noarch                303/536 
+
+  Cleanup    : man-pages-3.22-17.el6.noarch                             304/536 
+
+  Cleanup    : ql2400-firmware-5.06.02-1.el6.noarch                     305/536 
+
+  Cleanup    : tzdata-2016f-1.el6.noarch                                306/536 
+
+  Cleanup    : hal-info-20090716-3.1.el6.noarch                         307/536 
+
+  Cleanup    : pm-utils-1.2.5-9.el6.x86_64                              308/536 
+
+  Cleanup    : hal-0.5.14-11.el6.x86_64                                 309/536 
+
+  Cleanup    : gtk2-2.18.9-6.el6.x86_64                                 310/536 
+
+  Cleanup    : nfs-utils-lib-1.1.5-4.el6.x86_64                         311/536 
+
+  Cleanup    : 1:nfs-utils-1.2.3-15.el6_2.1.x86_64                      312/536 
+
+  Cleanup    : openssh-server-5.3p1-70.el6.x86_64                       313/536 
+
+  Cleanup    : pango-1.28.1-3.el6_0.5.x86_64                            314/536 
+
+  Cleanup    : 1:net-snmp-5.5-37.el6_2.1.x86_64                         315/536 
+
+  Cleanup    : curl-7.19.7-26.el6_2.4.x86_64                            316/536 
+
+  Cleanup    : 1:readahead-1.5.6-1.el6.x86_64                           317/536 
+
+  Cleanup    : 1:quota-3.17-16.el6.x86_64                               318/536 
+
+  Cleanup    : 1:cups-libs-1.4.2-44.el6_2.3.x86_64                      319/536 
+
+  Cleanup    : kexec-tools-2.0.0-209.el6_2.5.x86_64                     320/536 
+
+  Cleanup    : dracut-004-256.el6_2.1.noarch                            321/536 
+
+  Cleanup    : systemtap-runtime-1.6-5.el6_2.x86_64                     322/536 
+
+  Cleanup    : sysstat-9.0.4-20.el6.x86_64                              323/536 
+
+  Cleanup    : cronie-1.4.4-7.el6.x86_64                                324/536 
+
+  Cleanup    : cronie-anacron-1.4.4-7.el6.x86_64                        325/536 
+
+  Cleanup    : openssh-clients-5.3p1-70.el6.x86_64                      326/536 
+
+  Cleanup    : openssh-5.3p1-70.el6.x86_64                              327/536 
+
+  Cleanup    : prelink-0.4.6-3.el6.x86_64                               328/536 
+
+  Cleanup    : 1:smartmontools-5.39.1-5.el6.x86_64                      329/536 
+
+  Cleanup    : lvm2-2.02.87-6.el6.x86_64                                330/536 
+
+  Cleanup    : 2:xinetd-2.3.14-33.el6.x86_64                            331/536 
+
+  Cleanup    : rsyslog-5.8.10-6.el6.x86_64                              332/536 
+
+  Cleanup    : rpcbind-0.2.0-8.el6.x86_64                               333/536 
+
+  Cleanup    : man-1.6f-29.el6.x86_64                                   334/536 
+
+  Cleanup    : passwd-0.77-4.el6_2.2.x86_64                             335/536 
+
+  Cleanup    : parted-2.1-17.el6.x86_64                                 336/536 
+
+  Cleanup    : sudo-1.7.4p5-9.el6_2.x86_64                              337/536 
+
+  Cleanup    : mailx-12.4-6.el6.x86_64                                  338/536 
+
+  Cleanup    : plymouth-0.8.3-24.el6.x86_64                             339/536 
+
+  Cleanup    : e2fsprogs-1.41.12-11.el6.x86_64                          340/536 
+
+  Cleanup    : cairo-1.8.8-3.1.el6.x86_64                               341/536 
+
+  Cleanup    : dmraid-1.0.0.rc16-10.el6.x86_64                          342/536 
+
+  Cleanup    : dmraid-events-1.0.0.rc16-10.el6.x86_64                   343/536 
+
+  Cleanup    : 32:bind-utils-9.7.3-8.P3.el6_2.3.x86_64                  344/536 
+
+  Cleanup    : gnupg2-2.0.14-4.el6.x86_64                               345/536 
+
+  Cleanup    : libcurl-7.19.7-26.el6_2.4.x86_64                         346/536 
+
+  Cleanup    : audit-2.1.3-3.el6.x86_64                                 347/536 
+
+  Cleanup    : 2:nmap-5.21-4.el6.x86_64                                 348/536 
+
+  Cleanup    : plymouth-scripts-0.8.3-24.el6.x86_64                     349/536 
+
+  Cleanup    : libXft-2.1.13-4.1.el6.x86_64                             350/536 
+
+  Cleanup    : fontconfig-2.8.0-3.el6.x86_64                            351/536 
+
+  Cleanup    : fprintd-pam-0.1-19.git04fd09cfa.el6.x86_64               352/536 
+
+  Cleanup    : fprintd-0.1-19.git04fd09cfa.el6.x86_64                   353/536 
+
+  Cleanup    : polkit-0.96-2.el6_0.1.x86_64                             354/536 
+
+  Cleanup    : ConsoleKit-0.4.1-3.el6.x86_64                            355/536 
+
+  Cleanup    : dbus-glib-0.86-5.el6.x86_64                              356/536 
+
+  Cleanup    : 32:bind-libs-9.7.3-8.P3.el6_2.3.x86_64                   357/536 
+
+  Cleanup    : libuser-0.56.13-4.el6_0.1.x86_64                         358/536 
+
+  Cleanup    : openldap-2.4.23-20.el6.x86_64                            359/536 
+
+  Cleanup    : nss-sysinit-3.13.3-8.el6.x86_64                          360/536 
+
+  Cleanup    : nss-3.13.3-8.el6.x86_64                                  361/536 
+
+  Cleanup    : nss-softokn-3.12.9-11.el6.x86_64                         362/536 
+
+  Cleanup    : lvm2-libs-2.02.87-6.el6.x86_64                           363/536 
+
+  Cleanup    : device-mapper-event-1.02.66-6.el6.x86_64                 364/536 
+
+  Cleanup    : mdadm-3.2.2-9.el6.x86_64                                 365/536 
+
+  Cleanup    : gnutls-2.8.5-4.el6_2.2.x86_64                            366/536 
+
+  Cleanup    : gettext-0.17-16.el6.x86_64                               367/536 
+
+  Cleanup    : cvs-1.11.23-11.el6_2.1.x86_64                            368/536 
+
+  Cleanup    : 14:tcpdump-4.0.0-3.20090921gitdf3cb4.1.el6.x86_64        369/536 
+
+  Cleanup    : mlocate-0.22.2-3.el6.x86_64                              370/536 
+
+  Cleanup    : screen-4.0.3-16.el6.x86_64                               371/536 
+
+  Cleanup    : tcsh-6.17-14.el6.x86_64                                  372/536 
+
+  Cleanup    : 2:vim-minimal-7.2.411-1.6.el6.x86_64                     373/536 
+
+  Cleanup    : ConsoleKit-libs-0.4.1-3.el6.x86_64                       374/536 
+
+  Cleanup    : pinentry-0.7.6-6.el6.x86_64                              375/536 
+
+  Cleanup    : gzip-1.3.12-18.el6.x86_64                                376/536 
+
+  Cleanup    : less-436-10.el6.x86_64                                   377/536 
+
+  Cleanup    : logrotate-3.7.8-12.el6_0.1.x86_64                        378/536 
+
+  Cleanup    : libXcomposite-0.4.1-2.el6.x86_64                         379/536 
+
+  Cleanup    : libXcursor-1.1.10-2.el6.x86_64                           380/536 
+
+  Cleanup    : libXrandr-1.3.0-4.el6.x86_64                             381/536 
+
+  Cleanup    : iptables-ipv6-1.4.7-5.1.el6_2.x86_64                     382/536 
+
+  Cleanup    : at-3.1.10-43.el6_2.1.x86_64                              383/536 
+
+  Cleanup    : rng-tools-2-13.el6_2.x86_64                              384/536 
+
+  Cleanup    : 2:irqbalance-0.55-30.el6_2.x86_64                        385/536 
+
+  Cleanup    : pciutils-3.1.4-11.el6.x86_64                             386/536 
+
+  Cleanup    : alsa-utils-1.0.21-3.el6.x86_64                           387/536 
+
+  Cleanup    : acpid-1.0.10-2.1.el6.x86_64                              388/536 
+
+  Cleanup    : grubby-7.0.15-2.el6.x86_64                               389/536 
+
+  Cleanup    : psacct-6.3.2-63.el6.x86_64                               390/536 
+
+  Cleanup    : virt-what-1.11-1.1.el6.x86_64                            391/536 
+
+  Cleanup    : redhat-logos-60.0.14-1.el6.noarch                        392/536 
+
+  Cleanup    : xz-lzma-compat-4.999.9-0.3.beta.20091007git.el6.x86_64   393/536 
+
+  Cleanup    : xz-4.999.9-0.3.beta.20091007git.el6.x86_64               394/536 
+
+  Cleanup    : 2:tar-1.23-3.el6.x86_64                                  395/536 
+
+  Cleanup    : elfutils-libs-0.152-1.el6.x86_64                         396/536 
+
+  Cleanup    : libtiff-3.9.4-5.el6_2.x86_64                             397/536 
+
+  Cleanup    : libXdamage-1.1.2-1.el6.x86_64                            398/536 
+
+  Cleanup    : libXi-1.3-3.el6.x86_64                                   399/536 
+
+  Cleanup    : libXinerama-1.1-1.el6.x86_64                             400/536 
+
+  Cleanup    : hal-libs-0.5.14-11.el6.x86_64                            401/536 
+
+  Cleanup    : 1:dbus-1.2.24-5.el6_1.x86_64                             402/536 
+
+  Cleanup    : authconfig-6.1.12-5.el6.x86_64                           403/536 
+
+  Cleanup    : wget-1.12-1.4.el6.x86_64                                 404/536 
+
+  Cleanup    : perl-Crypt-SSLeay-0.57-16.el6.x86_64                     405/536 
+
+  Cleanup    : tmpwatch-2.9.16-4.el6.x86_64                             406/536 
+
+  Cleanup    : biosdevname-0.3.11-1.el6.x86_64                          407/536 
+
+  Cleanup    : 1:net-snmp-utils-5.5-37.el6_2.1.x86_64                   408/536 
+
+  Cleanup    : 1:net-snmp-libs-5.5-37.el6_2.1.x86_64                    409/536 
+
+  Cleanup    : blktrace-1.0.1-6.el6.x86_64                              410/536 
+
+  Cleanup    : libXext-1.1-3.el6.x86_64                                 411/536 
+
+  Cleanup    : libXfixes-4.0.4-1.el6.x86_64                             412/536 
+
+  Cleanup    : alsa-lib-1.0.22-3.el6.x86_64                             413/536 
+
+  Cleanup    : libXrender-0.9.5-1.el6.x86_64                            414/536 
+
+  Cleanup    : libX11-1.3-2.el6.x86_64                                  415/536 
+
+  Cleanup    : libxcb-1.5-1.el6.x86_64                                  416/536 
+
+  Cleanup    : libgomp-4.4.6-3.el6.x86_64                               417/536 
+
+  Cleanup    : device-mapper-event-libs-1.02.66-6.el6.x86_64            418/536 
+
+  Cleanup    : nss-util-3.13.3-2.el6.x86_64                             419/536 
+
+  Cleanup    : sqlite-3.6.20-1.el6.x86_64                               420/536 
+
+  Cleanup    : readline-6.0-3.el6.x86_64                                421/536 
+
+  Cleanup    : freetype-2.3.11-6.el6_2.9.x86_64                         422/536 
+
+  Cleanup    : libssh2-1.2.2-7.el6_2.3.x86_64                           423/536 
+
+  Cleanup    : kpartx-0.4.9-46.el6_2.2.x86_64                           424/536 
+
+  Cleanup    : e2fsprogs-libs-1.41.12-11.el6.x86_64                     425/536 
+
+  Cleanup    : libss-1.41.12-11.el6.x86_64                              426/536 
+
+  Cleanup    : libdrm-2.4.25-2.el6.x86_64                               427/536 
+
+  Cleanup    : avahi-libs-0.6.25-11.el6.x86_64                          428/536 
+
+  Cleanup    : tcp_wrappers-7.6-57.el6.x86_64                           429/536 
+
+  Cleanup    : atk-1.28.0-2.el6.x86_64                                  430/536 
+
+  Cleanup    : cryptsetup-luks-1.2.0-6.el6.x86_64                       431/536 
+
+  Cleanup    : cryptsetup-luks-libs-1.2.0-6.el6.x86_64                  432/536 
+
+  Cleanup    : device-mapper-1.02.66-6.el6.x86_64                       433/536 
+
+  Cleanup    : device-mapper-libs-1.02.66-6.el6.x86_64                  434/536 
+
+  Cleanup    : util-linux-ng-2.17.2-12.4.el6.x86_64                     435/536 
+
+  Cleanup    : iputils-20071127-20.el6.x86_64                           436/536 
+
+  Cleanup    : udev-147-2.40.el6.x86_64                                 437/536 
+
+  Cleanup    : initscripts-9.03.27-1.el6_2.1.x86_64                     438/536 
+
+  Cleanup    : iproute-2.6.32-17.el6.x86_64                             439/536 
+
+  Cleanup    : procps-3.2.8-21.el6.x86_64                               440/536 
+
+  Cleanup    : 2:shadow-utils-4.1.4.2-13.el6.x86_64                     441/536 
+
+  Cleanup    : upstart-0.6.5-10.el6.x86_64                              442/536 
+
+  Cleanup    : iptables-1.4.7-5.1.el6_2.x86_64                          443/536 
+
+  Cleanup    : 1:findutils-4.4.2-6.el6.x86_64                           444/536 
+
+  Cleanup    : sed-4.2.1-7.el6.x86_64                                   445/536 
+
+  Cleanup    : psmisc-22.6-15.el6_0.1.x86_64                            446/536 
+
+  Cleanup    : libblkid-2.17.2-12.4.el6.x86_64                          447/536 
+
+  Cleanup    : hwdata-0.233-7.6.el6.noarch                              448/536 
+
+  Cleanup    : module-init-tools-3.9-19.el6_2.x86_64                    449/536 
+
+  Cleanup    : binutils-2.20.51.0.2-5.28.el6.x86_64                     450/536 
+
+  Cleanup    : gawk-3.1.7-6.el6.x86_64                                  451/536 
+
+  Cleanup    : cpio-2.10-9.el6.x86_64                                   452/536 
+
+  Cleanup    : glib2-2.22.5-6.el6.x86_64                                453/536 
+
+  Cleanup    : libselinux-utils-2.0.94-5.2.el6.x86_64                   454/536 
+
+  Cleanup    : perl-Compress-Raw-Zlib-2.023-119.el6_1.1.x86_64          455/536 
+
+  Cleanup    : 1:perl-Module-Pluggable-3.90-119.el6_1.1.x86_64          456/536 
+
+  Cleanup    : 1:perl-Pod-Escapes-1.04-119.el6_1.1.x86_64               457/536 
+
+  Cleanup    : 1:perl-Pod-Simple-3.13-119.el6_1.1.x86_64                458/536 
+
+  Cleanup    : 3:perl-version-0.77-119.el6_1.1.x86_64                   459/536 
+
+  Cleanup    : 4:perl-libs-5.10.1-119.el6_1.1.x86_64                    460/536 
+
+  Cleanup    : 4:perl-5.10.1-119.el6_1.1.x86_64                         461/536 
+
+  Cleanup    : libxml2-python-2.7.6-4.el6_2.4.x86_64                    462/536 
+
+  Cleanup    : file-5.04-11.el6.x86_64                                  463/536 
+
+  Cleanup    : time-1.7-37.1.el6.x86_64                                 464/536 
+
+  Cleanup    : cyrus-sasl-plain-2.1.23-13.el6.x86_64                    465/536 
+
+  Cleanup    : cyrus-sasl-lib-2.1.23-13.el6.x86_64                      466/536 
+
+  Cleanup    : unzip-6.0-1.el6.x86_64                                   467/536 
+
+  Cleanup    : efibootmgr-0.5.4-9.el6.x86_64                            468/536 
+
+  Cleanup    : pam_passwdqc-1.0.5-6.el6.x86_64                          469/536 
+
+  Cleanup    : 1:telnet-0.17-47.el6.x86_64                              470/536 
+
+  Cleanup    : lsof-4.82-2.el6.x86_64                                   471/536 
+
+  Cleanup    : ntsysv-1.3.49.3-1.el6_2.x86_64                           472/536 
+
+  Cleanup    : ruby-1.8.7.352-7.el6_2.x86_64                            473/536 
+
+  Cleanup    : ruby-libs-1.8.7.352-7.el6_2.x86_64                       474/536 
+
+  Cleanup    : openssl-1.0.1e-16.el6_5.7.x86_64                         475/536 
+
+  Cleanup    : coreutils-libs-8.4-16.el6.x86_64                         476/536 
+
+  Cleanup    : pam-1.1.1-10.el6_2.1.x86_64                              477/536 
+
+  Cleanup    : coreutils-8.4-16.el6.x86_64                              478/536 
+
+  Cleanup    : krb5-libs-1.9-22.el6.x86_64                              479/536 
+
+  Cleanup    : gmp-4.3.1-7.el6_2.2.x86_64                               480/536 
+
+  Cleanup    : grep-2.6.3-2.el6.x86_64                                  481/536 
+
+  Cleanup    : pcre-7.8-3.1.el6.x86_64                                  482/536 
+
+  Cleanup    : libstdc++-4.4.6-3.el6.x86_64                             483/536 
+
+  Cleanup    : libselinux-2.0.94-5.2.el6.x86_64                         484/536 
+
+  Cleanup    : ncurses-5.7-3.20090208.el6.x86_64                        485/536 
+
+  Cleanup    : 1:make-3.81-19.el6.x86_64                                486/536 
+
+  Cleanup    : bash-4.1.2-15.el6_5.2.x86_64                             487/536 
+
+  Cleanup    : ncurses-libs-5.7-3.20090208.el6.x86_64                   488/536 
+
+  Cleanup    : db4-utils-4.7.25-16.el6.x86_64                           489/536 
+
+  Cleanup    : ncurses-base-5.7-3.20090208.el6.x86_64                   490/536 
+
+  Cleanup    : ca-certificates-2010.63-3.el6_1.5.noarch                 491/536 
+
+  Cleanup    : setup-2.8.14-20.el6.noarch                               492/536 
+
+  Cleanup    : libX11-common-1.3-2.el6.noarch                           493/536 
+
+  Cleanup    : 1:busybox-1.15.1-11.el6.x86_64                           494/536 
+
+  Cleanup    : db4-4.7.25-16.el6.x86_64                                 495/536 
+
+  Cleanup    : libgcc-4.4.6-3.el6.x86_64                                496/536 
+
+  Cleanup    : libcom_err-1.41.12-11.el6.x86_64                         497/536 
+
+  Cleanup    : keyutils-libs-1.4-3.el6.x86_64                           498/536 
+
+  Cleanup    : audit-libs-2.1.3-3.el6.x86_64                            499/536 
+
+  Cleanup    : gdbm-1.8.0-36.el6.x86_64                                 500/536 
+
+  Cleanup    : chkconfig-1.3.49.3-1.el6_2.x86_64                        501/536 
+
+  Cleanup    : pciutils-libs-3.1.4-11.el6.x86_64                        502/536 
+
+  Cleanup    : file-libs-5.04-11.el6.x86_64                             503/536 
+
+  Cleanup    : libxml2-2.7.6-4.el6_2.4.x86_64                           504/536 
+
+  Cleanup    : libuuid-2.17.2-12.4.el6.x86_64                           505/536 
+
+  Cleanup    : 1:dbus-libs-1.2.24-5.el6_1.x86_64                        506/536 
+
+  Cleanup    : sysvinit-tools-2.87-4.dsf.el6.x86_64                     507/536 
+
+  Cleanup    : 2:ethtool-2.6.33-0.3.el6.x86_64                          508/536 
+
+  Cleanup    : libudev-147-2.40.el6.x86_64                              509/536 
+
+  Cleanup    : libgcrypt-1.4.5-9.el6_2.2.x86_64                         510/536 
+
+  Cleanup    : tcp_wrappers-libs-7.6-57.el6.x86_64                      511/536 
+
+  Cleanup    : nspr-4.9-1.el6.x86_64                                    512/536 
+
+  Cleanup    : libXau-1.0.5-1.el6.x86_64                                513/536 
+
+  Cleanup    : lm_sensors-libs-3.1.1-10.el6.x86_64                      514/536 
+
+  Cleanup    : expat-2.0.1-11.el6_2.x86_64                              515/536 
+
+  Cleanup    : elfutils-libelf-0.152-1.el6.x86_64                       516/536 
+
+  Cleanup    : xz-libs-4.999.9-0.3.beta.20091007git.el6.x86_64          517/536 
+
+  Cleanup    : 1:dmidecode-2.11-2.el6.x86_64                            518/536 
+
+  Cleanup    : 14:libpcap-1.0.0-6.20091201git117cb5.el6.x86_64          519/536 
+
+  Cleanup    : libtasn1-2.3-3.el6_2.1.x86_64                            520/536 
+
+  Cleanup    : nss-softokn-freebl-3.12.9-11.el6.x86_64                  521/536 
+
+  Cleanup    : pixman-0.18.4-1.el6_0.1.x86_64                           522/536 
+
+  Cleanup    : 2:libpng-1.2.49-1.el6_2.x86_64                           523/536 
+
+  Cleanup    : plymouth-core-libs-0.8.3-24.el6.x86_64                   524/536 
+
+  Cleanup    : libtirpc-0.2.1-5.el6.x86_64                              525/536 
+
+  Cleanup    : dash-0.5.5.1-3.1.el6.x86_64                              526/536 
+
+  Cleanup    : libnl-1.1-14.el6.x86_64                                  527/536 
+
+  Cleanup    : libevent-1.4.13-1.el6.x86_64                             528/536 
+
+  Cleanup    : jasper-libs-1.900.1-15.el6_1.1.x86_64                    529/536 
+
+  Cleanup    : hdparm-9.16-3.4.el6.x86_64                               530/536 
+
+  Cleanup    : rsync-3.0.6-5.el6_0.1.x86_64                             531/536 
+
+  Cleanup    : libusb1-1.0.3-1.el6.x86_64                               532/536 
+
+  Cleanup    : zip-3.0-1.el6.x86_64                                     533/536 
+
+  Cleanup    : setuptool-1.19.9-3.el6.x86_64                            534/536 
+
+  Cleanup    : strace-4.5.19-1.10.el6.x86_64                            535/536 
+
+  Cleanup    : bridge-utils-1.2-9.el6.x86_64                            536/536 
+
+  Verifying  : tzdata-2017a-1.el6.noarch                                  1/536 
+
+  Verifying  : 1:findutils-4.4.2-9.el6.x86_64                             2/536 
+
+  Verifying  : 1:perl-Compress-Raw-Zlib-2.021-141.el6_7.1.x86_64          3/536 
+
+  Verifying  : 1:dmidecode-2.12-7.el6.x86_64                              4/536 
+
+  Verifying  : tcp_wrappers-7.6-58.el6.x86_64                             5/536 
+
+  Verifying  : libssh2-1.4.2-2.el6_7.1.x86_64                             6/536 
+
+  Verifying  : alsa-lib-1.1.0-4.el6.x86_64                                7/536 
+
+  Verifying  : pam-1.1.1-22.el6.x86_64                                    8/536 
+
+  Verifying  : 1:cups-libs-1.4.2-74.el6.x86_64                            9/536 
+
+  Verifying  : db4-utils-4.7.25-20.el6_8.1.x86_64                        10/536 
+
+  Verifying  : ruby-libs-1.8.7.374-4.el6_6.x86_64                        11/536 
+
+  Verifying  : ruby-1.8.7.374-4.el6_6.x86_64                             12/536 
+
+  Verifying  : sudo-1.8.6p3-25.el6_8.x86_64                              13/536 
+
+  Verifying  : setup-2.8.14-20.el6_4.1.noarch                            14/536 
+
+  Verifying  : hdparm-9.43-4.el6.x86_64                                  15/536 
+
+  Verifying  : freetype-2.3.11-17.el6.x86_64                             16/536 
+
+  Verifying  : man-pages-overrides-6.8.2-1.el6.noarch                    17/536 
+
+  Verifying  : parted-2.1-29.el6.x86_64                                  18/536 
+
+  Verifying  : rsyslog-5.8.10-10.el6_6.x86_64                            19/536 
+
+  Verifying  : dash-0.5.5.1-4.el6.x86_64                                 20/536 
+
+  Verifying  : perl-Test-Simple-0.92-141.el6_7.1.x86_64                  21/536 
+
+  Verifying  : ConsoleKit-libs-0.4.1-6.el6.x86_64                        22/536 
+
+  Verifying  : perl-libwww-perl-5.833-3.el6.noarch                       23/536 
+
+  Verifying  : libXcursor-1.1.14-2.1.el6.x86_64                          24/536 
+
+  Verifying  : nspr-4.11.0-1.el6.x86_64                                  25/536 
+
+  Verifying  : ntsysv-1.3.49.5-1.el6.x86_64                              26/536 
+
+  Verifying  : openssh-5.3p1-118.1.el6_8.x86_64                          27/536 
+
+  Verifying  : dracut-004-409.el6_8.2.noarch                             28/536 
+
+  Verifying  : libselinux-2.0.94-7.el6.x86_64                            29/536 
+
+  Verifying  : krb5-libs-1.10.3-57.el6.x86_64                            30/536 
+
+  Verifying  : ql2400-firmware-7.03.00-1.el6_5.noarch                    31/536 
+
+  Verifying  : jasper-libs-1.900.1-16.el6_6.3.x86_64                     32/536 
+
+  Verifying  : libpciaccess-0.13.4-1.el6.x86_64                          33/536 
+
+  Verifying  : nss-tools-3.21.3-2.el6_8.x86_64                           34/536 
+
+  Verifying  : shared-mime-info-0.70-6.el6.x86_64                        35/536 
+
+  Verifying  : libXfixes-5.0.1-2.1.el6.x86_64                            36/536 
+
+  Verifying  : man-pages-3.22-20.el6.noarch                              37/536 
+
+  Verifying  : virt-what-1.11-1.2.el6.x86_64                             38/536 
+
+  Verifying  : 2:xinetd-2.3.14-40.el6.x86_64                             39/536 
+
+  Verifying  : libxml2-2.7.6-21.el6_8.1.x86_64                           40/536 
+
+  Verifying  : grep-2.20-5.el6_8.x86_64                                  41/536 
+
+  Verifying  : elfutils-libs-0.164-2.el6.x86_64                          42/536 
+
+  Verifying  : blktrace-1.0.1-7.el6.x86_64                               43/536 
+
+  Verifying  : plymouth-0.8.3-27.el6.centos.1.x86_64                     44/536 
+
+  Verifying  : perl-Compress-Zlib-2.021-141.el6_7.1.x86_64               45/536 
+
+  Verifying  : bridge-utils-1.2-10.el6.x86_64                            46/536 
+
+  Verifying  : audit-libs-2.4.5-3.el6.x86_64                             47/536 
+
+  Verifying  : policycoreutils-2.0.83-30.1.el6_8.x86_64                  48/536 
+
+  Verifying  : coreutils-8.4-43.el6.x86_64                               49/536 
+
+  Verifying  : perl-IO-Compress-Zlib-2.021-141.el6_7.1.x86_64            50/536 
+
+  Verifying  : hal-0.5.14-14.el6.x86_64                                  51/536 
+
+  Verifying  : 14:libpcap-1.4.0-4.20130826git2dbcaa1.el6.x86_64          52/536 
+
+  Verifying  : checkpolicy-2.0.22-1.el6.x86_64                           53/536 
+
+  Verifying  : lvm2-2.02.143-7.el6_8.1.x86_64                            54/536 
+
+  Verifying  : xz-libs-4.999.9-0.5.beta.20091007git.el6.x86_64           55/536 
+
+  Verifying  : hal-info-20090716-5.el6.noarch                            56/536 
+
+  Verifying  : 1:net-snmp-libs-5.5-57.el6_8.1.x86_64                     57/536 
+
+  Verifying  : 1:perl-Pod-Simple-3.13-141.el6_7.1.x86_64                 58/536 
+
+  Verifying  : lzo-2.03-3.1.el6_5.1.x86_64                               59/536 
+
+  Verifying  : openssh-server-5.3p1-118.1.el6_8.x86_64                   60/536 
+
+  Verifying  : keyutils-1.4-5.el6.x86_64                                 61/536 
+
+  Verifying  : gmp-4.3.1-10.el6.x86_64                                   62/536 
+
+  Verifying  : ca-certificates-2015.2.6-65.0.1.el6_7.noarch              63/536 
+
+  Verifying  : libtirpc-0.2.1-11.el6_8.x86_64                            64/536 
+
+  Verifying  : mailx-12.4-8.el6_6.x86_64                                 65/536 
+
+  Verifying  : libselinux-utils-2.0.94-7.el6.x86_64                      66/536 
+
+  Verifying  : libgomp-4.4.7-17.el6.x86_64                               67/536 
+
+  Verifying  : hwdata-0.233-16.1.el6.noarch                              68/536 
+
+  Verifying  : 1:quota-3.17-23.el6.x86_64                                69/536 
+
+  Verifying  : redhat-logos-60.0.14-12.el6.centos.noarch                 70/536 
+
+  Verifying  : libtasn1-2.3-6.el6_5.x86_64                               71/536 
+
+  Verifying  : pinentry-0.7.6-8.el6.x86_64                               72/536 
+
+  Verifying  : 4:perl-5.10.1-141.el6_7.1.x86_64                          73/536 
+
+  Verifying  : libss-1.41.12-22.el6.x86_64                               74/536 
+
+  Verifying  : file-libs-5.04-30.el6.x86_64                              75/536 
+
+  Verifying  : udev-147-2.73.el6_8.2.x86_64                              76/536 
+
+  Verifying  : libtiff-3.9.4-21.el6_8.x86_64                             77/536 
+
+  Verifying  : glibc-devel-2.12-1.192.el6.x86_64                         78/536 
+
+  Verifying  : gdbm-devel-1.8.0-39.el6.x86_64                            79/536 
+
+  Verifying  : psacct-6.3.2-63.el6_3.3.x86_64                            80/536 
+
+  Verifying  : less-436-13.el6.x86_64                                    81/536 
+
+  Verifying  : 1:smartmontools-5.43-1.el6.x86_64                         82/536 
+
+  Verifying  : p11-kit-0.18.5-2.el6_5.2.x86_64                           83/536 
+
+  Verifying  : snappy-1.1.0-1.el6.x86_64                                 84/536 
+
+  Verifying  : lsof-4.82-5.el6.x86_64                                    85/536 
+
+  Verifying  : strace-4.8-10.el6.x86_64                                  86/536 
+
+  Verifying  : glib2-2.28.8-5.el6.x86_64                                 87/536 
+
+  Verifying  : iptables-1.4.7-16.el6.x86_64                              88/536 
+
+  Verifying  : nss-softokn-freebl-3.14.3-23.3.el6_8.x86_64               89/536 
+
+  Verifying  : passwd-0.77-7.el6.x86_64                                  90/536 
+
+  Verifying  : 1:net-snmp-utils-5.5-57.el6_8.1.x86_64                    91/536 
+
+  Verifying  : 4:perl-devel-5.10.1-141.el6_7.1.x86_64                    92/536 
+
+  Verifying  : pixman-0.32.8-1.el6.x86_64                                93/536 
+
+  Verifying  : xz-4.999.9-0.5.beta.20091007git.el6.x86_64                94/536 
+
+  Verifying  : chkconfig-1.3.49.5-1.el6.x86_64                           95/536 
+
+  Verifying  : perl-IO-Compress-Base-2.021-141.el6_7.1.x86_64            96/536 
+
+  Verifying  : ncurses-5.7-4.20090207.el6.x86_64                         97/536 
+
+  Verifying  : setuptool-1.19.9-4.el6.x86_64                             98/536 
+
+  Verifying  : gnutls-2.8.5-19.el6_7.x86_64                              99/536 
+
+  Verifying  : 2:nmap-5.51-4.el6.x86_64                                 100/536 
+
+  Verifying  : libgcc-4.4.7-17.el6.x86_64                               101/536 
+
+  Verifying  : nss-sysinit-3.21.3-2.el6_8.x86_64                        102/536 
+
+  Verifying  : e2fsprogs-1.41.12-22.el6.x86_64                          103/536 
+
+  Verifying  : 1:pkgconfig-0.23-9.1.el6.x86_64                          104/536 
+
+  Verifying  : tcp_wrappers-libs-7.6-58.el6.x86_64                      105/536 
+
+  Verifying  : libXau-1.0.6-4.el6.x86_64                                106/536 
+
+  Verifying  : sysvinit-tools-2.87-6.dsf.el6.x86_64                     107/536 
+
+  Verifying  : tcsh-6.17-35.el6_8.1.x86_64                              108/536 
+
+  Verifying  : hal-libs-0.5.14-14.el6.x86_64                            109/536 
+
+  Verifying  : man-1.6f-32.el6.x86_64                                   110/536 
+
+  Verifying  : at-3.1.10-48.el6.x86_64                                  111/536 
+
+  Verifying  : device-mapper-1.02.117-7.el6_8.1.x86_64                  112/536 
+
+  Verifying  : libstdc++-4.4.7-17.el6.x86_64                            113/536 
+
+  Verifying  : cairo-1.8.8-6.el6_6.x86_64                               114/536 
+
+  Verifying  : numactl-2.0.9-2.el6.x86_64                               115/536 
+
+  Verifying  : psmisc-22.6-19.el6_5.x86_64                              116/536 
+
+  Verifying  : grubby-7.0.15-7.el6.x86_64                               117/536 
+
+  Verifying  : openssh-clients-5.3p1-118.1.el6_8.x86_64                 118/536 
+
+  Verifying  : sed-4.2.1-10.el6.x86_64                                  119/536 
+
+  Verifying  : gdbm-1.8.0-39.el6.x86_64                                 120/536 
+
+  Verifying  : avahi-libs-0.6.25-15.el6_8.1.x86_64                      121/536 
+
+  Verifying  : binutils-2.20.51.0.2-5.44.el6.x86_64                     122/536 
+
+  Verifying  : 3:perl-version-0.77-141.el6_7.1.x86_64                   123/536 
+
+  Verifying  : perl-CGI-3.51-141.el6_7.1.x86_64                         124/536 
+
+  Verifying  : perl-ExtUtils-MakeMaker-6.55-141.el6_7.1.x86_64          125/536 
+
+  Verifying  : libxcb-1.11-2.el6.x86_64                                 126/536 
+
+  Verifying  : screen-4.0.3-19.el6.x86_64                               127/536 
+
+  Verifying  : file-5.04-30.el6.x86_64                                  128/536 
+
+  Verifying  : device-mapper-event-1.02.117-7.el6_8.1.x86_64            129/536 
+
+  Verifying  : util-linux-ng-2.17.2-12.24.el6_8.3.x86_64                130/536 
+
+  Verifying  : cronie-anacron-1.4.4-16.el6_8.2.x86_64                   131/536 
+
+  Verifying  : sos-3.2-40.el6.centos.noarch                             132/536 
+
+  Verifying  : ConsoleKit-0.4.1-6.el6.x86_64                            133/536 
+
+  Verifying  : fontconfig-2.8.0-5.el6.x86_64                            134/536 
+
+  Verifying  : 1:readahead-1.5.6-2.el6.x86_64                           135/536 
+
+  Verifying  : nss-3.21.3-2.el6_8.x86_64                                136/536 
+
+  Verifying  : 1:dbus-1.2.24-8.el6_6.x86_64                             137/536 
+
+  Verifying  : 1:make-3.81-23.el6.x86_64                                138/536 
+
+  Verifying  : initscripts-9.03.53-1.el6.centos.2.x86_64                139/536 
+
+  Verifying  : bash-4.1.2-41.el6_8.x86_64                               140/536 
+
+  Verifying  : device-mapper-persistent-data-0.6.2-0.1.rc7.el6.x86_64   141/536 
+
+  Verifying  : libnl-1.1.4-2.el6.x86_64                                 142/536 
+
+  Verifying  : lm_sensors-libs-3.1.1-17.el6.x86_64                      143/536 
+
+  Verifying  : systemtap-runtime-2.9-4.el6.x86_64                       144/536 
+
+  Verifying  : gzip-1.3.12-22.el6.x86_64                                145/536 
+
+  Verifying  : kernel-headers-2.6.32-642.15.1.el6.x86_64                146/536 
+
+  Verifying  : 2:tar-1.23-15.el6_8.x86_64                               147/536 
+
+  Verifying  : pcre-7.8-7.el6.x86_64                                    148/536 
+
+  Verifying  : acpid-1.0.10-3.el6.x86_64                                149/536 
+
+  Verifying  : pciutils-libs-3.1.10-4.el6.x86_64                        150/536 
+
+  Verifying  : dmraid-events-1.0.0.rc16-11.el6.x86_64                   151/536 
+
+  Verifying  : iputils-20071127-21.el6.x86_64                           152/536 
+
+  Verifying  : keyutils-libs-1.4-5.el6.x86_64                           153/536 
+
+  Verifying  : cronie-1.4.4-16.el6_8.2.x86_64                           154/536 
+
+  Verifying  : coreutils-libs-8.4-43.el6.x86_64                         155/536 
+
+  Verifying  : fprintd-0.1-22.git04fd09cfa.el6.x86_64                   156/536 
+
+  Verifying  : 4:perl-libs-5.10.1-141.el6_7.1.x86_64                    157/536 
+
+  Verifying  : 2:shadow-utils-4.1.5.1-5.el6.x86_64                      158/536 
+
+  Verifying  : system-config-firewall-base-1.2.27-7.2.el6_6.noarch      159/536 
+
+  Verifying  : zip-3.0-1.el6_7.1.x86_64                                 160/536 
+
+  Verifying  : biosdevname-0.7.1-3.el6.x86_64                           161/536 
+
+  Verifying  : libX11-common-1.6.3-2.el6.noarch                         162/536 
+
+  Verifying  : tmpwatch-2.9.16-6.el6.x86_64                             163/536 
+
+  Verifying  : system-config-firewall-tui-1.2.27-7.2.el6_6.noarch       164/536 
+
+  Verifying  : libblkid-2.17.2-12.24.el6_8.3.x86_64                     165/536 
+
+  Verifying  : 1:grub-0.97-94.el6_7.1.x86_64                            166/536 
+
+  Verifying  : libusb1-1.0.9-0.7.rc1.el6.x86_64                         167/536 
+
+  Verifying  : redhat-lsb-core-4.0-7.el6.centos.x86_64                  168/536 
+
+  Verifying  : ustr-1.0.4-9.1.el6.x86_64                                169/536 
+
+  Verifying  : audit-2.4.5-3.el6.x86_64                                 170/536 
+
+  Verifying  : ncurses-base-5.7-4.20090207.el6.x86_64                   171/536 
+
+  Verifying  : 1:busybox-1.15.1-21.el6_6.x86_64                         172/536 
+
+  Verifying  : db4-4.7.25-20.el6_8.1.x86_64                             173/536 
+
+  Verifying  : cryptsetup-luks-libs-1.2.0-11.el6.x86_64                 174/536 
+
+  Verifying  : db4-cxx-4.7.25-20.el6_8.1.x86_64                         175/536 
+
+  Verifying  : alsa-utils-1.1.0-8.el6.x86_64                            176/536 
+
+  Verifying  : kexec-tools-2.0.0-300.el6_8.2.x86_64                     177/536 
+
+  Verifying  : gnupg2-2.0.14-8.el6.x86_64                               178/536 
+
+  Verifying  : libxml2-python-2.7.6-21.el6_8.1.x86_64                   179/536 
+
+  Verifying  : rsync-3.0.6-12.el6.x86_64                                180/536 
+
+  Verifying  : 1:net-snmp-5.5-57.el6_8.1.x86_64                         181/536 
+
+  Verifying  : libX11-1.6.3-2.el6.x86_64                                182/536 
+
+  Verifying  : libXi-1.7.4-1.el6.x86_64                                 183/536 
+
+  Verifying  : 1:perl-Package-Constants-0.02-141.el6_7.1.x86_64         184/536 
+
+  Verifying  : kernel-firmware-2.6.32-642.15.1.el6.noarch               185/536 
+
+  Verifying  : mlocate-0.22.2-6.el6.x86_64                              186/536 
+
+  Verifying  : polkit-0.96-11.el6.x86_64                                187/536 
+
+  Verifying  : 1:telnet-0.17-48.el6.x86_64                              188/536 
+
+  Verifying  : libuuid-2.17.2-12.24.el6_8.3.x86_64                      189/536 
+
+  Verifying  : rpcbind-0.2.0-12.el6.x86_64                              190/536 
+
+  Verifying  : libsemanage-2.0.43-5.1.el6.x86_64                        191/536 
+
+  Verifying  : gdk-pixbuf2-2.24.1-6.el6_7.x86_64                        192/536 
+
+  Verifying  : dbus-glib-0.86-6.el6.x86_64                              193/536 
+
+  Verifying  : module-init-tools-3.9-25.el6.x86_64                      194/536 
+
+  Verifying  : libuser-0.56.13-8.el6_7.x86_64                           195/536 
+
+  Verifying  : procps-3.2.8-36.el6.x86_64                               196/536 
+
+  Verifying  : libdrm-2.4.65-2.el6.x86_64                               197/536 
+
+  Verifying  : prelink-0.4.6-3.1.el6_4.x86_64                           198/536 
+
+  Verifying  : e2fsprogs-libs-1.41.12-22.el6.x86_64                     199/536 
+
+  Verifying  : cryptsetup-luks-1.2.0-11.el6.x86_64                      200/536 
+
+  Verifying  : ncurses-libs-5.7-4.20090207.el6.x86_64                   201/536 
+
+  Verifying  : perl-Net-SSLeay-1.35-10.el6_8.1.x86_64                   202/536 
+
+  Verifying  : 1:perl-Module-Pluggable-3.90-141.el6_7.1.x86_64          203/536 
+
+  Verifying  : 32:bind-libs-9.8.2-0.47.rc1.el6_8.4.x86_64               204/536 
+
+  Verifying  : openldap-2.4.40-12.el6.x86_64                            205/536 
+
+  Verifying  : pciutils-3.1.10-4.el6.x86_64                             206/536 
+
+  Verifying  : gawk-3.1.7-10.el6_7.3.x86_64                             207/536 
+
+  Verifying  : cpio-2.10-12.el6_5.x86_64                                208/536 
+
+  Verifying  : sysstat-9.0.4-31.el6.x86_64                              209/536 
+
+  Verifying  : 1:perl-ExtUtils-ParseXS-2.2003.0-141.el6_7.1.x86_64      210/536 
+
+  Verifying  : curl-7.19.7-52.el6.x86_64                                211/536 
+
+  Verifying  : kernel-2.6.32-642.15.1.el6.x86_64                        212/536 
+
+  Verifying  : libXinerama-1.1.3-2.1.el6.x86_64                         213/536 
+
+  Verifying  : libXext-1.3.3-1.el6.x86_64                               214/536 
+
+  Verifying  : libXft-2.3.2-1.el6.x86_64                                215/536 
+
+  Verifying  : gtk2-2.24.23-8.el6.x86_64                                216/536 
+
+  Verifying  : device-mapper-libs-1.02.117-7.el6_8.1.x86_64             217/536 
+
+  Verifying  : perl-Test-Harness-3.17-141.el6_7.1.x86_64                218/536 
+
+  Verifying  : libXdamage-1.1.3-4.el6.x86_64                            219/536 
+
+  Verifying  : upstart-0.6.5-16.el6.x86_64                              220/536 
+
+  Verifying  : pam_passwdqc-1.0.5-8.el6.x86_64                          221/536 
+
+  Verifying  : libcurl-7.19.7-52.el6.x86_64                             222/536 
+
+  Verifying  : dracut-kernel-004-409.el6_8.2.noarch                     223/536 
+
+  Verifying  : 14:tcpdump-4.0.0-9.20090921gitdf3cb4.2.el6.x86_64        224/536 
+
+  Verifying  : sqlite-3.6.20-1.el6_7.2.x86_64                           225/536 
+
+  Verifying  : openssl-1.0.1e-48.el6_8.4.x86_64                         226/536 
+
+  Verifying  : device-mapper-event-libs-1.02.117-7.el6_8.1.x86_64       227/536 
+
+  Verifying  : 2:ethtool-3.5-6.el6.x86_64                               228/536 
+
+  Verifying  : time-1.7-38.el6.x86_64                                   229/536 
+
+  Verifying  : plymouth-core-libs-0.8.3-27.el6.centos.1.x86_64          230/536 
+
+  Verifying  : db4-devel-4.7.25-20.el6_8.1.x86_64                       231/536 
+
+  Verifying  : 1:nfs-utils-1.2.3-70.el6_8.2.x86_64                      232/536 
+
+  Verifying  : fprintd-pam-0.1-22.git04fd09cfa.el6.x86_64               233/536 
+
+  Verifying  : iproute-2.6.32-54.el6.x86_64                             234/536 
+
+  Verifying  : nfs-utils-lib-1.1.5-11.el6.x86_64                        235/536 
+
+  Verifying  : perl-Crypt-SSLeay-0.57-17.el6.x86_64                     236/536 
+
+  Verifying  : dmraid-1.0.0.rc16-11.el6.x86_64                          237/536 
+
+  Verifying  : p11-kit-trust-0.18.5-2.el6_5.2.x86_64                    238/536 
+
+  Verifying  : 1:perl-Pod-Escapes-1.04-141.el6_7.1.x86_64               239/536 
+
+  Verifying  : 1:perl-IO-Zlib-1.09-141.el6_7.1.x86_64                   240/536 
+
+  Verifying  : pango-1.28.1-11.el6.x86_64                               241/536 
+
+  Verifying  : xorg-x11-drv-ati-firmware-7.6.1-2.el6.noarch             242/536 
+
+  Verifying  : 2:vim-minimal-7.4.629-5.el6_8.1.x86_64                   243/536 
+
+  Verifying  : libXrandr-1.4.2-1.el6.x86_64                             244/536 
+
+  Verifying  : iptables-ipv6-1.4.7-16.el6.x86_64                        245/536 
+
+  Verifying  : logrotate-3.7.8-26.el6_7.x86_64                          246/536 
+
+  Verifying  : libevent-1.4.13-4.el6.x86_64                             247/536 
+
+  Verifying  : expat-2.0.1-13.el6_8.x86_64                              248/536 
+
+  Verifying  : wget-1.12-8.el6.x86_64                                   249/536 
+
+  Verifying  : nss-util-3.21.3-1.el6_8.x86_64                           250/536 
+
+  Verifying  : mdadm-3.3.4-1.el6_8.5.x86_64                             251/536 
+
+  Verifying  : readline-6.0-4.el6.x86_64                                252/536 
+
+  Verifying  : cyrus-sasl-lib-2.1.23-15.el6_6.2.x86_64                  253/536 
+
+  Verifying  : elfutils-libelf-0.164-2.el6.x86_64                       254/536 
+
+  Verifying  : libXrender-0.9.8-2.1.el6_8.1.x86_64                      255/536 
+
+  Verifying  : 32:bind-utils-9.8.2-0.47.rc1.el6_8.4.x86_64              256/536 
+
+  Verifying  : 1:dbus-libs-1.2.24-8.el6_6.x86_64                        257/536 
+
+  Verifying  : 2:irqbalance-1.0.7-8.el6.x86_64                          258/536 
+
+  Verifying  : rng-tools-5-2.el6_7.x86_64                               259/536 
+
+  Verifying  : efibootmgr-0.5.4-13.el6.x86_64                           260/536 
+
+  Verifying  : gettext-0.17-18.el6.x86_64                               261/536 
+
+  Verifying  : atk-1.30.0-1.el6.x86_64                                  262/536 
+
+  Verifying  : cvs-1.11.23-16.el6.x86_64                                263/536 
+
+  Verifying  : libcom_err-1.41.12-22.el6.x86_64                         264/536 
+
+  Verifying  : libXcomposite-0.4.3-4.el6.x86_64                         265/536 
+
+  Verifying  : kpartx-0.4.9-93.el6.x86_64                               266/536 
+
+  Verifying  : unzip-6.0-4.el6.x86_64                                   267/536 
+
+  Verifying  : 2:libpng-1.2.49-2.el6_7.x86_64                           268/536 
+
+  Verifying  : libudev-147-2.73.el6_8.2.x86_64                          269/536 
+
+  Verifying  : cyrus-sasl-plain-2.1.23-15.el6_6.2.x86_64                270/536 
+
+  Verifying  : lvm2-libs-2.02.143-7.el6_8.1.x86_64                      271/536 
+
+  Verifying  : libgcrypt-1.4.5-12.el6_8.x86_64                          272/536 
+
+  Verifying  : xz-lzma-compat-4.999.9-0.5.beta.20091007git.el6.x86_64   273/536 
+
+  Verifying  : authconfig-6.1.12-23.el6.x86_64                          274/536 
+
+  Verifying  : python-argparse-1.2.1-2.1.el6.noarch                     275/536 
+
+  Verifying  : perl-Archive-Tar-1.58-141.el6_7.1.x86_64                 276/536 
+
+  Verifying  : glibc-headers-2.12-1.192.el6.x86_64                      277/536 
+
+  Verifying  : pm-utils-1.2.5-11.el6.x86_64                             278/536 
+
+  Verifying  : nss-softokn-3.14.3-23.3.el6_8.x86_64                     279/536 
+
+  Verifying  : plymouth-scripts-0.8.3-27.el6.centos.1.x86_64            280/536 
+
+  Verifying  : atk-1.28.0-2.el6.x86_64                                  281/536 
+
+  Verifying  : setuptool-1.19.9-3.el6.x86_64                            282/536 
+
+  Verifying  : libX11-common-1.3-2.el6.noarch                           283/536 
+
+  Verifying  : 1:smartmontools-5.39.1-5.el6.x86_64                      284/536 
+
+  Verifying  : ntsysv-1.3.49.3-1.el6_2.x86_64                           285/536 
+
+  Verifying  : libuuid-2.17.2-12.4.el6.x86_64                           286/536 
+
+  Verifying  : hal-info-20090716-3.1.el6.noarch                         287/536 
+
+  Verifying  : rsync-3.0.6-5.el6_0.1.x86_64                             288/536 
+
+  Verifying  : libXcursor-1.1.10-2.el6.x86_64                           289/536 
+
+  Verifying  : less-436-10.el6.x86_64                                   290/536 
+
+  Verifying  : glib2-2.22.5-6.el6.x86_64                                291/536 
+
+  Verifying  : perl-Net-SSLeay-1.35-9.el6.x86_64                        292/536 
+
+  Verifying  : iptables-1.4.7-5.1.el6_2.x86_64                          293/536 
+
+  Verifying  : psacct-6.3.2-63.el6.x86_64                               294/536 
+
+  Verifying  : pixman-0.18.4-1.el6_0.1.x86_64                           295/536 
+
+  Verifying  : cyrus-sasl-plain-2.1.23-13.el6.x86_64                    296/536 
+
+  Verifying  : perl-Compress-Raw-Zlib-2.023-119.el6_1.1.x86_64          297/536 
+
+  Verifying  : libXext-1.1-3.el6.x86_64                                 298/536 
+
+  Verifying  : gawk-3.1.7-6.el6.x86_64                                  299/536 
+
+  Verifying  : libtirpc-0.2.1-5.el6.x86_64                              300/536 
+
+  Verifying  : man-pages-overrides-6.2.3-2.el6.noarch                   301/536 
+
+  Verifying  : chkconfig-1.3.49.3-1.el6_2.x86_64                        302/536 
+
+  Verifying  : openssh-5.3p1-70.el6.x86_64                              303/536 
+
+  Verifying  : system-config-firewall-base-1.2.27-5.el6.noarch          304/536 
+
+  Verifying  : logrotate-3.7.8-12.el6_0.1.x86_64                        305/536 
+
+  Verifying  : libblkid-2.17.2-12.4.el6.x86_64                          306/536 
+
+  Verifying  : dracut-004-256.el6_2.1.noarch                            307/536 
+
+  Verifying  : device-mapper-event-libs-1.02.66-6.el6.x86_64            308/536 
+
+  Verifying  : sysvinit-tools-2.87-4.dsf.el6.x86_64                     309/536 
+
+  Verifying  : 14:tcpdump-4.0.0-3.20090921gitdf3cb4.1.el6.x86_64        310/536 
+
+  Verifying  : alsa-utils-1.0.21-3.el6.x86_64                           311/536 
+
+  Verifying  : pinentry-0.7.6-6.el6.x86_64                              312/536 
+
+  Verifying  : hdparm-9.16-3.4.el6.x86_64                               313/536 
+
+  Verifying  : perl-Crypt-SSLeay-0.57-16.el6.x86_64                     314/536 
+
+  Verifying  : iputils-20071127-20.el6.x86_64                           315/536 
+
+  Verifying  : perl-ExtUtils-MakeMaker-6.55-119.el6_1.1.x86_64          316/536 
+
+  Verifying  : zip-3.0-1.el6.x86_64                                     317/536 
+
+  Verifying  : kexec-tools-2.0.0-209.el6_2.5.x86_64                     318/536 
+
+  Verifying  : openssh-server-5.3p1-70.el6.x86_64                       319/536 
+
+  Verifying  : cairo-1.8.8-3.1.el6.x86_64                               320/536 
+
+  Verifying  : libudev-147-2.40.el6.x86_64                              321/536 
+
+  Verifying  : 2:vim-minimal-7.2.411-1.6.el6.x86_64                     322/536 
+
+  Verifying  : wget-1.12-1.4.el6.x86_64                                 323/536 
+
+  Verifying  : readline-6.0-3.el6.x86_64                                324/536 
+
+  Verifying  : plymouth-core-libs-0.8.3-24.el6.x86_64                   325/536 
+
+  Verifying  : libXfixes-4.0.4-1.el6.x86_64                             326/536 
+
+  Verifying  : audit-2.1.3-3.el6.x86_64                                 327/536 
+
+  Verifying  : libXau-1.0.5-1.el6.x86_64                                328/536 
+
+  Verifying  : setup-2.8.14-20.el6.noarch                               329/536 
+
+  Verifying  : iproute-2.6.32-17.el6.x86_64                             330/536 
+
+  Verifying  : authconfig-6.1.12-5.el6.x86_64                           331/536 
+
+  Verifying  : libusb1-1.0.3-1.el6.x86_64                               332/536 
+
+  Verifying  : libcom_err-1.41.12-11.el6.x86_64                         333/536 
+
+  Verifying  : nss-sysinit-3.13.3-8.el6.x86_64                          334/536 
+
+  Verifying  : device-mapper-event-1.02.66-6.el6.x86_64                 335/536 
+
+  Verifying  : ConsoleKit-libs-0.4.1-3.el6.x86_64                       336/536 
+
+  Verifying  : 1:telnet-0.17-47.el6.x86_64                              337/536 
+
+  Verifying  : 1:dbus-1.2.24-5.el6_1.x86_64                             338/536 
+
+  Verifying  : avahi-libs-0.6.25-11.el6.x86_64                          339/536 
+
+  Verifying  : cpio-2.10-9.el6.x86_64                                   340/536 
+
+  Verifying  : 1:findutils-4.4.2-6.el6.x86_64                           341/536 
+
+  Verifying  : gdbm-1.8.0-36.el6.x86_64                                 342/536 
+
+  Verifying  : mlocate-0.22.2-3.el6.x86_64                              343/536 
+
+  Verifying  : rpcbind-0.2.0-8.el6.x86_64                               344/536 
+
+  Verifying  : at-3.1.10-43.el6_2.1.x86_64                              345/536 
+
+  Verifying  : hwdata-0.233-7.6.el6.noarch                              346/536 
+
+  Verifying  : pcre-7.8-3.1.el6.x86_64                                  347/536 
+
+  Verifying  : cronie-anacron-1.4.4-7.el6.x86_64                        348/536 
+
+  Verifying  : perl-CGI-3.51-119.el6_1.1.x86_64                         349/536 
+
+  Verifying  : 2:nmap-5.21-4.el6.x86_64                                 350/536 
+
+  Verifying  : 2:irqbalance-0.55-30.el6_2.x86_64                        351/536 
+
+  Verifying  : grubby-7.0.15-2.el6.x86_64                               352/536 
+
+  Verifying  : gtk2-2.18.9-6.el6.x86_64                                 353/536 
+
+  Verifying  : 1:grub-0.97-75.el6.x86_64                                354/536 
+
+  Verifying  : 1:perl-ExtUtils-ParseXS-2.2003.0-119.el6_1.1.x86_64      355/536 
+
+  Verifying  : systemtap-runtime-1.6-5.el6_2.x86_64                     356/536 
+
+  Verifying  : libstdc++-4.4.6-3.el6.x86_64                             357/536 
+
+  Verifying  : elfutils-libs-0.152-1.el6.x86_64                         358/536 
+
+  Verifying  : ncurses-5.7-3.20090208.el6.x86_64                        359/536 
+
+  Verifying  : device-mapper-libs-1.02.66-6.el6.x86_64                  360/536 
+
+  Verifying  : xz-4.999.9-0.3.beta.20091007git.el6.x86_64               361/536 
+
+  Verifying  : rsyslog-5.8.10-6.el6.x86_64                              362/536 
+
+  Verifying  : perl-libwww-perl-5.833-2.el6.noarch                      363/536 
+
+  Verifying  : libnl-1.1-14.el6.x86_64                                  364/536 
+
+  Verifying  : sos-2.2-17.el6_2.3.noarch                                365/536 
+
+  Verifying  : libtasn1-2.3-3.el6_2.1.x86_64                            366/536 
+
+  Verifying  : libselinux-2.0.94-5.2.el6.x86_64                         367/536 
+
+  Verifying  : pam_passwdqc-1.0.5-6.el6.x86_64                          368/536 
+
+  Verifying  : libXcomposite-0.4.1-2.el6.x86_64                         369/536 
+
+  Verifying  : fprintd-pam-0.1-19.git04fd09cfa.el6.x86_64               370/536 
+
+  Verifying  : 32:bind-utils-9.7.3-8.P3.el6_2.3.x86_64                  371/536 
+
+  Verifying  : libgcc-4.4.6-3.el6.x86_64                                372/536 
+
+  Verifying  : libXinerama-1.1-1.el6.x86_64                             373/536 
+
+  Verifying  : libgomp-4.4.6-3.el6.x86_64                               374/536 
+
+  Verifying  : coreutils-libs-8.4-16.el6.x86_64                         375/536 
+
+  Verifying  : 2:xinetd-2.3.14-33.el6.x86_64                            376/536 
+
+  Verifying  : pango-1.28.1-3.el6_0.5.x86_64                            377/536 
+
+  Verifying  : blktrace-1.0.1-6.el6.x86_64                              378/536 
+
+  Verifying  : libxcb-1.5-1.el6.x86_64                                  379/536 
+
+  Verifying  : perl-Test-Harness-3.17-119.el6_1.1.x86_64                380/536 
+
+  Verifying  : cronie-1.4.4-7.el6.x86_64                                381/536 
+
+  Verifying  : db4-4.7.25-16.el6.x86_64                                 382/536 
+
+  Verifying  : 32:bind-libs-9.7.3-8.P3.el6_2.3.x86_64                   383/536 
+
+  Verifying  : 1:readahead-1.5.6-1.el6.x86_64                           384/536 
+
+  Verifying  : psmisc-22.6-15.el6_0.1.x86_64                            385/536 
+
+  Verifying  : module-init-tools-3.9-19.el6_2.x86_64                    386/536 
+
+  Verifying  : pam-1.1.1-10.el6_2.1.x86_64                              387/536 
+
+  Verifying  : kpartx-0.4.9-46.el6_2.2.x86_64                           388/536 
+
+  Verifying  : 1:nfs-utils-1.2.3-15.el6_2.1.x86_64                      389/536 
+
+  Verifying  : sysstat-9.0.4-20.el6.x86_64                              390/536 
+
+  Verifying  : kernel-firmware-2.6.32-504.8.1.el6.noarch                391/536 
+
+  Verifying  : 1:dbus-libs-1.2.24-5.el6_1.x86_64                        392/536 
+
+  Verifying  : file-5.04-11.el6.x86_64                                  393/536 
+
+  Verifying  : nss-softokn-freebl-3.12.9-11.el6.x86_64                  394/536 
+
+  Verifying  : 1:quota-3.17-16.el6.x86_64                               395/536 
+
+  Verifying  : 1:net-snmp-utils-5.5-37.el6_2.1.x86_64                   396/536 
+
+  Verifying  : 2:shadow-utils-4.1.4.2-13.el6.x86_64                     397/536 
+
+  Verifying  : ca-certificates-2010.63-3.el6_1.5.noarch                 398/536 
+
+  Verifying  : cvs-1.11.23-11.el6_2.1.x86_64                            399/536 
+
+  Verifying  : ncurses-libs-5.7-3.20090208.el6.x86_64                   400/536 
+
+  Verifying  : redhat-logos-60.0.14-1.el6.noarch                        401/536 
+
+  Verifying  : upstart-0.6.5-10.el6.x86_64                              402/536 
+
+  Verifying  : time-1.7-37.1.el6.x86_64                                 403/536 
+
+  Verifying  : xz-lzma-compat-4.999.9-0.3.beta.20091007git.el6.x86_64   404/536 
+
+  Verifying  : hal-0.5.14-11.el6.x86_64                                 405/536 
+
+  Verifying  : 2:libpng-1.2.49-1.el6_2.x86_64                           406/536 
+
+  Verifying  : gzip-1.3.12-18.el6.x86_64                                407/536 
+
+  Verifying  : 1:perl-Module-Pluggable-3.90-119.el6_1.1.x86_64          408/536 
+
+  Verifying  : gmp-4.3.1-7.el6_2.2.x86_64                               409/536 
+
+  Verifying  : mdadm-3.2.2-9.el6.x86_64                                 410/536 
+
+  Verifying  : perl-Archive-Tar-1.58-119.el6_1.1.x86_64                 411/536 
+
+  Verifying  : nss-softokn-3.12.9-11.el6.x86_64                         412/536 
+
+  Verifying  : 3:perl-version-0.77-119.el6_1.1.x86_64                   413/536 
+
+  Verifying  : virt-what-1.11-1.1.el6.x86_64                            414/536 
+
+  Verifying  : device-mapper-1.02.66-6.el6.x86_64                       415/536 
+
+  Verifying  : lvm2-2.02.87-6.el6.x86_64                                416/536 
+
+  Verifying  : fontconfig-2.8.0-3.el6.x86_64                            417/536 
+
+  Verifying  : pciutils-libs-3.1.4-11.el6.x86_64                        418/536 
+
+  Verifying  : libevent-1.4.13-1.el6.x86_64                             419/536 
+
+  Verifying  : krb5-libs-1.9-22.el6.x86_64                              420/536 
+
+  Verifying  : libxml2-python-2.7.6-4.el6_2.4.x86_64                    421/536 
+
+  Verifying  : gnupg2-2.0.14-4.el6.x86_64                               422/536 
+
+  Verifying  : man-pages-3.22-17.el6.noarch                             423/536 
+
+  Verifying  : 2:tar-1.23-3.el6.x86_64                                  424/536 
+
+  Verifying  : xorg-x11-drv-ati-firmware-6.14.2-7.el6.noarch            425/536 
+
+  Verifying  : file-libs-5.04-11.el6.x86_64                             426/536 
+
+  Verifying  : lm_sensors-libs-3.1.1-10.el6.x86_64                      427/536 
+
+  Verifying  : pm-utils-1.2.5-9.el6.x86_64                              428/536 
+
+  Verifying  : binutils-2.20.51.0.2-5.28.el6.x86_64                     429/536 
+
+  Verifying  : cyrus-sasl-lib-2.1.23-13.el6.x86_64                      430/536 
+
+  Verifying  : libgcrypt-1.4.5-9.el6_2.2.x86_64                         431/536 
+
+  Verifying  : 1:perl-Package-Constants-0.02-119.el6_1.1.x86_64         432/536 
+
+  Verifying  : xz-libs-4.999.9-0.3.beta.20091007git.el6.x86_64          433/536 
+
+  Verifying  : 1:perl-Pod-Simple-3.13-119.el6_1.1.x86_64                434/536 
+
+  Verifying  : fprintd-0.1-19.git04fd09cfa.el6.x86_64                   435/536 
+
+  Verifying  : bash-4.1.2-15.el6_5.2.x86_64                             436/536 
+
+  Verifying  : ruby-1.8.7.352-7.el6_2.x86_64                            437/536 
+
+  Verifying  : efibootmgr-0.5.4-9.el6.x86_64                            438/536 
+
+  Verifying  : pciutils-3.1.4-11.el6.x86_64                             439/536 
+
+  Verifying  : 1:make-3.81-19.el6.x86_64                                440/536 
+
+  Verifying  : parted-2.1-17.el6.x86_64                                 441/536 
+
+  Verifying  : coreutils-8.4-16.el6.x86_64                              442/536 
+
+  Verifying  : ql2400-firmware-5.06.02-1.el6.noarch                     443/536 
+
+  Verifying  : bridge-utils-1.2-9.el6.x86_64                            444/536 
+
+  Verifying  : strace-4.5.19-1.10.el6.x86_64                            445/536 
+
+  Verifying  : libX11-1.3-2.el6.x86_64                                  446/536 
+
+  Verifying  : libdrm-2.4.25-2.el6.x86_64                               447/536 
+
+  Verifying  : perl-Compress-Zlib-2.020-119.el6_1.1.x86_64              448/536 
+
+  Verifying  : perl-IO-Compress-Zlib-2.020-119.el6_1.1.x86_64           449/536 
+
+  Verifying  : 1:net-snmp-5.5-37.el6_2.1.x86_64                         450/536 
+
+  Verifying  : libXft-2.1.13-4.1.el6.x86_64                             451/536 
+
+  Verifying  : dmraid-1.0.0.rc16-10.el6.x86_64                          452/536 
+
+  Verifying  : cryptsetup-luks-libs-1.2.0-6.el6.x86_64                  453/536 
+
+  Verifying  : prelink-0.4.6-3.el6.x86_64                               454/536 
+
+  Verifying  : alsa-lib-1.0.22-3.el6.x86_64                             455/536 
+
+  Verifying  : sed-4.2.1-7.el6.x86_64                                   456/536 
+
+  Verifying  : nfs-utils-lib-1.1.5-4.el6.x86_64                         457/536 
+
+  Verifying  : freetype-2.3.11-6.el6_2.9.x86_64                         458/536 
+
+  Verifying  : util-linux-ng-2.17.2-12.4.el6.x86_64                     459/536 
+
+  Verifying  : ruby-libs-1.8.7.352-7.el6_2.x86_64                       460/536 
+
+  Verifying  : dmraid-events-1.0.0.rc16-10.el6.x86_64                   461/536 
+
+  Verifying  : dbus-glib-0.86-5.el6.x86_64                              462/536 
+
+  Verifying  : libxml2-2.7.6-4.el6_2.4.x86_64                           463/536 
+
+  Verifying  : 1:busybox-1.15.1-11.el6.x86_64                           464/536 
+
+  Verifying  : lsof-4.82-2.el6.x86_64                                   465/536 
+
+  Verifying  : 4:perl-5.10.1-119.el6_1.1.x86_64                         466/536 
+
+  Verifying  : ncurses-base-5.7-3.20090208.el6.x86_64                   467/536 
+
+  Verifying  : 2:ethtool-2.6.33-0.3.el6.x86_64                          468/536 
+
+  Verifying  : screen-4.0.3-16.el6.x86_64                               469/536 
+
+  Verifying  : openssl-1.0.1e-16.el6_5.7.x86_64                         470/536 
+
+  Verifying  : gettext-0.17-16.el6.x86_64                               471/536 
+
+  Verifying  : openldap-2.4.23-20.el6.x86_64                            472/536 
+
+  Verifying  : e2fsprogs-1.41.12-11.el6.x86_64                          473/536 
+
+  Verifying  : libssh2-1.2.2-7.el6_2.3.x86_64                           474/536 
+
+  Verifying  : tzdata-2016f-1.el6.noarch                                475/536 
+
+  Verifying  : libuser-0.56.13-4.el6_0.1.x86_64                         476/536 
+
+  Verifying  : nss-util-3.13.3-2.el6.x86_64                             477/536 
+
+  Verifying  : 4:perl-devel-5.10.1-119.el6_1.1.x86_64                   478/536 
+
+  Verifying  : libselinux-utils-2.0.94-5.2.el6.x86_64                   479/536 
+
+  Verifying  : libXrender-0.9.5-1.el6.x86_64                            480/536 
+
+  Verifying  : 1:dmidecode-2.11-2.el6.x86_64                            481/536 
+
+  Verifying  : passwd-0.77-4.el6_2.2.x86_64                             482/536 
+
+  Verifying  : gnutls-2.8.5-4.el6_2.2.x86_64                            483/536 
+
+  Verifying  : db4-utils-4.7.25-16.el6.x86_64                           484/536 
+
+  Verifying  : plymouth-0.8.3-24.el6.x86_64                             485/536 
+
+  Verifying  : nss-3.13.3-8.el6.x86_64                                  486/536 
+
+  Verifying  : perl-Test-Simple-0.92-119.el6_1.1.x86_64                 487/536 
+
+  Verifying  : biosdevname-0.3.11-1.el6.x86_64                          488/536 
+
+  Verifying  : libXrandr-1.3.0-4.el6.x86_64                             489/536 
+
+  Verifying  : 1:perl-Pod-Escapes-1.04-119.el6_1.1.x86_64               490/536 
+
+  Verifying  : tcsh-6.17-14.el6.x86_64                                  491/536 
+
+  Verifying  : nspr-4.9-1.el6.x86_64                                    492/536 
+
+  Verifying  : plymouth-scripts-0.8.3-24.el6.x86_64                     493/536 
+
+  Verifying  : udev-147-2.40.el6.x86_64                                 494/536 
+
+  Verifying  : 1:net-snmp-libs-5.5-37.el6_2.1.x86_64                    495/536 
+
+  Verifying  : grep-2.6.3-2.el6.x86_64                                  496/536 
+
+  Verifying  : cryptsetup-luks-1.2.0-6.el6.x86_64                       497/536 
+
+  Verifying  : tmpwatch-2.9.16-4.el6.x86_64                             498/536 
+
+  Verifying  : libss-1.41.12-11.el6.x86_64                              499/536 
+
+  Verifying  : libXdamage-1.1.2-1.el6.x86_64                            500/536 
+
+  Verifying  : unzip-6.0-1.el6.x86_64                                   501/536 
+
+  Verifying  : rng-tools-2-13.el6_2.x86_64                              502/536 
+
+  Verifying  : 1:cups-libs-1.4.2-44.el6_2.3.x86_64                      503/536 
+
+  Verifying  : expat-2.0.1-11.el6_2.x86_64                              504/536 
+
+  Verifying  : perl-IO-Compress-Base-2.020-119.el6_1.1.x86_64           505/536 
+
+  Verifying  : jasper-libs-1.900.1-15.el6_1.1.x86_64                    506/536 
+
+  Verifying  : 4:perl-libs-5.10.1-119.el6_1.1.x86_64                    507/536 
+
+  Verifying  : hal-libs-0.5.14-11.el6.x86_64                            508/536 
+
+  Verifying  : 14:libpcap-1.0.0-6.20091201git117cb5.el6.x86_64          509/536 
+
+  Verifying  : libcurl-7.19.7-26.el6_2.4.x86_64                         510/536 
+
+  Verifying  : tcp_wrappers-7.6-57.el6.x86_64                           511/536 
+
+  Verifying  : libXi-1.3-3.el6.x86_64                                   512/536 
+
+  Verifying  : dracut-kernel-004-256.el6_2.1.noarch                     513/536 
+
+  Verifying  : libtiff-3.9.4-5.el6_2.x86_64                             514/536 
+
+  Verifying  : sudo-1.7.4p5-9.el6_2.x86_64                              515/536 
+
+  Verifying  : openssh-clients-5.3p1-70.el6.x86_64                      516/536 
+
+  Verifying  : elfutils-libelf-0.152-1.el6.x86_64                       517/536 
+
+  Verifying  : sqlite-3.6.20-1.el6.x86_64                               518/536 
+
+  Verifying  : 1:perl-IO-Zlib-1.09-119.el6_1.1.x86_64                   519/536 
+
+  Verifying  : polkit-0.96-2.el6_0.1.x86_64                             520/536 
+
+  Verifying  : keyutils-libs-1.4-3.el6.x86_64                           521/536 
+
+  Verifying  : mailx-12.4-6.el6.x86_64                                  522/536 
+
+  Verifying  : acpid-1.0.10-2.1.el6.x86_64                              523/536 
+
+  Verifying  : procps-3.2.8-21.el6.x86_64                               524/536 
+
+  Verifying  : ConsoleKit-0.4.1-3.el6.x86_64                            525/536 
+
+  Verifying  : e2fsprogs-libs-1.41.12-11.el6.x86_64                     526/536 
+
+  Verifying  : iptables-ipv6-1.4.7-5.1.el6_2.x86_64                     527/536 
+
+  Verifying  : dash-0.5.5.1-3.1.el6.x86_64                              528/536 
+
+  Verifying  : redhat-lsb-core-4.0-7.el6.x86_64                         529/536 
+
+  Verifying  : lvm2-libs-2.02.87-6.el6.x86_64                           530/536 
+
+  Verifying  : curl-7.19.7-26.el6_2.4.x86_64                            531/536 
+
+  Verifying  : initscripts-9.03.27-1.el6_2.1.x86_64                     532/536 
+
+  Verifying  : system-config-firewall-tui-1.2.27-5.el6.noarch           533/536 
+
+  Verifying  : tcp_wrappers-libs-7.6-57.el6.x86_64                      534/536 
+
+  Verifying  : audit-libs-2.1.3-3.el6.x86_64                            535/536 
+
+  Verifying  : man-1.6f-29.el6.x86_64                                   536/536 
+
+Installed:
+  kernel.x86_64 0:2.6.32-642.15.1.el6                                           
+
+Dependency Installed:
+  checkpolicy.x86_64 0:2.0.22-1.el6                                             
+  db4-cxx.x86_64 0:4.7.25-20.el6_8.1                                            
+  db4-devel.x86_64 0:4.7.25-20.el6_8.1                                          
+  device-mapper-persistent-data.x86_64 0:0.6.2-0.1.rc7.el6                      
+  gdbm-devel.x86_64 0:1.8.0-39.el6                                              
+  gdk-pixbuf2.x86_64 0:2.24.1-6.el6_7                                           
+  glibc-devel.x86_64 0:2.12-1.192.el6                                           
+  glibc-headers.x86_64 0:2.12-1.192.el6                                         
+  kernel-headers.x86_64 0:2.6.32-642.15.1.el6                                   
+  keyutils.x86_64 0:1.4-5.el6                                                   
+  libpciaccess.x86_64 0:0.13.4-1.el6                                            
+  libsemanage.x86_64 0:2.0.43-5.1.el6                                           
+  lzo.x86_64 0:2.03-3.1.el6_5.1                                                 
+  nss-tools.x86_64 0:3.21.3-2.el6_8                                             
+  numactl.x86_64 0:2.0.9-2.el6                                                  
+  p11-kit.x86_64 0:0.18.5-2.el6_5.2                                             
+  p11-kit-trust.x86_64 0:0.18.5-2.el6_5.2                                       
+  pkgconfig.x86_64 1:0.23-9.1.el6                                               
+  policycoreutils.x86_64 0:2.0.83-30.1.el6_8                                    
+  python-argparse.noarch 0:1.2.1-2.1.el6                                        
+  shared-mime-info.x86_64 0:0.70-6.el6                                          
+  snappy.x86_64 0:1.1.0-1.el6                                                   
+  ustr.x86_64 0:1.0.4-9.1.el6                                                   
+
+Updated:
+  ConsoleKit.x86_64 0:0.4.1-6.el6                                               
+  ConsoleKit-libs.x86_64 0:0.4.1-6.el6                                          
+  acpid.x86_64 0:1.0.10-3.el6                                                   
+  alsa-lib.x86_64 0:1.1.0-4.el6                                                 
+  alsa-utils.x86_64 0:1.1.0-8.el6                                               
+  at.x86_64 0:3.1.10-48.el6                                                     
+  atk.x86_64 0:1.30.0-1.el6                                                     
+  audit.x86_64 0:2.4.5-3.el6                                                    
+  audit-libs.x86_64 0:2.4.5-3.el6                                               
+  authconfig.x86_64 0:6.1.12-23.el6                                             
+  avahi-libs.x86_64 0:0.6.25-15.el6_8.1                                         
+  bash.x86_64 0:4.1.2-41.el6_8                                                  
+  bind-libs.x86_64 32:9.8.2-0.47.rc1.el6_8.4                                    
+  bind-utils.x86_64 32:9.8.2-0.47.rc1.el6_8.4                                   
+  binutils.x86_64 0:2.20.51.0.2-5.44.el6                                        
+  biosdevname.x86_64 0:0.7.1-3.el6                                              
+  blktrace.x86_64 0:1.0.1-7.el6                                                 
+  bridge-utils.x86_64 0:1.2-10.el6                                              
+  busybox.x86_64 1:1.15.1-21.el6_6                                              
+  ca-certificates.noarch 0:2015.2.6-65.0.1.el6_7                                
+  cairo.x86_64 0:1.8.8-6.el6_6                                                  
+  chkconfig.x86_64 0:1.3.49.5-1.el6                                             
+  coreutils.x86_64 0:8.4-43.el6                                                 
+  coreutils-libs.x86_64 0:8.4-43.el6                                            
+  cpio.x86_64 0:2.10-12.el6_5                                                   
+  cronie.x86_64 0:1.4.4-16.el6_8.2                                              
+  cronie-anacron.x86_64 0:1.4.4-16.el6_8.2                                      
+  cryptsetup-luks.x86_64 0:1.2.0-11.el6                                         
+  cryptsetup-luks-libs.x86_64 0:1.2.0-11.el6                                    
+  cups-libs.x86_64 1:1.4.2-74.el6                                               
+  curl.x86_64 0:7.19.7-52.el6                                                   
+  cvs.x86_64 0:1.11.23-16.el6                                                   
+  cyrus-sasl-lib.x86_64 0:2.1.23-15.el6_6.2                                     
+  cyrus-sasl-plain.x86_64 0:2.1.23-15.el6_6.2                                   
+  dash.x86_64 0:0.5.5.1-4.el6                                                   
+  db4.x86_64 0:4.7.25-20.el6_8.1                                                
+  db4-utils.x86_64 0:4.7.25-20.el6_8.1                                          
+  dbus.x86_64 1:1.2.24-8.el6_6                                                  
+  dbus-glib.x86_64 0:0.86-6.el6                                                 
+  dbus-libs.x86_64 1:1.2.24-8.el6_6                                             
+  device-mapper.x86_64 0:1.02.117-7.el6_8.1                                     
+  device-mapper-event.x86_64 0:1.02.117-7.el6_8.1                               
+  device-mapper-event-libs.x86_64 0:1.02.117-7.el6_8.1                          
+  device-mapper-libs.x86_64 0:1.02.117-7.el6_8.1                                
+  dmidecode.x86_64 1:2.12-7.el6                                                 
+  dmraid.x86_64 0:1.0.0.rc16-11.el6                                             
+  dmraid-events.x86_64 0:1.0.0.rc16-11.el6                                      
+  dracut.noarch 0:004-409.el6_8.2                                               
+  dracut-kernel.noarch 0:004-409.el6_8.2                                        
+  e2fsprogs.x86_64 0:1.41.12-22.el6                                             
+  e2fsprogs-libs.x86_64 0:1.41.12-22.el6                                        
+  efibootmgr.x86_64 0:0.5.4-13.el6                                              
+  elfutils-libelf.x86_64 0:0.164-2.el6                                          
+  elfutils-libs.x86_64 0:0.164-2.el6                                            
+  ethtool.x86_64 2:3.5-6.el6                                                    
+  expat.x86_64 0:2.0.1-13.el6_8                                                 
+  file.x86_64 0:5.04-30.el6                                                     
+  file-libs.x86_64 0:5.04-30.el6                                                
+  findutils.x86_64 1:4.4.2-9.el6                                                
+  fontconfig.x86_64 0:2.8.0-5.el6                                               
+  fprintd.x86_64 0:0.1-22.git04fd09cfa.el6                                      
+  fprintd-pam.x86_64 0:0.1-22.git04fd09cfa.el6                                  
+  freetype.x86_64 0:2.3.11-17.el6                                               
+  gawk.x86_64 0:3.1.7-10.el6_7.3                                                
+  gdbm.x86_64 0:1.8.0-39.el6                                                    
+  gettext.x86_64 0:0.17-18.el6                                                  
+  glib2.x86_64 0:2.28.8-5.el6                                                   
+  gmp.x86_64 0:4.3.1-10.el6                                                     
+  gnupg2.x86_64 0:2.0.14-8.el6                                                  
+  gnutls.x86_64 0:2.8.5-19.el6_7                                                
+  grep.x86_64 0:2.20-5.el6_8                                                    
+  grub.x86_64 1:0.97-94.el6_7.1                                                 
+  grubby.x86_64 0:7.0.15-7.el6                                                  
+  gtk2.x86_64 0:2.24.23-8.el6                                                   
+  gzip.x86_64 0:1.3.12-22.el6                                                   
+  hal.x86_64 0:0.5.14-14.el6                                                    
+  hal-info.noarch 0:20090716-5.el6                                              
+  hal-libs.x86_64 0:0.5.14-14.el6                                               
+  hdparm.x86_64 0:9.43-4.el6                                                    
+  hwdata.noarch 0:0.233-16.1.el6                                                
+  initscripts.x86_64 0:9.03.53-1.el6.centos.2                                   
+  iproute.x86_64 0:2.6.32-54.el6                                                
+  iptables.x86_64 0:1.4.7-16.el6                                                
+  iptables-ipv6.x86_64 0:1.4.7-16.el6                                           
+  iputils.x86_64 0:20071127-21.el6                                              
+  irqbalance.x86_64 2:1.0.7-8.el6                                               
+  jasper-libs.x86_64 0:1.900.1-16.el6_6.3                                       
+  kernel-firmware.noarch 0:2.6.32-642.15.1.el6                                  
+  kexec-tools.x86_64 0:2.0.0-300.el6_8.2                                        
+  keyutils-libs.x86_64 0:1.4-5.el6                                              
+  kpartx.x86_64 0:0.4.9-93.el6                                                  
+  krb5-libs.x86_64 0:1.10.3-57.el6                                              
+  less.x86_64 0:436-13.el6                                                      
+  libX11.x86_64 0:1.6.3-2.el6                                                   
+  libX11-common.noarch 0:1.6.3-2.el6                                            
+  libXau.x86_64 0:1.0.6-4.el6                                                   
+  libXcomposite.x86_64 0:0.4.3-4.el6                                            
+  libXcursor.x86_64 0:1.1.14-2.1.el6                                            
+  libXdamage.x86_64 0:1.1.3-4.el6                                               
+  libXext.x86_64 0:1.3.3-1.el6                                                  
+  libXfixes.x86_64 0:5.0.1-2.1.el6                                              
+  libXft.x86_64 0:2.3.2-1.el6                                                   
+  libXi.x86_64 0:1.7.4-1.el6                                                    
+  libXinerama.x86_64 0:1.1.3-2.1.el6                                            
+  libXrandr.x86_64 0:1.4.2-1.el6                                                
+  libXrender.x86_64 0:0.9.8-2.1.el6_8.1                                         
+  libblkid.x86_64 0:2.17.2-12.24.el6_8.3                                        
+  libcom_err.x86_64 0:1.41.12-22.el6                                            
+  libcurl.x86_64 0:7.19.7-52.el6                                                
+  libdrm.x86_64 0:2.4.65-2.el6                                                  
+  libevent.x86_64 0:1.4.13-4.el6                                                
+  libgcc.x86_64 0:4.4.7-17.el6                                                  
+  libgcrypt.x86_64 0:1.4.5-12.el6_8                                             
+  libgomp.x86_64 0:4.4.7-17.el6                                                 
+  libnl.x86_64 0:1.1.4-2.el6                                                    
+  libpcap.x86_64 14:1.4.0-4.20130826git2dbcaa1.el6                              
+  libpng.x86_64 2:1.2.49-2.el6_7                                                
+  libselinux.x86_64 0:2.0.94-7.el6                                              
+  libselinux-utils.x86_64 0:2.0.94-7.el6                                        
+  libss.x86_64 0:1.41.12-22.el6                                                 
+  libssh2.x86_64 0:1.4.2-2.el6_7.1                                              
+  libstdc++.x86_64 0:4.4.7-17.el6                                               
+  libtasn1.x86_64 0:2.3-6.el6_5                                                 
+  libtiff.x86_64 0:3.9.4-21.el6_8                                               
+  libtirpc.x86_64 0:0.2.1-11.el6_8                                              
+  libudev.x86_64 0:147-2.73.el6_8.2                                             
+  libusb1.x86_64 0:1.0.9-0.7.rc1.el6                                            
+  libuser.x86_64 0:0.56.13-8.el6_7                                              
+  libuuid.x86_64 0:2.17.2-12.24.el6_8.3                                         
+  libxcb.x86_64 0:1.11-2.el6                                                    
+  libxml2.x86_64 0:2.7.6-21.el6_8.1                                             
+  libxml2-python.x86_64 0:2.7.6-21.el6_8.1                                      
+  lm_sensors-libs.x86_64 0:3.1.1-17.el6                                         
+  logrotate.x86_64 0:3.7.8-26.el6_7                                             
+  lsof.x86_64 0:4.82-5.el6                                                      
+  lvm2.x86_64 0:2.02.143-7.el6_8.1                                              
+  lvm2-libs.x86_64 0:2.02.143-7.el6_8.1                                         
+  mailx.x86_64 0:12.4-8.el6_6                                                   
+  make.x86_64 1:3.81-23.el6                                                     
+  man.x86_64 0:1.6f-32.el6                                                      
+  man-pages.noarch 0:3.22-20.el6                                                
+  man-pages-overrides.noarch 0:6.8.2-1.el6                                      
+  mdadm.x86_64 0:3.3.4-1.el6_8.5                                                
+  mlocate.x86_64 0:0.22.2-6.el6                                                 
+  module-init-tools.x86_64 0:3.9-25.el6                                         
+  ncurses.x86_64 0:5.7-4.20090207.el6                                           
+  ncurses-base.x86_64 0:5.7-4.20090207.el6                                      
+  ncurses-libs.x86_64 0:5.7-4.20090207.el6                                      
+  net-snmp.x86_64 1:5.5-57.el6_8.1                                              
+  net-snmp-libs.x86_64 1:5.5-57.el6_8.1                                         
+  net-snmp-utils.x86_64 1:5.5-57.el6_8.1                                        
+  nfs-utils.x86_64 1:1.2.3-70.el6_8.2                                           
+  nfs-utils-lib.x86_64 0:1.1.5-11.el6                                           
+  nmap.x86_64 2:5.51-4.el6                                                      
+  nspr.x86_64 0:4.11.0-1.el6                                                    
+  nss.x86_64 0:3.21.3-2.el6_8                                                   
+  nss-softokn.x86_64 0:3.14.3-23.3.el6_8                                        
+  nss-softokn-freebl.x86_64 0:3.14.3-23.3.el6_8                                 
+  nss-sysinit.x86_64 0:3.21.3-2.el6_8                                           
+  nss-util.x86_64 0:3.21.3-1.el6_8                                              
+  ntsysv.x86_64 0:1.3.49.5-1.el6                                                
+  openldap.x86_64 0:2.4.40-12.el6                                               
+  openssh.x86_64 0:5.3p1-118.1.el6_8                                            
+  openssh-clients.x86_64 0:5.3p1-118.1.el6_8                                    
+  openssh-server.x86_64 0:5.3p1-118.1.el6_8                                     
+  openssl.x86_64 0:1.0.1e-48.el6_8.4                                            
+  pam.x86_64 0:1.1.1-22.el6                                                     
+  pam_passwdqc.x86_64 0:1.0.5-8.el6                                             
+  pango.x86_64 0:1.28.1-11.el6                                                  
+  parted.x86_64 0:2.1-29.el6                                                    
+  passwd.x86_64 0:0.77-7.el6                                                    
+  pciutils.x86_64 0:3.1.10-4.el6                                                
+  pciutils-libs.x86_64 0:3.1.10-4.el6                                           
+  pcre.x86_64 0:7.8-7.el6                                                       
+  perl.x86_64 4:5.10.1-141.el6_7.1                                              
+  perl-Archive-Tar.x86_64 0:1.58-141.el6_7.1                                    
+  perl-CGI.x86_64 0:3.51-141.el6_7.1                                            
+  perl-Compress-Raw-Zlib.x86_64 1:2.021-141.el6_7.1                             
+  perl-Compress-Zlib.x86_64 0:2.021-141.el6_7.1                                 
+  perl-Crypt-SSLeay.x86_64 0:0.57-17.el6                                        
+  perl-ExtUtils-MakeMaker.x86_64 0:6.55-141.el6_7.1                             
+  perl-ExtUtils-ParseXS.x86_64 1:2.2003.0-141.el6_7.1                           
+  perl-IO-Compress-Base.x86_64 0:2.021-141.el6_7.1                              
+  perl-IO-Compress-Zlib.x86_64 0:2.021-141.el6_7.1                              
+  perl-IO-Zlib.x86_64 1:1.09-141.el6_7.1                                        
+  perl-Module-Pluggable.x86_64 1:3.90-141.el6_7.1                               
+  perl-Net-SSLeay.x86_64 0:1.35-10.el6_8.1                                      
+  perl-Package-Constants.x86_64 1:0.02-141.el6_7.1                              
+  perl-Pod-Escapes.x86_64 1:1.04-141.el6_7.1                                    
+  perl-Pod-Simple.x86_64 1:3.13-141.el6_7.1                                     
+  perl-Test-Harness.x86_64 0:3.17-141.el6_7.1                                   
+  perl-Test-Simple.x86_64 0:0.92-141.el6_7.1                                    
+  perl-devel.x86_64 4:5.10.1-141.el6_7.1                                        
+  perl-libs.x86_64 4:5.10.1-141.el6_7.1                                         
+  perl-libwww-perl.noarch 0:5.833-3.el6                                         
+  perl-version.x86_64 3:0.77-141.el6_7.1                                        
+  pinentry.x86_64 0:0.7.6-8.el6                                                 
+  pixman.x86_64 0:0.32.8-1.el6                                                  
+  plymouth.x86_64 0:0.8.3-27.el6.centos.1                                       
+  plymouth-core-libs.x86_64 0:0.8.3-27.el6.centos.1                             
+  plymouth-scripts.x86_64 0:0.8.3-27.el6.centos.1                               
+  pm-utils.x86_64 0:1.2.5-11.el6                                                
+  polkit.x86_64 0:0.96-11.el6                                                   
+  prelink.x86_64 0:0.4.6-3.1.el6_4                                              
+  procps.x86_64 0:3.2.8-36.el6                                                  
+  psacct.x86_64 0:6.3.2-63.el6_3.3                                              
+  psmisc.x86_64 0:22.6-19.el6_5                                                 
+  ql2400-firmware.noarch 0:7.03.00-1.el6_5                                      
+  quota.x86_64 1:3.17-23.el6                                                    
+  readahead.x86_64 1:1.5.6-2.el6                                                
+  readline.x86_64 0:6.0-4.el6                                                   
+  redhat-logos.noarch 0:60.0.14-12.el6.centos                                   
+  redhat-lsb-core.x86_64 0:4.0-7.el6.centos                                     
+  rng-tools.x86_64 0:5-2.el6_7                                                  
+  rpcbind.x86_64 0:0.2.0-12.el6                                                 
+  rsync.x86_64 0:3.0.6-12.el6                                                   
+  rsyslog.x86_64 0:5.8.10-10.el6_6                                              
+  ruby.x86_64 0:1.8.7.374-4.el6_6                                               
+  ruby-libs.x86_64 0:1.8.7.374-4.el6_6                                          
+  screen.x86_64 0:4.0.3-19.el6                                                  
+  sed.x86_64 0:4.2.1-10.el6                                                     
+  setup.noarch 0:2.8.14-20.el6_4.1                                              
+  setuptool.x86_64 0:1.19.9-4.el6                                               
+  shadow-utils.x86_64 2:4.1.5.1-5.el6                                           
+  smartmontools.x86_64 1:5.43-1.el6                                             
+  sos.noarch 0:3.2-40.el6.centos                                                
+  sqlite.x86_64 0:3.6.20-1.el6_7.2                                              
+  strace.x86_64 0:4.8-10.el6                                                    
+  sudo.x86_64 0:1.8.6p3-25.el6_8                                                
+  sysstat.x86_64 0:9.0.4-31.el6                                                 
+  system-config-firewall-base.noarch 0:1.2.27-7.2.el6_6                         
+  system-config-firewall-tui.noarch 0:1.2.27-7.2.el6_6                          
+  systemtap-runtime.x86_64 0:2.9-4.el6                                          
+  sysvinit-tools.x86_64 0:2.87-6.dsf.el6                                        
+  tar.x86_64 2:1.23-15.el6_8                                                    
+  tcp_wrappers.x86_64 0:7.6-58.el6                                              
+  tcp_wrappers-libs.x86_64 0:7.6-58.el6                                         
+  tcpdump.x86_64 14:4.0.0-9.20090921gitdf3cb4.2.el6                             
+  tcsh.x86_64 0:6.17-35.el6_8.1                                                 
+  telnet.x86_64 1:0.17-48.el6                                                   
+  time.x86_64 0:1.7-38.el6                                                      
+  tmpwatch.x86_64 0:2.9.16-6.el6                                                
+  tzdata.noarch 0:2017a-1.el6                                                   
+  udev.x86_64 0:147-2.73.el6_8.2                                                
+  unzip.x86_64 0:6.0-4.el6                                                      
+  upstart.x86_64 0:0.6.5-16.el6                                                 
+  util-linux-ng.x86_64 0:2.17.2-12.24.el6_8.3                                   
+  vim-minimal.x86_64 2:7.4.629-5.el6_8.1                                        
+  virt-what.x86_64 0:1.11-1.2.el6                                               
+  wget.x86_64 0:1.12-8.el6                                                      
+  xinetd.x86_64 2:2.3.14-40.el6                                                 
+  xorg-x11-drv-ati-firmware.noarch 0:7.6.1-2.el6                                
+  xz.x86_64 0:4.999.9-0.5.beta.20091007git.el6                                  
+  xz-libs.x86_64 0:4.999.9-0.5.beta.20091007git.el6                             
+  xz-lzma-compat.x86_64 0:4.999.9-0.5.beta.20091007git.el6                      
+  zip.x86_64 0:3.0-1.el6_7.1                                                    
+
+Complete!
+[DEBUG] enter disable_other_repos
+[DEBUG] disabling the other yum repos
+[DEBUG] List of enabled repos:
+Loaded plugins: fastestmirror, security
+Loading mirror speeds from cached hostfile
+ * base: mirrors.coreix.net
+ * extras: mirrors.coreix.net
+ * updates: mirrors.coreix.net
+repo id                        repo name                                  status
+base                           CentOS-6 - Base                            6,696
+extras                         CentOS-6 - Extras                             64
+updates                        CentOS-6 - Updates                           974
+repolist: 7,734
+[DEBUG] finished at LSB Version:	:base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch
+Distributor ID:	CentOS
+Description:	CentOS release 6.8 (Final)
+Release:	6.8
+Codename:	Final
+[DEBUG] please, reboot the server
